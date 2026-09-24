@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+header, footer{
+    border: 2px solid black;
+}
+:root{
+    --font-ppal: "Bricolage Grotesque", sans-serif;
+    --font-sec: "Cormorant Garamond", serif;
+    --bg-ppal: #F8F3EC;
+    --bg-sec: #FFFDF8;
+    --surface: #EFE3D3;
+    --headings: #8B5E3C;
+    --text: #6D4C35;
+    --accent: #C98A4A;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--bg-ppal);
+    font-family: var(--font-ppal);
+    padding: 10px 50px 0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-sec);
+    font-weight: bolder;
+}
+p{
+    font-size: 1.5rem;
+    color: var(--text);
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--accent);
+}
+/* HEADER */
+header{
+    background-color: var(--bg-ppal);
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    height: 8vh;
+    width: auto;
+}
+.titles{
+    text-align: center;
+}
+ul{
+    display: flex;
+    gap: 40px;
+}
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logos{
+    height: 5vh;
+    width: auto;
+}
+.whatsapp{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+/* MAIN HOME */
+/* main{
+} */
+.home-img{
+    height: 40vh;
+    width: auto;
+    margin: 1rem;
+}
+/* MAIN TIPOS */
+/* MAIN GALERÍA */

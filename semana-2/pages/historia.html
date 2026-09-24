@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Punto Café</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img src="../assets/hero-logo.png" alt="Logo de Punto Café" class="logo" title="Punto Café">
+        </a>
+        <div class="titles">
+            <h1>Punto Café</h1>
+            <h2>Café de Especialidad</h2>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="./tipos.html">Tipos de Café</a>
+                </li>
+                <li>
+                    <a href="./galeria.html">Galería</a>
+                </li>
+                <li>
+                    <a href="./historia.html">Historía</a>
+                </li>
+                <li>
+                    <a href="./contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <footer>
+        <p>Creado por Lau 🤜🏼🤛🏼 Lucho</p>
+        <p>&copy;<span id="year"></span> Todos los Derechos Reservados</p>
+        <ul> <!-- links de redes sociales -->
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="../assets/logos/instagram.png" alt="Página de Instagram" class="logos" title="Instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../assets/logos/facebook.png" alt="Página de Facebook" class="logos" title="Facebook">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.x.com/" target="_blank">
+                    <img src="../assets/logos/x.png" alt="Perfil de X (ex twitter)" class="logos" title="X">
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/5491232456789" target="_blank">
+                    <img src="../assets/logos/whatsapp.png" alt="Envianos un WhatsApp" class="logos whatsapp" title="WhatsApp">
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
