@@ -1,6 +1,6 @@
 # POWER GYM — Base para la clase de CSS Grid
 
-La web está completa en contenido y estilos visuales, pero **NO tiene Grid aplicado**.
+La web está completa en contenido y estilos visuales.
 
 ## Estructura
 
