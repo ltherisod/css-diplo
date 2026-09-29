@@ -16,9 +16,8 @@ ESTRUCTURA
 EN CLASE
 - Navbar: ya usa Flexbox.
 - Footer: ya usa Flexbox.
-- Formulario: usa Flexbox en columna.
-- .cards-grid: NO usa Grid todavía.
-- .layout-areas: NO usa Grid todavía.
+- .cards-grid:  Grid.
+- .layout-areas:  Grid.
 
 PALETA
 - Negro: #0B0B0B
