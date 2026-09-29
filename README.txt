@@ -35,6 +35,5 @@ BUENAS PRÁCTICAS APLICADAS
 - Contenedor con max-width para evitar textos demasiado anchos.
 - object-fit para mantener proporción de imágenes.
 - Separación clara del CSS por secciones y comentarios.
-- Grid no está resuelto de antemano: se agrega durante la clase.
 
 Las imágenes se cargan desde Unsplash y necesitan conexión a Internet.
