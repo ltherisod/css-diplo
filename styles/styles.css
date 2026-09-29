@@ -1,0 +1,637 @@
+/* =========================================================
+   POWER GYM - CSS BASE PARA LA CLASE DE GRID
+   ---------------------------------------------------------
+   PALETA:
+   - Negro principal: #0B0B0B
+   - Negro secundario: #171717
+   - Verde lima: #C7FF3D
+   - Blanco: #FFFFFF
+   - Gris claro: #C8C8C8
+
+   IMPORTANTE:
+   - Navbar y footer usan Flexbox porque ya fue visto.
+   - Las secciones de tarjetas NO usan Grid todavía.
+   - Grid se va a agregar paso a paso durante la clase.
+   ========================================================= */
+
+
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
+
+html {
+  /* Hace más suave el desplazamiento cuando usamos enlaces internos. */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Quitamos el margen que agrega el navegador por defecto. */
+  margin: 0;
+
+  /* Elegimos una tipografía simple y disponible en cualquier navegador. */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Definimos el color general del texto. */
+  color: #FFFFFF;
+
+  /* Definimos el fondo general del sitio. */
+  background-color: #0B0B0B;
+
+  /* Mejora la lectura de párrafos y textos largos. */
+  line-height: 1.5;
+}
+
+a {
+  /* Quitamos el subrayado de los enlaces. */
+  text-decoration: none;
+}
+
+img {
+  /* Hace que las imágenes se comporten como bloques y evita espacios raros debajo. */
+  display: block;
+
+  /* Evita que una imagen sea más ancha que su contenedor. */
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  /* Quitamos márgenes automáticos para controlar nosotros los espacios. */
+  margin-top: 0;
+}
+
+
+/* =========================
+   CONTENEDOR GENERAL
+   ========================= */
+
+.contenedor {
+  /* Limita el ancho del contenido en pantallas grandes. */
+  max-width: 1180px;
+
+  /* Centra el contenido horizontalmente. */
+  margin: 0 auto;
+
+  /* Evita que el contenido toque los bordes de la pantalla. */
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+
+/* =========================
+   HEADER Y NAVBAR - FLEXBOX
+   ========================= */
+
+.header {
+  /* Fondo oscuro para separar la navegación del resto de la página. */
+  background-color: #0B0B0B;
+
+  /* Línea inferior sutil. */
+  border-bottom: 1px solid #2A2A2A;
+}
+
+.navbar {
+  /* FLEXBOX: coloca el logo y el menú en una misma fila. */
+  display: flex;
+
+  /* Envía el logo a un extremo y los enlaces al otro. */
+  justify-content: space-between;
+
+  /* Centra verticalmente logo y menú. */
+  align-items: center;
+
+  /* Deja separación si los elementos se acercan. */
+  gap: 32px;
+
+  /* Altura visual del navbar. */
+  min-height: 76px;
+}
+
+.logo {
+  /* FLEXBOX para alinear la marca y el texto del logo. */
+  display: flex;
+
+  /* Centra verticalmente las dos partes del logo. */
+  align-items: center;
+
+  /* Espacio entre isotipo y nombre. */
+  gap: 10px;
+
+  /* Color blanco del texto del logo. */
+  color: #FFFFFF;
+
+  /* Refuerza visualmente la marca. */
+  font-weight: 700;
+
+  /* Agrega separación entre letras. */
+  letter-spacing: 1px;
+}
+
+.logo-marca {
+  /* Fondo verde lima del isotipo. */
+  background-color: #C7FF3D;
+
+  /* Texto negro para generar contraste. */
+  color: #0B0B0B;
+
+  /* Tamaño fijo para que funcione como un pequeño logo. */
+  width: 40px;
+  height: 40px;
+
+  /* FLEXBOX para centrar las letras PG. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Hace el logo circular. */
+  border-radius: 50%;
+
+  /* Texto fuerte dentro del isotipo. */
+  font-weight: 800;
+}
+
+.logo-texto {
+  /* Tamaño del nombre del gimnasio. */
+  font-size: 20px;
+}
+
+.nav-links {
+  /* Quitamos los puntos de la lista. */
+  list-style: none;
+
+  /* FLEXBOX: pone los links uno al lado del otro. */
+  display: flex;
+
+  /* Espacio entre links. */
+  gap: 24px;
+
+  /* Quitamos espacios que la lista trae por defecto. */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  /* Color blanco del menú. */
+  color: #FFFFFF;
+
+  /* Tamaño moderado del texto. */
+  font-size: 15px;
+
+  /* Un poco de grosor para mejorar la lectura. */
+  font-weight: 600;
+}
+
+
+/* =========================
+   HERO PRINCIPAL
+   ========================= */
+
+.hero {
+  
+  /* Altura mínima para que la portada tenga presencia. */
+  min-height: 620px;
+}
+
+.hero-contenido {
+  /* Limita el ancho del bloque de texto. */
+  max-width: 760px;
+
+  /* Separa el contenido del borde superior del hero. */
+  padding-top: 150px;
+
+  /* Separa el contenido del borde inferior. */
+  padding-bottom: 120px;
+
+  /* Sobrescribe el centrado horizontal del contenedor para alinear a la izquierda. */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow {
+  /* Verde lima para pequeños textos destacados. */
+  color: #C7FF3D;
+
+  /* Texto en negrita. */
+  font-weight: 700;
+
+  /* Espaciado de letras estilo deportivo. */
+  letter-spacing: 2px;
+
+  /* Tamaño pequeño para que funcione como etiqueta. */
+  font-size: 14px;
+
+  /* Separa la etiqueta del título. */
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  /* Título grande de portada. */
+  font-size: 64px;
+
+  /* Reduce el espacio entre líneas del título. */
+  line-height: 1;
+
+  /* Separa el título del texto siguiente. */
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  /* Palabra destacada en verde lima. */
+  color: #C7FF3D;
+}
+
+.hero-texto {
+  /* Limita el ancho para que el párrafo sea cómodo de leer. */
+  max-width: 600px;
+
+  /* Color gris claro. */
+  color: #E0E0E0;
+
+  /* Tamaño un poco mayor que el texto común. */
+  font-size: 19px;
+
+  /* Separa el párrafo del botón. */
+  margin-bottom: 32px;
+}
+
+
+/* =========================
+   HERO DE PÁGINAS INTERNAS
+   ========================= */
+
+.page-hero {
+  /* Fondo oscuro común. */
+  background-color: #171717;
+
+  /* Espacio vertical. */
+  padding-top: 86px;
+  padding-bottom: 86px;
+
+  /* Borde inferior verde lima como detalle visual. */
+  border-bottom: 4px solid #C7FF3D;
+}
+
+.page-hero h1 {
+  /* Título grande de página interna. */
+  font-size: 52px;
+
+  /* Separa el título del texto. */
+  margin-bottom: 14px;
+}
+
+.page-hero p {
+  /* Color más suave para el texto descriptivo. */
+  color: #D0D0D0;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.boton {
+  /* Permite usar padding correctamente en enlaces. */
+  display: inline-block;
+
+  /* Fondo verde lima. */
+  background-color: #C7FF3D;
+
+  /* Texto oscuro para generar contraste. */
+  color: #0B0B0B;
+
+  /* Espacio interno. */
+  padding: 14px 22px;
+
+  /* Borde sutilmente redondeado. */
+  border-radius: 6px;
+
+  /* Texto fuerte. */
+  font-weight: 700;
+
+  /* Quitamos borde por defecto si el botón es un <button>. */
+  border: none;
+
+  /* Mostramos cursor de acción. */
+  cursor: pointer;
+}
+
+
+/* =========================
+   SECCIONES GENERALES
+   ========================= */
+
+.seccion {
+  /* Separa las secciones verticalmente. */
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.seccion-oscura {
+  /* Diferencia visual entre secciones. */
+  background-color: #171717;
+}
+
+.seccion h2 {
+  /* Tamaño de títulos secundarios. */
+  font-size: 38px;
+
+  /* Separa el título del texto. */
+  margin-bottom: 14px;
+}
+
+.intro {
+  /* Texto gris claro para introducciones. */
+  color: #C8C8C8;
+
+  /* Separa la introducción de las tarjetas. */
+  margin-bottom: 36px;
+}
+
+
+/* =========================
+   TARJETAS -  GRID
+   ========================= */
+
+
+.cards-grid {
+ /* Activamos el CSS Grid en el contenedor padre. Sus hijos directos pasan a ser ahora Grid Items*/
+ display: grid;
+ /*Creo 3 columnas iguales*/
+ /* grid-template-columns: 1fr 1fr 1fr; */
+ /*Repito 3 veces el mismo valor, lo resumo con el repeat*/
+ /* tiene un mínimo de 220px puede crecer hasta 1fr */
+ grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+ /* grid-template-rows: 300px 300px; */
+ /*Separar filas y columnas*/
+ gap:24px;
+}
+
+.card {
+  /* Fondo de cada tarjeta. */
+  background-color: #171717;
+
+  /* Borde sutil para separar la tarjeta del fondo. */
+  border: 1px solid #2C2C2C;
+
+  /* Redondea levemente las esquinas. */
+  border-radius: 10px;
+
+  /* Evita que la imagen sobresalga de las esquinas redondeadas. */
+  overflow: hidden;
+
+  /* Separa una tarjeta de la siguiente mientras todavía no usamos Grid. */
+  /* margin-bottom: 24px; */
+}
+
+.card img {
+  /* La imagen ocupa todo el ancho de la tarjeta. */
+  width: 100%;
+
+  /* Todas las imágenes mantienen una altura pareja. */
+  height: 260px;
+
+  /* Mantiene la proporción y recorta lo que sobra. */
+  object-fit: cover;
+}
+
+.card-contenido {
+  /* Espacio interno del contenido de cada tarjeta. */
+  padding: 22px;
+}
+
+.card h2,
+.card h3 {
+  /* Título blanco y claro. */
+  color: #FFFFFF;
+
+  /* Separa el título del texto. */
+  margin-bottom: 10px;
+}
+
+.card p {
+  /* Color de texto secundario. */
+  color: #C8C8C8;
+}
+
+.precio {
+  /* Verde lima para destacar precios. */
+  color: #C7FF3D !important;
+
+  /* Tamaño grande. */
+  font-size: 34px;
+
+  /* Texto fuerte. */
+  font-weight: 700;
+}
+
+.plan-etiqueta {
+  /* Color de acento. */
+  color: #C7FF3D !important;
+
+  /* Texto pequeño. */
+  font-size: 13px;
+
+  /* Espaciado entre letras. */
+  letter-spacing: 1.5px;
+
+  /* Texto en negrita. */
+  font-weight: 700;
+}
+
+.card-destacada {
+
+  /* 1           2           3           4
+|-----------|-----------|-----------|
+| columna 1 | columna 2 | columna 3 | */
+  /* Empeza en la linea 1 y termina en la linea 3 */
+  /* grid-column:1/3; */
+  /* HACE QUE LA CARD OCUPE 2 COLUMNAS */
+  grid-column: span 2; 
+  /* hace que la card ocupe 2 filas */
+  grid-row: span 2;
+}
+
+/* =========================
+   SECCIÓN PREPARADA PARA GRID AREAS
+   ========================= */
+
+/*
+  Esta sección contiene:
+  - un bloque de texto
+  - un bloque de imagen
+
+  TODAVÍA NO USAMOS GRID.
+
+  Durante la clase vamos a agregar:
+  - display: grid
+  - grid-template-columns
+  - grid-template-areas
+  - grid-area
+*/
+.layout-areas {
+  /* Por ahora los bloques siguen el flujo normal y quedan apilados. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "texto imagen";
+  align-items:center;
+}
+
+.area-texto {
+  /* Separa el texto de la imagen mientras todavía no usamos Grid. */
+  grid-area:texto;
+  margin-bottom: 28px;
+}
+
+.area-texto p {
+  /* Color secundario. */
+  color: #C8C8C8;
+}
+.area-imagen{
+  grid-area:imagen;
+}
+.area-imagen img {
+  /* La imagen ocupa todo el ancho disponible. */
+  width: 100%;
+
+  /* Altura visual estable. */
+  height: 380px;
+
+  /* Evita deformaciones. */
+  object-fit: cover;
+
+  /* Redondea las esquinas. */
+  border-radius: 10px;
+}
+
+.nota-clase {
+  /* Diferencia visual para la nota que usaremos en clase. */
+  border-left: 4px solid #C7FF3D;
+
+  /* Espacio interno a la izquierda. */
+  padding-left: 16px;
+
+  /* Separa la nota del texto anterior. */
+  margin-top: 24px;
+}
+
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+.contacto {
+  /* Evita que el formulario se vuelva demasiado ancho. */
+  max-width: 720px;
+}
+
+.formulario {
+  /* FLEXBOX en columna para apilar los campos. */
+  display: flex;
+
+  /* Hace que los controles queden uno debajo del otro. */
+  flex-direction: column;
+
+  /* Espacio entre los controles. */
+  gap: 12px;
+}
+
+.formulario label {
+  /* Hace más visible el nombre de cada campo. */
+  font-weight: 700;
+}
+
+.formulario input,
+.formulario textarea {
+  /* Fondo oscuro de los campos. */
+  background-color: #171717;
+
+  /* Texto blanco. */
+  color: #FFFFFF;
+
+  /* Borde sutil. */
+  border: 1px solid #3A3A3A;
+
+  /* Espacio interno. */
+  padding: 14px;
+
+  /* Tamaño legible. */
+  font-size: 16px;
+
+  /* Redondea las esquinas. */
+  border-radius: 6px;
+
+  /* Usa la misma tipografía que el sitio. */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   FOOTER - FLEXBOX
+   ========================= */
+
+.footer {
+  /* Fondo negro. */
+  background-color: #070707;
+
+  /* Línea superior verde lima. */
+  border-top: 3px solid #C7FF3D;
+}
+
+.footer-contenido {
+  /* FLEXBOX: organiza el contenido del footer en una fila. */
+  display: flex;
+
+  /* Envía los bloques hacia extremos opuestos. */
+  justify-content: space-between;
+
+  /* Centra verticalmente. */
+  align-items: center;
+
+  /* Espacio de seguridad entre elementos. */
+  gap: 24px;
+
+  /* Espacio vertical del footer. */
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.footer p {
+  /* Quitamos el margen inferior por defecto. */
+  margin-bottom: 0;
+
+  /* Color secundario. */
+  color: #BDBDBD;
+}
+
+.footer-logo {
+  /* Nombre de marca en blanco. */
+  color: #FFFFFF !important;
+
+  /* Texto fuerte. */
+  font-weight: 700;
+
+  /* Espaciado de letras. */
+  letter-spacing: 1px;
+}
+
+.footer-link {
+  /* Color de acento. */
+  color: #C7FF3D;
+
+  /* Texto en negrita. */
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   GRID SE VA A AGREGAR DURANTE LA CLASE
+   ========================================================= */
+
+/*
+  No dejamos ninguna solución hecha.
+
+  La idea es que durante la clase vayamos agregando las
+  propiedades de Grid una por una para observar cada cambio.
+*/
