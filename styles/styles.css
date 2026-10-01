@@ -1,4 +1,13 @@
-
+/* =========================================================
+   POWER GYM - 
+   ---------------------------------------------------------
+   PALETA:
+   - Negro principal: #0B0B0B
+   - Negro secundario: #171717
+   - Verde lima: #C7FF3D
+   - Blanco: #FFFFFF
+   - Gris claro: #C8C8C8
+   ========================================================= */
 
 
 /* =========================
@@ -337,24 +346,22 @@ p {
 
 
 /* =========================
-   TARJETAS -  GRID
+   TARJETAS - GRID
    ========================= */
 
 
+
 .cards-grid {
-  /* GRID trabajado en la clase anterior. */
-  display: grid;
-
-  /*
-    ESTADO INICIAL DE LA CLASE:
-    tenemos 3 columnas pensadas para una pantalla grande.
-
-    Hoy vamos a transformar este bloque a Mobile First.
-  */
-  grid-template-columns: repeat(3, 1fr);
-
-  /* Separación entre las tarjetas. */
-  gap: 24px;
+ /* Activamos el CSS Grid en el contenedor padre. Sus hijos directos pasan a ser ahora Grid Items*/
+ display: grid;
+ /*Creo 3 columnas iguales*/
+ /* grid-template-columns: 1fr 1fr 1fr; */
+ /*Repito 3 veces el mismo valor, lo resumo con el repeat*/
+ /* tiene un mínimo de 220px puede crecer hasta 1fr */
+ grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+ /* grid-template-rows: 300px 300px; */
+ /*Separar filas y columnas*/
+ gap:24px;
 }
 
 .card {
@@ -430,36 +437,47 @@ p {
 }
 
 .card-destacada {
-  /*
-    ESTADO INICIAL:
-    la tarjeta destacada ocupa más espacio en desktop.
 
-    En mobile esto no nos conviene.
-    Durante la clase vamos a cambiarlo.
+  /*
+    CLASE DE MEDIA QUERIES:
+    OJO con esta clase.
+
+    En la clase de Grid hicimos que esta tarjeta ocupe
+    2 columnas y 2 filas.
+
+    Cuando llevemos .cards-grid a UNA sola columna en mobile,
+    también tendremos que adaptar esta regla.
   */
-  grid-column: span 2;
+
+  /* 1           2           3           4
+|-----------|-----------|-----------|
+| columna 1 | columna 2 | columna 3 | */
+  /* Empeza en la linea 1 y termina en la linea 3 */
+  /* grid-column:1/3; */
+  /* HACE QUE LA CARD OCUPE 2 COLUMNAS */
+  grid-column: span 2; 
+  /* hace que la card ocupe 2 filas */
   grid-row: span 2;
 }
 
 /* =========================
-   GRID AREAS - ESTADO INICIAL
+   SECCIÓN CON GRID AREAS
    ========================= */
 
 /*
-  Esta sección YA usa Grid Areas porque fue trabajada
-  en la clase anterior.
+  MOBILE:
+  TEXTO
+  IMAGEN
 
-  ESTADO INICIAL:
-  texto e imagen están en dos columnas.
-
-  Hoy vamos a hacer que en mobile queden apilados y que
-  recién desde 1024px vuelvan a quedar uno al lado del otro.
+  DESKTOP:
+  TEXTO | IMAGEN
 */
 .layout-areas {
+  /* Por ahora los bloques siguen el flujo normal y quedan apilados. */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "texto imagen";
-  align-items: center;
+  align-items:center;
 }
 
 .area-texto {
@@ -609,8 +627,10 @@ p {
 }
 
 
-/* ==============
+
+
+/* ================
    MEDIA QUERIES 
-   ============== */
+   ================
 
-
+  
