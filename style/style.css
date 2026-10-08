@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-header, footer{
-    border: 2px solid black;
-}
 :root{
     --font-ppal: "Bricolage Grotesque", sans-serif;
     --font-sec: "Cormorant Garamond", serif;
@@ -25,6 +22,7 @@ body{
 h1, h2, h3, h4, h5, h6{
     font-family: var(--font-sec);
     font-weight: bolder;
+    color: var(--headings);
 }
 p{
     font-size: 1.5rem;
@@ -35,17 +33,20 @@ ul{
 }
 a{
     text-decoration: none;
-    color: var(--accent);
+    color: var(--accent) !important;
+}
+.active{
+    font-weight: bolder;
 }
 /* HEADER */
-header{
+/* header{
     background-color: var(--bg-ppal);
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 .logo{
     height: 8vh;
     width: auto;
@@ -57,6 +58,25 @@ ul{
     display: flex;
     gap: 40px;
 }
+.nav-change{
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 1s;
+}
+.nav-change:hover{
+    background-color: var(--headings);
+    color: var(--surface);
+}
+.nav-change:active{
+    background-color: crimson;
+    color: white;
+}
+/* .active{
+    background-color: darkblue;
+    padding: 10px;
+    border-radius: 15px;
+    color: gold;
+} */
 /* FOOTER */
 footer{
     display: flex;
@@ -73,12 +93,63 @@ footer{
     right: 50px;
 }
 /* MAIN HOME */
-/* main{
-} */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-img{
+    height: 40vh;
+    width: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
 .home-img{
     height: 40vh;
     width: auto;
-    margin: 1rem;
+    border-radius: 15px;
+    transition: scale 1s ease;
+}
+/* ease | ease-in | ease-out | ease-in-out */
+.home-img:hover{
+    scale: 1.5;
 }
 /* MAIN TIPOS */
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+/* .card:nth-child(2n+1){
+    border: 5px solid crimson;
+}
+.card:nth-child(2){
+    border: 5px solid blue;
+} */
+.card{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+.img-types{
+    width: 20vw;
+    height: auto;
+}
+
 /* MAIN GALERÍA */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.fuente-personal{
+    color: var(--accent);
+}
