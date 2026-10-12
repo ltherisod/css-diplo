@@ -1,28 +1,75 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Power Gym: entrenamiento de fuerza, funcional y planes para distintos objetivos.">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="Power Gym: entrenamiento de fuerza, funcional y planes para distintos objetivos." name="description" />
   <title>Power Gym | Inicio</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <!-- Bootstrap CSS primero; nuestros estilos después -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="styles/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-  <header class="header">
-    <nav class="navbar contenedor">
-      <a class="logo" href="index.html" aria-label="Power Gym - Inicio">
-        <span class="logo-marca">PG</span>
-        <span class="logo-texto">POWER GYM</span>
-      </a>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="pages/actividades.html">Actividades</a></li>
-        <li><a href="pages/planes.html">Planes</a></li>
-        <li><a href="pages/nosotros.html">Nosotros</a></li>
-        <li><a href="pages/contacto.html">Contacto</a></li>
-      </ul>
+  <!-- ==========================================
+     HEADER - NAVEGACIÓN
+========================================== -->
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-power">
+      <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="./index.html">
+          <img src="https://i.postimg.cc/XJjzVPvX/Logotipo-POWER-GYM-Neon.png" alt="Logo de Power Gym"
+            class="logo-img" />
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Enlaces -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+            <li class="nav-item">
+              <a class="nav-link activo" href="./index.html" aria-current="page">
+                Inicio
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/nosotros.html">
+                Sobre nosotros
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/actividades.html">
+                Actividades
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/planes.html">
+                Planes
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/contacto.html">
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -30,7 +77,7 @@
     <section class="hero">
       <div class="hero-contenido contenedor">
         <p class="eyebrow">FUERZA · ENERGÍA · CONSTANCIA</p>
-        <h1>Entrená fuerte.<br><span>Sentite mejor.</span></h1>
+        <h1>Entrená fuerte.<br /><span>Sentite mejor.</span></h1>
         <p class="hero-texto">
           Un gimnasio pensado para acompañarte desde tu primer entrenamiento
           hasta tus próximos objetivos.
@@ -38,7 +85,6 @@
         <a class="boton" href="pages/planes.html">Conocé nuestros planes</a>
       </div>
     </section>
-
     <section class="seccion">
       <div class="contenedor">
         <p class="eyebrow">ENTRENÁ A TU MANERA</p>
@@ -46,68 +92,50 @@
         <p class="intro">
           Estas tarjetas van a ser nuestro ejemplo principal para aprender CSS Grid.
         </p>
-
         <div class="cards-grid">
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=80"
-              alt="Persona entrenando musculación con pesas"
-            >
+            <img alt="Persona entrenando musculación con pesas"
+              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
               <h3>Musculación</h3>
               <p>Entrenamiento de fuerza con máquinas, barras y mancuernas.</p>
             </div>
           </article>
-
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80"
-              alt="Persona realizando entrenamiento funcional"
-            >
+            <img alt="Persona realizando entrenamiento funcional"
+              src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
               <h3>Funcional</h3>
               <p>Clases dinámicas para trabajar fuerza, coordinación y resistencia.</p>
             </div>
           </article>
-
           <article class="card card-destacada">
-            <img
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80"
-              alt="Entrenamiento personalizado en gimnasio"
-            >
+            <img alt="Entrenamiento personalizado en gimnasio"
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
               <h3>Personalizado</h3>
               <p>Rutinas adaptadas a tus objetivos con acompañamiento profesional.</p>
             </div>
           </article>
-
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80"
-              alt="Persona levantando pesas"
-            >
+            <img alt="Persona levantando pesas"
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
               <h3>Fuerza</h3>
               <p>Trabajo progresivo para mejorar técnica y rendimiento.</p>
             </div>
           </article>
-
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=80"
-              alt="Clase grupal dentro de un gimnasio"
-            >
+            <img alt="Clase grupal dentro de un gimnasio"
+              src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
               <h3>Clases grupales</h3>
               <p>Entrená acompañado y mantené la motivación semana a semana.</p>
             </div>
           </article>
-
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80"
-              alt="Zona de entrenamiento de gimnasio"
-            >
+            <img alt="Zona de entrenamiento de gimnasio"
+              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
               <h3>Open Gym</h3>
               <p>Usá el espacio y el equipamiento para realizar tu propia rutina.</p>
@@ -116,7 +144,6 @@
         </div>
       </div>
     </section>
-
     <section class="seccion seccion-oscura">
       <div class="contenedor layout-areas">
         <div class="area-texto">
@@ -131,26 +158,90 @@
             <strong>Grid Areas</strong> junto con <strong>Media Queries</strong>.
           </p>
         </div>
-
         <div class="area-imagen">
-          <img
-            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80"
-            alt="Equipamiento de Power Gym"
-          >
+          <img alt="Equipamiento de Power Gym"
+            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+        </div>
+      </div>
+    </section>
+    <!-- Componente Bootstrap: carrusel (se conserva CSS Grid arriba) -->
+    <section class="galeria-gym">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <p class="etiqueta">GALERÍA</p>
+          <h2 class="titulo-seccion">Conocé nuestro espacio</h2>
+          <p class="texto">
+            Recorré algunas de las áreas y actividades que vas a encontrar en
+            Power Gym.
+          </p>
+        </div>
+        <div class="carousel slide carousel-power" data-bs-ride="carousel" id="carouselPowerGym">
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Imagen 1" class="active" data-bs-slide-to="0"
+              data-bs-target="#carouselPowerGym" type="button"></button>
+            <button aria-label="Imagen 2" data-bs-slide-to="1" data-bs-target="#carouselPowerGym"
+              type="button"></button>
+            <button aria-label="Imagen 3" data-bs-slide-to="2" data-bs-target="#carouselPowerGym"
+              type="button"></button>
+          </div>
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img alt="Sala de musculación" class="d-block w-100 imagen-carousel"
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Sala de musculación</h3>
+                <p>Equipamiento para trabajar fuerza y resistencia.</p>
+              </div>
+              </img>
+            </div>
+            <div class="carousel-item">
+              <img alt="Entrenamiento con pesas" class="d-block w-100 imagen-carousel"
+                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Entrenamiento con pesas</h3>
+                <p>Sectores preparados para diferentes objetivos.</p>
+              </div>
+              </img>
+            </div>
+            <div class="carousel-item">
+              <img alt="Entrenamiento funcional" class="d-block w-100 imagen-carousel"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Clases y actividades</h3>
+                <p>
+                  Entrenamientos individuales y grupales para todos los
+                  niveles.
+                </p>
+              </div>
+              </img>
+            </div>
+          </div>
+          <!-- Controles -->
+          <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselPowerGym" type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden"> Anterior </span>
+          </button>
+          <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselPowerGym" type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="visually-hidden"> Siguiente </span>
+          </button>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="footer-contenido contenedor">
       <div>
         <p class="footer-logo">POWER GYM</p>
         <p>Fuerza, energía y constancia.</p>
       </div>
-
       <a class="footer-link" href="pages/contacto.html">Consultanos</a>
     </div>
   </footer>
+  <!-- Bundle JS de Bootstrap: menú hamburguesa y carrusel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

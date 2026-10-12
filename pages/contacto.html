@@ -1,51 +1,292 @@
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Power Gym - Contacto">
-  <title>Power Gym | Contacto</title>
-  <link rel="stylesheet" href="../styles/styles.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-<body>
-  <header class="header">
-    <nav class="navbar contenedor">
-      <a class="logo" href="../index.html" aria-label="Power Gym - Inicio">
-        <span class="logo-marca">PG</span>
-        <span class="logo-texto">POWER GYM</span>
-      </a>
+    <title>Power Gym | Contacto</title>
 
-      <ul class="nav-links">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="actividades.html">Actividades</a></li>
-        <li><a href="planes.html">Planes</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <main>
-    <section class="page-hero page-hero-contacto">
-      <div class="contenedor">
-        <p class="eyebrow">HABLEMOS</p>
-        <h1>Contacto</h1>
-        <p>Contanos qué tipo de entrenamiento estás buscando.</p>
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+
+  <body>
+
+    <!-- ==========================================
+         HEADER - NAVEGACIÓN
+    ========================================== -->
+
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-power">
+        <div class="container">
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="https://i.postimg.cc/XJjzVPvX/Logotipo-POWER-GYM-Neon.png"
+              alt="Logo de Power Gym"
+              class="logo-img"
+            />
+          </a>
+
+          <!-- Botón hamburguesa -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Enlaces -->
+          <div
+            class="collapse navbar-collapse"
+            id="menuPrincipal"
+          >
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                  Inicio
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">
+                  Sobre nosotros
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./actividades.html">
+                  Actividades
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./planes.html">
+                  Planes
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="nav-link activo"
+                  href="./contacto.html"
+                  aria-current="page"
+                >
+                  Contacto
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main>
+
+      <!-- Encabezado de página -->
+      <section class="page-hero">
+        <div class="contenedor">
+          <p class="eyebrow">HABLEMOS</p>
+          <h1>Contacto</h1>
+          <p>
+            Contanos qué tipo de entrenamiento estás buscando.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SECCIÓN CONTACTO
+      ========================================== -->
+
+      <section class="seccion">
+        <div class="contenedor">
+
+          <!-- Grilla responsive -->
+          <div class="row g-5">
+
+            <!-- Columna de información -->
+            <div class="col-12 col-lg-5">
+
+              <p class="eyebrow">CONTACTO</p>
+
+              <h2>¿Querés empezar?</h2>
+
+              <p class="intro">
+                Escribinos y te contamos todo lo que
+                necesitás saber sobre nuestros planes
+                y actividades.
+              </p>
+
+              <!-- Datos de contacto -->
+              <div class="datos-contacto">
+
+                <p>
+                  <strong>Dirección</strong>
+                  <br />
+                  Av. Principal 1234
+                </p>
+
+                <p>
+                  <strong>Teléfono</strong>
+                  <br />
+                  11 1234-5678
+                </p>
+
+                <p>
+                  <strong>Email</strong>
+                  <br />
+                  contacto@powergym.com
+                </p>
+
+              </div>
+            </div>
+
+            <!-- ==================================
+                 FORMULARIO
+            ================================== -->
+
+            <div class="col-12 col-lg-7">
+
+              <form class="formulario-power">
+
+                <!-- Nombre -->
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">
+                    Nombre
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Ingresá tu nombre"
+                    required
+                  />
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label">
+                    Email
+                  </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="nombre@email.com"
+                    required
+                  />
+                </div>
+
+                <!-- Actividad -->
+                <div class="mb-3">
+                  <label for="actividad" class="form-label">
+                    Actividad de interés
+                  </label>
+
+                  <select
+                    class="form-select"
+                    id="actividad"
+                    name="actividad"
+                    required
+                  >
+                    <option value="" selected disabled>
+                      Elegí una opción
+                    </option>
+
+                    <option value="musculacion">
+                      Musculación
+                    </option>
+
+                    <option value="funcional">
+                      Funcional
+                    </option>
+
+                    <option value="spinning">
+                      Spinning
+                    </option>
+                  </select>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label">
+                    Mensaje
+                  </label>
+
+                  <textarea
+                    class="form-control"
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Escribí tu consulta"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Botón -->
+                <button
+                  type="submit"
+                  class="btn boton-power"
+                >
+                  Enviar consulta
+                </button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+      <div class="footer-contenido contenedor">
+
+        <div>
+          <p class="footer-logo">POWER GYM</p>
+          <p>Fuerza, energía y constancia.</p>
+        </div>
+
+        <a class="footer-link" href="./contacto.html">
+          Consultanos
+        </a>
+
       </div>
-    </section>
+    </footer>
 
-   
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-  <footer class="footer">
-    <div class="footer-contenido contenedor">
-      <div>
-        <p class="footer-logo">POWER GYM</p>
-        <p>Fuerza, energía y constancia.</p>
-      </div>
-
-      <a class="footer-link" href="contacto.html">Consultanos</a>
-    </div>
-  </footer>
-</body>
+  </body>
 </html>

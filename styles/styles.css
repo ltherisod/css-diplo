@@ -1,51 +1,40 @@
-/* =========================================================
-   POWER GYM - 
-   ---------------------------------------------------------
-   PALETA:
-   - Negro principal: #0B0B0B
-   - Negro secundario: #171717
-   - Verde lima: #C7FF3D
-   - Blanco: #FFFFFF
-   - Gris claro: #C8C8C8
-   ========================================================= */
 
+/* ==========================================
+   POWER GYM - ESTILOS GENERALES
+========================================== */
 
-/* =========================
-   ESTILOS GENERALES
-   ========================= */
+/* 1. VARIABLES Y CONFIGURACIÓN GENERAL */
+
+:root {
+  --color-principal: #0B0B0B;
+  --color-secundario: #171717;
+  --color-acento: #C7FF3D;
+  --color-blanco: #FFFFFF;
+  --color-gris: #C8C8C8;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html {
-  /* Hace más suave el desplazamiento cuando usamos enlaces internos. */
   scroll-behavior: smooth;
 }
 
 body {
-  /* Quitamos el margen que agrega el navegador por defecto. */
   margin: 0;
-
-  /* Elegimos una tipografía simple y disponible en cualquier navegador. */
   font-family: Arial, Helvetica, sans-serif;
-
-  /* Definimos el color general del texto. */
-  color: #FFFFFF;
-
-  /* Definimos el fondo general del sitio. */
-  background-color: #0B0B0B;
-
-  /* Mejora la lectura de párrafos y textos largos. */
   line-height: 1.5;
+  color: var(--color-blanco);
+  background-color: var(--color-principal);
 }
 
 a {
-  /* Quitamos el subrayado de los enlaces. */
   text-decoration: none;
 }
 
 img {
-  /* Hace que las imágenes se comporten como bloques y evita espacios raros debajo. */
   display: block;
-
-  /* Evita que una imagen sea más ancha que su contenedor. */
   max-width: 100%;
 }
 
@@ -53,660 +42,688 @@ h1,
 h2,
 h3,
 p {
-  /* Quitamos márgenes automáticos para controlar nosotros los espacios. */
   margin-top: 0;
 }
 
-
-/* =========================
-   CONTENEDOR GENERAL
-   ========================= */
+/* ==========================================
+   2. CONTENEDOR GENERAL
+========================================== */
 
 .contenedor {
-  /* Limita el ancho del contenido en pantallas grandes. */
   max-width: 1180px;
-
-  /* Centra el contenido horizontalmente. */
   margin: 0 auto;
-
-  /* Evita que el contenido toque los bordes de la pantalla. */
   padding-left: 24px;
   padding-right: 24px;
 }
 
-
-/* =========================
-   HEADER Y NAVBAR - FLEXBOX
-   ========================= */
+/* ==========================================
+   3. HEADER Y NAVEGACIÓN
+========================================== */
 
 .header {
-  /* Fondo oscuro para separar la navegación del resto de la página. */
-  background-color: #0B0B0B;
-
-  /* Línea inferior sutil. */
-  border-bottom: 1px solid #2A2A2A;
+  background-color: var(--color-secundario);
+  border-bottom: 1px solid #333333;
 }
 
-.navbar {
-  /* FLEXBOX: coloca el logo y el menú en una misma fila. */
-  display: flex;
-  /* MOBILE FIRST: 
-  logo y la navegacion uno abajo de otro */
-  flex-direction: column;
+/* Barra de navegación */
 
+.navbar-power {
+  background-color: var(--color-secundario);
 
-
-  /* Alinearlos al inicio */
-  align-items: flex-start;
-
-  /* Deja separación si los elementos se acercan. */
-  gap: 20px;
-
-  /* Altura visual del navbar. */
-  min-height: 76px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  --bs-navbar-color: #FFFFFF;
+  --bs-navbar-hover-color: #C7FF3D;
+  --bs-navbar-active-color: #C7FF3D;
 }
 
-.logo {
-  /* FLEXBOX para alinear la marca y el texto del logo. */
-  display: flex;
+/* Logo */
 
-  /* Centra verticalmente las dos partes del logo. */
-  align-items: center;
-
-  /* Espacio entre isotipo y nombre. */
-  gap: 10px;
-
-  /* Color blanco del texto del logo. */
-  color: #FFFFFF;
-
-  /* Refuerza visualmente la marca. */
-  font-weight: 700;
-
-  /* Agrega separación entre letras. */
-  letter-spacing: 1px;
-}
-
-.logo-marca {
-  /* Fondo verde lima del isotipo. */
-  background-color: #C7FF3D;
-
-  /* Texto negro para generar contraste. */
-  color: #0B0B0B;
-
-  /* Tamaño fijo para que funcione como un pequeño logo. */
-  width: 40px;
-  height: 40px;
-
-  /* FLEXBOX para centrar las letras PG. */
+.navbar-power .navbar-brand {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  /* Hace el logo circular. */
-  border-radius: 50%;
-
-  /* Texto fuerte dentro del isotipo. */
-  font-weight: 800;
-}
-
-.logo-texto {
-  /* Tamaño del nombre del gimnasio. */
-  font-size: 20px;
-}
-
-.nav-links {
-  /* Quitamos los puntos de la lista. */
-  list-style: none;
-
-  /* FLEXBOX: pone los links uno al lado del otro. */
-  display: flex;
-/* MOBILE: ENLACES ESTEN UNO ABAJO DEL OTRO */
-flex-direction: column;
-  /* Espacio entre links. */
-  gap: 12px;
-
-  /* Quitamos espacios que la lista trae por defecto. */
+  flex-shrink: 0;
   padding: 0;
-  margin: 0;
+  margin-right: 24px;
 }
 
-.nav-links a {
-  /* Color blanco del menú. */
-  color: #FFFFFF;
+.navbar-power .logo-img {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
-  /* Tamaño moderado del texto. */
-  font-size: 15px;
+/* Enlaces de navegación */
 
-  /* Un poco de grosor para mejorar la lectura. */
+.navbar-power .nav-link {
+  color: var(--color-blanco);
   font-weight: 600;
 }
 
+.navbar-power .nav-link:hover,
+.navbar-power .nav-link:focus,
+.navbar-power .nav-link.active,
+.navbar-power .nav-link.activo {
+  color: var(--color-acento);
+}
 
-/* =========================
-   HERO PRINCIPAL
-   ========================= */
+/* Menú hamburguesa */
+
+.navbar-power .navbar-toggler {
+  border: 1px solid var(--color-acento);
+}
+
+.navbar-power .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.3);
+}
+
+/* ==========================================
+   4. HERO PRINCIPAL
+========================================== */
 
 .hero {
-  
-  /* Altura mínima para que la portada tenga presencia. */
   min-height: 620px;
 }
 
 .hero-contenido {
-  /* Limita el ancho del bloque de texto. */
   max-width: 760px;
-
-  /* Separa el contenido del borde superior del hero. */
-  padding-top: 150px;
-
-  /* Separa el contenido del borde inferior. */
-  padding-bottom: 120px;
-
-  /* Sobrescribe el centrado horizontal del contenedor para alinear a la izquierda. */
   margin-left: auto;
   margin-right: auto;
+  padding-top: 150px;
+  padding-bottom: 120px;
 }
 
 .eyebrow {
-  /* Verde lima para pequeños textos destacados. */
-  color: #C7FF3D;
-
-  /* Texto en negrita. */
-  font-weight: 700;
-
-  /* Espaciado de letras estilo deportivo. */
-  letter-spacing: 2px;
-
-  /* Tamaño pequeño para que funcione como etiqueta. */
-  font-size: 14px;
-
-  /* Separa la etiqueta del título. */
   margin-bottom: 16px;
+  color: var(--color-acento);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .hero h1 {
-  /* Título grande de portada. */
-  /* 36px_ tamaño minimo
-  6vw: valor flexible
-  64px: el tamaño maximo */
-  font-size:clamp(36px,6vw,64px);
-
-  /* Reduce el espacio entre líneas del título. */
-  line-height: 1;
-
-  /* Separa el título del texto siguiente. */
   margin-bottom: 24px;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1;
 }
 
 .hero h1 span {
-  /* Palabra destacada en verde lima. */
-  color: #C7FF3D;
+  color: var(--color-acento);
 }
 
 .hero-texto {
-  /* Limita el ancho para que el párrafo sea cómodo de leer. */
   max-width: 600px;
-
-  /* Color gris claro. */
-  color: #E0E0E0;
-
-  /* Tamaño un poco mayor que el texto común. */
-  font-size: 19px;
-
-  /* Separa el párrafo del botón. */
   margin-bottom: 32px;
+  color: #E0E0E0;
+  font-size: 19px;
 }
 
-
-/* =========================
-   HERO DE PÁGINAS INTERNAS
-   ========================= */
+/* ==========================================
+   5. HERO DE PÁGINAS INTERNAS
+========================================== */
 
 .page-hero {
-  /* Fondo oscuro común. */
-  background-color: #171717;
-
-  /* Espacio vertical. */
   padding-top: 86px;
   padding-bottom: 86px;
-
-  /* Borde inferior verde lima como detalle visual. */
-  border-bottom: 4px solid #C7FF3D;
+  background-color: var(--color-secundario);
+  border-bottom: 4px solid var(--color-acento);
 }
 
 .page-hero h1 {
-  /* Título grande de página interna. */
-  font-size: 52px;
-
-  /* Separa el título del texto. */
   margin-bottom: 14px;
+  font-size: clamp(32px, 5vw, 52px);
 }
 
 .page-hero p {
-  /* Color más suave para el texto descriptivo. */
   color: #D0D0D0;
 }
 
-
-/* =========================
-   BOTONES
-   ========================= */
+/* ==========================================
+   6. BOTONES
+========================================== */
 
 .boton {
-  /* Permite usar padding correctamente en enlaces. */
   display: inline-block;
-
-  /* Fondo verde lima. */
-  background-color: #C7FF3D;
-
-  /* Texto oscuro para generar contraste. */
-  color: #0B0B0B;
-
-  /* Espacio interno. */
   padding: 14px 22px;
 
-  /* Borde sutilmente redondeado. */
+  background-color: var(--color-acento);
+  color: var(--color-principal);
+
+  border: none;
   border-radius: 6px;
 
-  /* Texto fuerte. */
+  font: inherit;
   font-weight: 700;
-
-  /* Quitamos borde por defecto si el botón es un <button>. */
-  border: none;
-
-  /* Mostramos cursor de acción. */
+  text-align: center;
   cursor: pointer;
 }
 
+/* Estados interactivos */
 
-/* =========================
-   SECCIONES GENERALES
-   ========================= */
+.boton:hover {
+  background-color: #B5EB2F;
+  color: var(--color-principal);
+}
+
+.boton:focus-visible {
+  outline: 3px solid var(--color-blanco);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   7. SECCIONES GENERALES
+========================================== */
 
 .seccion {
-  /* Separa las secciones verticalmente. */
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
 .seccion-oscura {
-  /* Diferencia visual entre secciones. */
-  background-color: #171717;
+  background-color: var(--color-secundario);
 }
 
 .seccion h2 {
-  /* Tamaño de títulos secundarios. */
-  font-size: 38px;
-
-  /* Separa el título del texto. */
   margin-bottom: 14px;
+  font-size: clamp(28px, 4vw, 38px);
 }
 
 .intro {
-  /* Texto gris claro para introducciones. */
-  color: #C8C8C8;
-
-  /* Separa la introducción de las tarjetas. */
   margin-bottom: 36px;
+  color: var(--color-gris);
 }
 
+/* ==========================================
+   8. TARJETAS - CSS GRID
+========================================== */
 
-/* =========================
-   TARJETAS - GRID
-   ========================= */
+/*
+   MOBILE FIRST
 
-
+   Mobile:  1 columna
+   Tablet:  2 columnas
+   Desktop: 3 columnas
+*/
 
 .cards-grid {
- /* Activamos el CSS Grid en el contenedor padre. Sus hijos directos pasan a ser ahora Grid Items*/
- display: grid;
- /*Creo 3 columnas iguales*/
- /* grid-template-columns: 1fr 1fr 1fr; */
- /*Repito 3 veces el mismo valor, lo resumo con el repeat*/
- /* tiene un mínimo de 220px puede crecer hasta 1fr */
- /* grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); */
- /* grid-template-rows: 300px 300px; */
- /*MOBILES FIRST:
- EMPEZAMOS CON UNA COLUMNA 1fr = una fraccion de espacio disponible*/
- /*Separar filas y columnas*/
- grid-template-columns: 1fr;
- gap:24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
-.card {
-  /* Fondo de cada tarjeta. */
-  background-color: #171717;
+/* Tarjetas individuales */
 
-  /* Borde sutil para separar la tarjeta del fondo. */
+.cards-grid .card {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+
   border: 1px solid #2C2C2C;
-
-  /* Redondea levemente las esquinas. */
   border-radius: 10px;
 
-  /* Evita que la imagen sobresalga de las esquinas redondeadas. */
   overflow: hidden;
-
-  /* Separa una tarjeta de la siguiente mientras todavía no usamos Grid. */
-  /* margin-bottom: 24px; */
 }
 
-.card img {
-  /* La imagen ocupa todo el ancho de la tarjeta. */
+/* Imágenes */
+
+.cards-grid .card img {
   width: 100%;
-
-  /* Todas las imágenes mantienen una altura pareja. */
   height: 260px;
-
-  /* Mantiene la proporción y recorta lo que sobra. */
   object-fit: cover;
 }
 
+/* Contenido */
+
 .card-contenido {
-  /* Espacio interno del contenido de cada tarjeta. */
   padding: 22px;
 }
 
-.card h2,
-.card h3 {
-  /* Título blanco y claro. */
-  color: #FFFFFF;
-
-  /* Separa el título del texto. */
+.cards-grid .card h2,
+.cards-grid .card h3 {
   margin-bottom: 10px;
+  color: var(--color-blanco);
 }
 
-.card p {
-  /* Color de texto secundario. */
-  color: #C8C8C8;
+.cards-grid .card p {
+  color: var(--color-gris);
 }
 
-.precio {
-  /* Verde lima para destacar precios. */
-  color: #C7FF3D !important;
+/* Precios */
 
-  /* Tamaño grande. */
+.cards-grid .card .precio {
+  color: var(--color-acento);
   font-size: 34px;
-
-  /* Texto fuerte. */
   font-weight: 700;
 }
 
-.plan-etiqueta {
-  /* Color de acento. */
-  color: #C7FF3D !important;
+/* Etiquetas */
 
-  /* Texto pequeño. */
+.cards-grid .card .plan-etiqueta {
+  color: var(--color-acento);
   font-size: 13px;
-
-  /* Espaciado entre letras. */
-  letter-spacing: 1.5px;
-
-  /* Texto en negrita. */
   font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-.card-destacada {
+/* Tarjeta destacada */
 
-  /*
-    CLASE DE MEDIA QUERIES:
-    OJO con esta clase.
-
-    En la clase de Grid hicimos que esta tarjeta ocupe
-    2 columnas y 2 filas.
-
-    Cuando llevemos .cards-grid a UNA sola columna en mobile,
-    también tendremos que adaptar esta regla.
-  */
-
-  /* 1           2           3           4
-|-----------|-----------|-----------|
-| columna 1 | columna 2 | columna 3 | */
-  /* Empeza en la linea 1 y termina en la linea 3 */
-  /* grid-column:1/3; */
-  /* HACE QUE LA CARD OCUPE 2 COLUMNAS */
-/* MOBILE: LA TARJETA SE COMPORTA IGUAL QUE LAS ANTERIRORES */
-
-  grid-column: auto;
-  /* hace que la card ocupe 2 filas */
-  grid-row: auto;
+.cards-grid .card-destacada {
+  border-color: var(--color-acento);
 }
 
-/* =========================
-   SECCIÓN CON GRID AREAS
-   ========================= */
+/* ==========================================
+   9. SECCIÓN CON GRID TEMPLATE AREAS
+========================================== */
 
 /*
-  MOBILE:
-  TEXTO
-  IMAGEN
+   MOBILE:
+   +------------------+
+   |      TEXTO       |
+   +------------------+
+   |      IMAGEN      |
+   +------------------+
 
-  DESKTOP:
-  TEXTO | IMAGEN
+   DESKTOP:
+   +---------+--------+
+   |  TEXTO  | IMAGEN |
+   +---------+--------+
 */
+
 .layout-areas {
-  /* Por ahora los bloques siguen el flujo normal y quedan apilados. */
   display: grid;
-  /*MOBILE FIRST: 1 SOLA COLUMNA*/
   grid-template-columns: 1fr;
-  /*Cada "" representa una fila diferente (2)*/
-  grid-template-areas: 
-  "texto" 
-  "imagen";
-  gap:24px;
+
+  grid-template-areas:
+    "texto"
+    "imagen";
+
+  gap: 24px;
 }
 
+/* Área de texto */
+
 .area-texto {
-  /* Separa el texto de la imagen mientras todavía no usamos Grid. */
-  grid-area:texto;
+  grid-area: texto;
 }
 
 .area-texto p {
-  /* Color secundario. */
-  color: #C8C8C8;
+  color: var(--color-gris);
 }
-.area-imagen{
-  grid-area:imagen;
+
+/* Área de imagen */
+
+.area-imagen {
+  grid-area: imagen;
 }
+
 .area-imagen img {
-  /* La imagen ocupa todo el ancho disponible. */
   width: 100%;
-
-  /* Altura visual estable. */
   height: 380px;
-
-  /* Evita deformaciones. */
   object-fit: cover;
-
-  /* Redondea las esquinas. */
   border-radius: 10px;
 }
 
+/* Nota destacada */
+
 .nota-clase {
-  /* Diferencia visual para la nota que usaremos en clase. */
-  border-left: 4px solid #C7FF3D;
-
-  /* Espacio interno a la izquierda. */
-  padding-left: 16px;
-
-  /* Separa la nota del texto anterior. */
   margin-top: 24px;
+  padding-left: 16px;
+  border-left: 4px solid var(--color-acento);
 }
 
+/* ==========================================
+   10. GALERÍA DE IMÁGENES
+========================================== */
 
-/* =========================
-   FORMULARIO
-   ========================= */
+.galeria-gym {
+  padding: 70px 0;
+  background-color: var(--color-secundario);
+}
+
+/* Encabezado */
+
+.galeria-gym .etiqueta {
+  color: var(--color-acento);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.galeria-gym h2 {
+  color: var(--color-blanco);
+}
+
+.galeria-gym .texto {
+  color: var(--color-gris);
+}
+
+/* Carrusel */
+
+.carousel-power {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  border: 2px solid var(--color-acento);
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+/* Imágenes del carrusel */
+
+.imagen-carousel {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+/* Texto del carrusel */
+
+.carousel-power .carousel-caption {
+  padding: 12px;
+  background-color: rgba(11, 11, 11, 0.78);
+  border-radius: 8px;
+}
+
+.carousel-power .carousel-caption h3 {
+  color: var(--color-acento);
+}
+
+/* Indicadores */
+
+.carousel-power .carousel-indicators [data-bs-target] {
+  background-color: var(--color-acento);
+}
+
+/* ==========================================
+   11. FORMULARIO DE CONTACTO
+========================================== */
+
+/* Contenedor del formulario */
 
 .contacto {
-  /* Evita que el formulario se vuelva demasiado ancho. */
   max-width: 720px;
 }
 
+/* Formulario original con Flexbox */
+
 .formulario {
-  /* FLEXBOX en columna para apilar los campos. */
   display: flex;
-
-  /* Hace que los controles queden uno debajo del otro. */
   flex-direction: column;
-
-  /* Espacio entre los controles. */
   gap: 12px;
 }
 
 .formulario label {
-  /* Hace más visible el nombre de cada campo. */
   font-weight: 700;
 }
 
 .formulario input,
 .formulario textarea {
-  /* Fondo oscuro de los campos. */
-  background-color: #171717;
-
-  /* Texto blanco. */
-  color: #FFFFFF;
-
-  /* Borde sutil. */
-  border: 1px solid #3A3A3A;
-
-  /* Espacio interno. */
+  width: 100%;
   padding: 14px;
 
-  /* Tamaño legible. */
-  font-size: 16px;
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
 
-  /* Redondea las esquinas. */
+  border: 1px solid #3A3A3A;
   border-radius: 6px;
 
-  /* Usa la misma tipografía que el sitio. */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
+  font-size: 16px;
 }
 
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: var(--color-acento);
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
 
-/* =========================
-   FOOTER - FLEXBOX
-   ========================= */
+/* ==========================================
+   12. FORMULARIO POWER GYM
+========================================== */
+
+/* Contenedor */
+
+.formulario-power {
+  padding: 30px;
+  background-color: var(--color-secundario);
+  border: 1px solid #333333;
+  border-radius: 10px;
+}
+
+/* Etiquetas */
+
+.formulario-power .form-label {
+  color: var(--color-blanco);
+  font-weight: 600;
+}
+
+/* Inputs, textarea y select */
+
+.formulario-power .form-control,
+.formulario-power .form-select {
+  padding: 12px;
+
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+
+  border: 1px solid #444444;
+  border-radius: 6px;
+}
+
+/* Placeholders */
+
+.formulario-power .form-control::placeholder {
+  color: var(--color-gris);
+}
+
+/* Estados de foco */
+
+.formulario-power .form-control:focus,
+.formulario-power .form-select:focus {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.2);
+}
+
+/* Opciones del select */
+
+.formulario-power .form-select option {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+/* Botón de envío */
+
+.boton-power {
+  padding: 12px 24px;
+
+  background-color: var(--color-acento);
+  color: var(--color-principal);
+
+  border: none;
+  border-radius: 6px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boton-power:hover {
+  background-color: #B5EB2F;
+  color: var(--color-principal);
+}
+
+.boton-power:focus-visible {
+  outline: 3px solid var(--color-blanco);
+  outline-offset: 3px;
+}
+
+/* Información de contacto */
+
+.datos-contacto {
+  margin-top: 30px;
+}
+
+.datos-contacto p {
+  margin-bottom: 22px;
+  color: var(--color-gris);
+}
+
+.datos-contacto strong {
+  color: var(--color-acento);
+}
+
+/* ==========================================
+   13. FOOTER - FLEXBOX
+========================================== */
 
 .footer {
-  /* Fondo negro. */
   background-color: #070707;
-
-  /* Línea superior verde lima. */
-  border-top: 3px solid #C7FF3D;
+  border-top: 3px solid var(--color-acento);
 }
 
+/* Contenedor */
+
 .footer-contenido {
-  /* FLEXBOX: organiza el contenido del footer en una fila. */
   display: flex;
-
-  /* Envía los bloques hacia extremos opuestos. */
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-
-  /* Centra verticalmente. */
-  align-items: center;
-
-  /* Espacio de seguridad entre elementos. */
   gap: 24px;
 
-  /* Espacio vertical del footer. */
   padding-top: 34px;
   padding-bottom: 34px;
 }
 
-.footer p {
-  /* Quitamos el margen inferior por defecto. */
-  margin-bottom: 0;
+/* Textos */
 
-  /* Color secundario. */
+.footer p {
+  margin-bottom: 0;
   color: #BDBDBD;
 }
 
 .footer-logo {
-  /* Nombre de marca en blanco. */
-  color: #FFFFFF !important;
-
-  /* Texto fuerte. */
+  color: var(--color-blanco);
   font-weight: 700;
-
-  /* Espaciado de letras. */
   letter-spacing: 1px;
 }
 
-.footer-link {
-  /* Color de acento. */
-  color: #C7FF3D;
+/* Enlace */
 
-  /* Texto en negrita. */
+.footer-link {
+  color: var(--color-acento);
   font-weight: 700;
 }
 
+.footer-link:hover {
+  color: var(--color-blanco);
+}
 
+/* ==========================================
+   14. MEDIA QUERIES - RESPONSIVE
+========================================== */
 
+/* ------------------------------------------
+   MOBILE - HASTA 767px
+------------------------------------------ */
 
-/* ================
-   MEDIA QUERIES 
-   ================ */
+@media (max-width: 767px) {
 
+  /* Logo */
 
-   
-/* ================
-   TABLET
-   ================ */
+  .navbar-power .logo-img {
+    width: 140px;
+  }
 
-   @media (min-width: 768px){
-    .cards-grid{
-      /* DESDE 768px TENEMOS MAS Espacio
-      Pasar de 1 columna a 2 */
-      grid-template-columns: repeat(2, 1fr);
-    }
-   } 
+  /* Hero */
 
-   /* ================
-   DESKTOP
-   ================ */
+  .hero {
+    min-height: auto;
+  }
 
-   @media (min-width: 1024px){
-    .cards-grid{
-      /* DESDE 1024px TENEMOS MAS Espacio
-      Pasar de 2 columna a 3 */
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .hero-contenido {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
 
-    .card-destacada{
-      grid-column: span 3;
-     
-    }
+  /* Secciones */
 
-    .layout-areas{
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      /*Cada "" representa una fila diferente (1)*/
-      grid-template-areas: "texto imagen";
-    }
+  .seccion {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    .navbar{
-      /* DESKTOP: COLOCAR TODO EN UNA FILA */
-      flex-direction: row;
-      /* logo por un extremo, menu al otro */
-      justify-content: space-between;
-      /* centrar verticalmente */
-      align-items: center;
-      /* sacamos el padding vertical para mobile */
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+  /* Galería */
 
-    .nav-links{
-      /* QUIERO QUE EN DESKTOP ESTEN EN UNA FILA */
-      flex-direction: row;
-      gap:24px;
-    }
+  .galeria-gym {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
 
-   } 
+  .imagen-carousel {
+    height: 250px;
+  }
 
+  /* Grid Areas */
 
-   
-  
-  
+  .area-imagen img {
+    height: 280px;
+  }
+
+  /* Formulario */
+
+  .formulario-power {
+    padding: 20px;
+  }
+
+}
+
+/* ------------------------------------------
+   TABLET - DESDE 768px
+------------------------------------------ */
+
+@media (min-width: 768px) {
+
+  /* Grid de tarjetas: 2 columnas */
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer en una fila */
+
+  .footer-contenido {
+    flex-direction: row;
+    align-items: center;
+  }
+
+}
+
+/* ------------------------------------------
+   DESKTOP - DESDE 1024px
+------------------------------------------ */
+
+@media (min-width: 1024px) {
+
+  /* Grid de tarjetas: 3 columnas */
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Tarjeta destacada */
+
+  .cards-grid .card-destacada {
+    grid-column: span 3;
+  }
+
+  /* Grid Areas: texto e imagen */
+
+  .layout-areas {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "texto imagen";
+    align-items: center;
+  }
+
+}
