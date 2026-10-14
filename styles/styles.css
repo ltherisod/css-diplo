@@ -727,3 +727,257 @@ p {
   }
 
 }
+
+
+/* ==========================================
+   MÓDULO 5 - TRANSFORMACIONES Y ANIMACIONES
+========================================== */
+
+/* Sección y distribución de ejemplos */
+.laboratorio-movimiento {
+  background-color: var(--color-principal);
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.demo-grid-secundaria {
+  margin-top: 20px;
+}
+
+.demo-panel {
+  padding: 20px;
+  background-color: var(--color-secundario);
+  border: 1px solid #3A3A3A;
+  border-radius: 10px;
+}
+
+.demo-panel h3 {
+  color: var(--color-acento);
+  font-size: 20px;
+}
+
+.demo-panel p {
+  color: var(--color-gris);
+}
+
+/* Zona visible de cada demostración */
+.demo-escenario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  padding: 28px;
+  border: 1px dashed #666666;
+  border-radius: 8px;
+}
+
+/* Apariencia original de las cajas */
+.demo-caja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 75px;
+  background-color: var(--color-acento);
+  color: var(--color-principal);
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 2D: translate - desplazamiento horizontal y vertical */
+.caja-translate {
+  /* margin-left:200px; */
+
+  /* transform: translate(50px, 40px) */
+  /* mover hacia la derecha  */
+    /* transform: translateX(50px); */
+    /* mover hacia la izq  */
+    /* transform: translateX(-50px); */
+    /* mover verticalmente para abajo */
+    /* transform: translateY(50px); */
+    /* mover verticalmente para arriba */
+    transform: translateY(-50px);
+
+
+
+
+}
+
+/* 2D: rotate - giro en grados */
+.caja-rotate {
+  /* GIRO 45 GRADOS */
+  /* transform: rotate(45deg); */
+  /* GIRO 90 GRADOS */
+  /* transform: rotate(90deg); */
+  /* GIRO ANTIHORARIO (CONTRARIO) */
+    /* transform: rotate(-20deg); */
+      /* GIRO media vuelta */
+    transform: rotate(180deg);
+}
+
+/* 2D: scale - cambio de tamaño visual */
+.caja-scale {
+  /* TAMAÑO ORIGINAL */
+  /* transform: scale(1);  */
+  /* AGRANDAR */
+  /* transform: scale(1.5); */
+  /* ACHICAR */
+  /* transform: scale(0.5); */
+  /* AGRANDAR EL EJE HORIZONTAL */
+  /* transform: scaleX(1.4); */
+  /* AGRANDAR EL EJE Vertical */
+  transform: scaleY(1.4);
+
+
+}
+
+/* 2D: skew - inclinación */
+.caja-skew {
+  /* transform: skew(30deg); */
+  /* inclinar sentido contrario */
+    /* transform: skew(-30deg); */
+    /* inclinar sobre un eje (x/y) */
+      /* transform: skewX(20deg); */
+      /* transform: skewY(30deg); */
+      /* ambos ejes */
+      transform: skew(15deg,10deg);
+
+}
+
+/* Combinación de funciones transform */
+.caja-combinada {
+  /* asi no */
+  /* transform: translateX(40px);
+  transform: rotate(40deg); */
+  /* asi si */
+  transform: translateX(40px) rotate(40deg);
+}
+
+/* Punto de referencia de la transformación */
+.caja-origen {
+  /* definir el pto de referencia */
+  /* top: parte superior
+  left: lado izq */
+  /* transform-origin: top left; */
+  /* centro */
+  /* transform-origin: center; */
+  /* esquina inf derecha */
+  transform-origin: bottom right;
+
+  transform: rotate(40deg);
+}
+
+/* 3D: contexto de perspectiva en el contenedor */
+.escenario-3d {
+  /* siempre en el elemento padre define una distancia de referencia; */
+  perspective: 200px;
+}
+
+/* 3D: rotación alrededor del eje Y */
+.caja-3d {
+  /* transform: rotateY(45deg); */
+    transform: rotateX(45deg);
+}
+
+/* Separadores de ejemplos */
+.demo-subtitulo {
+  margin-top: 38px;
+  margin-bottom: 16px;
+  color: var(--color-acento);
+}
+
+/* Tarjeta que responde a hover */
+.demo-tarjeta {
+  max-width: 440px;
+  padding: 30px;
+  background-color: var(--color-secundario);
+  border: 1px solid var(--color-acento);
+  border-radius: 12px;
+}
+
+.demo-tarjeta p {
+  margin-bottom: 0;
+  color: var(--color-gris);
+}
+
+/* Estado normal de la tarjeta: transición */
+.tarjeta-hover {
+  /* transition indica como se anima */
+  /* transform: la propriedad que cambia; */
+  /* 04s: dura 0.4segundos */
+  /* ease: aceleracion y desaceleracion suave */
+  /* cambio lento uso 1 segundo completo */
+/* transition:transform 1s ease; */
+/* rapido uso decima de segundo */
+/* transition:transform 0.1s ease; */
+
+/* LINEAR: VELOCIDAD CONSTANTE */
+/* transition:transform 0.1s linear; */
+/* EASE: ACELERACION Y DESACELERACION SUAVE */
+/* transition:transform 0.1s ease; */
+/* EASE-IN : EMPEZAR LENTAMENTE Y ACELERAR */
+/* transition:transform 0.1s ease-in; */
+/* EASE-OUT : EMPIEZA RAPIDO Y DESACELERA */
+/* transition:transform 0.1s ease-out; */
+/* EASE-IN-OUT: EMPEZA Y TEREMINA LENTAMENTE */
+transition:transform 0.1s ease-in-out;
+
+}
+
+/* Estado hover: transformación */
+.tarjeta-hover:hover {
+  /* crece un 5 % */
+  transform: scale(1.05);
+}
+
+/* Pista horizontal de la animación */
+.demo-pista {
+  display: flex;
+  align-items: center;
+  min-height: 140px;
+  padding: 18px;
+  border: 1px dashed #666666;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Definición de los fotogramas clave */
+@keyframes mover-caja {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(200px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+/* Aplicación de la animación a la caja */
+.caja-animada {
+  /* NOMBRE DE LA ANIMACION */
+  animation-name: mover-caja;
+  /* TIEMPO DE LA ANIMACION */
+  animation-duration: 3s;
+  /* suavizar */
+  /* contrtolar como cambia la vel */
+  /* ease-in-out: */
+  animation-timing-function: ease-in-out;
+  /* quiero que se repita infinitamente */
+  animation-iteration-count: infinite;
+
+}
+
+/* Adaptación de la grilla de demostraciones */
+@media (min-width: 768px) {
+  .demo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

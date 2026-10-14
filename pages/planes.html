@@ -5,131 +5,316 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="Power Gym - Planes" name="description" />
-  <title>Power Gym | Planes</title>
+  <meta content="Power Gym: entrenamiento de fuerza, funcional y planes para distintos objetivos." name="description" />
+  <title>Power Gym | Inicio</title>
   <!-- Bootstrap CSS primero; nuestros estilos después -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../styles/styles.css" rel="stylesheet" />
+  <link href="styles/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-  
-<!-- ==========================================
+
+  <!-- ==========================================
      HEADER - NAVEGACIÓN
 ========================================== -->
 
-<header class="header">
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-power">
-        <div class="container">
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-power">
+      <div class="container">
 
-          <!-- Logo -->
-          <a class="navbar-brand" href="../index.html">
-            <img
-              src="https://i.postimg.cc/XJjzVPvX/Logotipo-POWER-GYM-Neon.png"
-              alt="Logo de Power Gym"
-              class="logo-img"
-            />
-          </a>
+        <!-- Logo -->
+        <a class="navbar-brand" href="./index.html">
+          <img src="https://i.postimg.cc/XJjzVPvX/Logotipo-POWER-GYM-Neon.png" alt="Logo de Power Gym"
+            class="logo-img" />
+        </a>
 
-          <!-- Botón hamburguesa -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal"
-            aria-expanded="false"
-            aria-label="Abrir menú"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <!-- Enlaces -->
-          <div
-            class="collapse navbar-collapse"
-            id="menuPrincipal"
-          >
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <!-- Enlaces -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html">
-                  Inicio
-                </a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link activo" href="./index.html" aria-current="page">
+                Inicio
+              </a>
+            </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="./nosotros.html">
-                  Sobre nosotros
-                </a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/nosotros.html">
+                Sobre nosotros
+              </a>
+            </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="./actividades.html">
-                  Actividades
-                </a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/actividades.html">
+                Actividades
+              </a>
+            </li>
 
-              <li class="nav-item">
-                <a class="nav-link activo" href="./planes.html">
-                  Planes
-                </a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/planes.html">
+                Planes
+              </a>
+            </li>
 
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="./contacto.html"
-                  aria-current="page"
-                >
-                  Contacto
-                </a>
-              </li>
-
-            </ul>
-          </div>
-
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/contacto.html">
+                Contacto
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
   <main>
-    <section class="page-hero page-hero-planes">
-      <div class="contenedor">
-        <p class="eyebrow">ELEGÍ TU PLAN</p>
-        <h1>Planes</h1>
-        <p>Opciones simples para distintas frecuencias y objetivos.</p>
+    <section class="hero">
+      <div class="hero-contenido contenedor">
+        <p class="eyebrow">FUERZA · ENERGÍA · CONSTANCIA</p>
+        <h1>Entrená fuerte.<br /><span>Sentite mejor.</span></h1>
+        <p class="hero-texto">
+          Un gimnasio pensado para acompañarte desde tu primer entrenamiento
+          hasta tus próximos objetivos.
+        </p>
+        <a class="boton" href="pages/planes.html">Conocé nuestros planes</a>
       </div>
     </section>
+
+    <!-- ==========================================
+         MÓDULO 5 - TRANSFORMACIONES Y ANIMACIONES
+    ========================================== -->
+    <section class="seccion laboratorio-movimiento" aria-labelledby="titulo-movimiento">
+      <div class="contenedor">
+        <p class="eyebrow">MÓDULO 5 · CSS</p>
+        <h2 id="titulo-movimiento">Transformaciones y movimiento</h2>
+        <p class="intro">
+          Exploramos cómo mover, girar y escalar elementos sin cambiar su lugar en la página.
+        </p>
+
+        <!-- Transformaciones 2D -->
+        <div class="demo-grid">
+          <article class="demo-panel">
+            <h3>Translate</h3>
+            <p>Desplazamiento en los ejes X e Y.</p>
+            <div class="demo-escenario">
+              <div class="demo-caja caja-translate">Mover</div>
+            </div>
+          </article>
+
+          <article class="demo-panel">
+            <h3>Rotate</h3>
+            <p>Giro del elemento en grados.</p>
+            <div class="demo-escenario">
+              <div class="demo-caja caja-rotate">Girar</div>
+            </div>
+          </article>
+
+          <article class="demo-panel">
+            <h3>Scale</h3>
+            <p>Cambio de tamaño visual.</p>
+            <div class="demo-escenario">
+              <div class="demo-caja caja-scale">Escalar</div>
+            </div>
+          </article>
+
+          <article class="demo-panel">
+            <h3>Skew</h3>
+            <p>Inclinación del elemento.</p>
+            <div class="demo-escenario">
+              <div class="demo-caja caja-skew">Inclinar</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Combinación de transformaciones y origen -->
+        <div class="demo-grid demo-grid-secundaria">
+          <article class="demo-panel">
+            <h3>Varias transformaciones</h3>
+            <p>El orden cambia el resultado.</p>
+            <div class="demo-escenario">
+              <div class="demo-caja caja-combinada">Combinar</div>
+            </div>
+          </article>
+
+          <article class="demo-panel">
+            <h3>Transform origin</h3>
+            <p>El punto desde donde gira la caja.</p>
+            <div class="demo-escenario">
+              <div class="demo-caja caja-origen">Origen</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Transformaciones 3D -->
+        <h3 class="demo-subtitulo">Una mirada a las transformaciones 3D</h3>
+        <div class="demo-escenario escenario-3d">
+          <div class="demo-caja caja-3d">Giro 3D</div>
+        </div>
+
+        <!-- Transición asociada al estado hover -->
+        <h3 class="demo-subtitulo">Transición con hover</h3>
+        <p class="intro">Acercá el mouse a la tarjeta para observar el cambio.</p>
+        <div class="demo-tarjeta tarjeta-hover">
+          <h3>Entrená a tu ritmo</h3>
+          <p>Una tarjeta para probar transform y transition.</p>
+        </div>
+
+        <!-- Animación con keyframes -->
+        <h3 class="demo-subtitulo">Primera animación con keyframes</h3>
+        <div class="demo-pista">
+          <div class="demo-caja caja-animada">Animar</div>
+        </div>
+      </div>
+    </section>
+
     <section class="seccion">
       <div class="contenedor">
+        <p class="eyebrow">ENTRENÁ A TU MANERA</p>
+        <h2>Actividades destacadas</h2>
+        <p class="intro">
+          Estas tarjetas van a ser nuestro ejemplo principal para aprender CSS Grid.
+        </p>
         <div class="cards-grid">
-          <article class="card plan">
+          <article class="card">
+            <img alt="Persona entrenando musculación con pesas"
+              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
-              <p class="plan-etiqueta">INICIAL</p>
-              <h2>Plan 2 días</h2>
-              <p class="precio">$25.000</p>
-              <p>Acceso al gimnasio dos veces por semana.</p>
-              <a class="boton" href="contacto.html">Consultar</a>
+              <h3>Musculación</h3>
+              <p>Entrenamiento de fuerza con máquinas, barras y mancuernas.</p>
             </div>
           </article>
-          <article class="card plan card-destacada">
+          <article class="card">
+            <img alt="Persona realizando entrenamiento funcional"
+              src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
-              <p class="plan-etiqueta">MÁS ELEGIDO</p>
-              <h2>Plan Full</h2>
-              <p class="precio">$35.000</p>
-              <p>Acceso libre de lunes a sábado.</p>
-              <a class="boton" href="contacto.html">Consultar</a>
+              <h3>Funcional</h3>
+              <p>Clases dinámicas para trabajar fuerza, coordinación y resistencia.</p>
             </div>
           </article>
-          <article class="card plan">
+          <article class="card card-destacada">
+            <img alt="Entrenamiento personalizado en gimnasio"
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
             <div class="card-contenido">
-              <p class="plan-etiqueta">PERSONAL</p>
-              <h2>Plan Personal</h2>
-              <p class="precio">$50.000</p>
-              <p>Acceso libre y seguimiento personalizado.</p>
-              <a class="boton" href="contacto.html">Consultar</a>
+              <h3>Personalizado</h3>
+              <p>Rutinas adaptadas a tus objetivos con acompañamiento profesional.</p>
             </div>
           </article>
+          <article class="card">
+            <img alt="Persona levantando pesas"
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <div class="card-contenido">
+              <h3>Fuerza</h3>
+              <p>Trabajo progresivo para mejorar técnica y rendimiento.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img alt="Clase grupal dentro de un gimnasio"
+              src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <div class="card-contenido">
+              <h3>Clases grupales</h3>
+              <p>Entrená acompañado y mantené la motivación semana a semana.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img alt="Zona de entrenamiento de gimnasio"
+              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <div class="card-contenido">
+              <h3>Open Gym</h3>
+              <p>Usá el espacio y el equipamiento para realizar tu propia rutina.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="seccion seccion-oscura">
+      <div class="contenedor layout-areas">
+        <div class="area-texto">
+          <p class="eyebrow">MÁS QUE UN GIMNASIO</p>
+          <h2>Un espacio preparado para vos</h2>
+          <p>
+            Entrená con equipamiento completo, profesionales que te acompañan
+            y un ambiente que te impulsa a seguir.
+          </p>
+          <p class="nota-clase">
+            Esta sección la vamos a usar para practicar
+            <strong>Grid Areas</strong> junto con <strong>Media Queries</strong>.
+          </p>
+        </div>
+        <div class="area-imagen">
+          <img alt="Equipamiento de Power Gym"
+            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+        </div>
+      </div>
+    </section>
+    <!-- Componente Bootstrap: carrusel (se conserva CSS Grid arriba) -->
+    <section class="galeria-gym">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <p class="etiqueta">GALERÍA</p>
+          <h2 class="titulo-seccion">Conocé nuestro espacio</h2>
+          <p class="texto">
+            Recorré algunas de las áreas y actividades que vas a encontrar en
+            Power Gym.
+          </p>
+        </div>
+        <div class="carousel slide carousel-power" data-bs-ride="carousel" id="carouselPowerGym">
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Imagen 1" class="active" data-bs-slide-to="0"
+              data-bs-target="#carouselPowerGym" type="button"></button>
+            <button aria-label="Imagen 2" data-bs-slide-to="1" data-bs-target="#carouselPowerGym"
+              type="button"></button>
+            <button aria-label="Imagen 3" data-bs-slide-to="2" data-bs-target="#carouselPowerGym"
+              type="button"></button>
+          </div>
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img alt="Sala de musculación" class="d-block w-100 imagen-carousel"
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Sala de musculación</h3>
+                <p>Equipamiento para trabajar fuerza y resistencia.</p>
+              </div>
+              </img>
+            </div>
+            <div class="carousel-item">
+              <img alt="Entrenamiento con pesas" class="d-block w-100 imagen-carousel"
+                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Entrenamiento con pesas</h3>
+                <p>Sectores preparados para diferentes objetivos.</p>
+              </div>
+              </img>
+            </div>
+            <div class="carousel-item">
+              <img alt="Entrenamiento funcional" class="d-block w-100 imagen-carousel"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Clases y actividades</h3>
+                <p>
+                  Entrenamientos individuales y grupales para todos los
+                  niveles.
+                </p>
+              </div>
+              </img>
+            </div>
+          </div>
+          <!-- Controles -->
+          <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselPowerGym" type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden"> Anterior </span>
+          </button>
+          <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselPowerGym" type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="visually-hidden"> Siguiente </span>
+          </button>
         </div>
       </div>
     </section>
@@ -140,7 +325,7 @@
         <p class="footer-logo">POWER GYM</p>
         <p>Fuerza, energía y constancia.</p>
       </div>
-      <a class="footer-link" href="contacto.html">Consultanos</a>
+      <a class="footer-link" href="pages/contacto.html">Consultanos</a>
     </div>
   </footer>
   <!-- Bundle JS de Bootstrap: menú hamburguesa y carrusel -->
