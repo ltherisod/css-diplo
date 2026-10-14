@@ -981,3 +981,141 @@ transition:transform 0.1s ease-in-out;
   }
 }
 
+
+
+/* ============================================================
+   MÓDULO 5 - CLASE DEL JUEVES
+   Animaciones, gradientes, rendimiento y accesibilidad.
+============================================================ */
+
+/* 1. ESTILOS BASE DE LAS DEMOSTRACIONES DEL JUEVES */
+.laboratorio-jueves {
+  background-color: #111111;
+}
+
+.jueves-subtitulo {
+  margin: 42px 0 18px;
+  color: var(--color-acento);
+  font-size: 23px;
+}
+
+.jueves-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.jueves-panel {
+  min-width: 0;
+  padding: 20px;
+  background-color: var(--color-secundario);
+  border: 1px solid #444444;
+  border-radius: 10px;
+}
+
+.jueves-panel h4 {
+  color: var(--color-blanco);
+  font-size: 19px;
+}
+
+.jueves-panel p {
+  color: var(--color-gris);
+}
+
+.jueves-escenario {
+  display: flex;
+  align-items: center;
+  min-height: 120px;
+  padding: 18px;
+  border: 1px dashed #777777;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.jueves-bloque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 64px;
+  flex-shrink: 0;
+  background-color: var(--color-acento);
+  color: #0B0B0B;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 2. PROPIEDADES DE ANIMATION */
+.jueves-delay {
+}
+
+.jueves-direction {
+}
+
+.jueves-fill {
+}
+
+.jueves-pausa {
+}
+
+.jueves-pausa:hover {
+}
+
+/* 3. GRADIENTES */
+.jueves-gradiente {
+  height: 140px;
+  border-radius: 9px;
+  margin: 18px 0;
+}
+
+.jueves-linear {
+}
+
+.jueves-radial {
+}
+
+.jueves-conic {
+}
+
+/* 4. GRADIENTE ANIMADO */
+.jueves-banner-gradiente {
+  padding: 44px 24px;
+  border-radius: 12px;
+  color: #0B0B0B;
+  text-align: center;
+  background-color: var(--color-acento);
+}
+
+.jueves-banner-gradiente h4,
+.jueves-banner-gradiente p {
+  color: #0B0B0B;
+}
+
+/* 5. RENDIMIENTO: TRANSFORM Y OPACITY */
+.jueves-rendimiento {
+}
+
+.jueves-aparecer {
+}
+
+/* 6. ACCESIBILIDAD */
+
+/* 7. RESPONSIVE
+   Una columna en celulares, dos en pantallas medianas,
+   y tres para los ejemplos de gradientes en escritorio.
+*/
+@media (min-width: 768px) {
+  .jueves-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .jueves-grid-tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.jueves-nota {
+  margin-top: 20px;
+  color: var(--color-gris);
+  font-size: 14px;
+}

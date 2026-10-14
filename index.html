@@ -10,6 +10,10 @@
   <!-- Bootstrap CSS primero; nuestros estilos después -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="styles/styles.css" rel="stylesheet" />
+  <!-- Animate.css: efectos ya preparados, cargados mediante CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- AOS: estilos de animación al hacer scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
@@ -173,6 +177,104 @@
       </div>
     </section>
 
+
+    <!-- ========================================================
+         MÓDULO 5 - CLASE DEL JUEVES
+         Los ejemplos del martes permanecen en la sección anterior.
+         Cada demostración tiene clases independientes para poder
+         modificarla sin alterar el resto de Power Gym.
+    ========================================================= -->
+    <section class="seccion laboratorio-jueves" id="clase-jueves">
+      <div class="contenedor">
+        <p class="eyebrow">MÓDULO 5 · SEGUNDA CLASE</p>
+        <h2>Animaciones, gradientes y buenas prácticas</h2>
+        <p class="intro">Seguimos trabajando con CSS: controlamos el movimiento, creamos fondos degradados y probamos librerías.</p>
+
+        <!-- 1. CONTROL DE ANIMATION -->
+        <h3 class="jueves-subtitulo">1. Propiedades de animation</h3>
+        <div class="jueves-grid">
+          <article class="jueves-panel">
+            <h4>Delay: esperar para comenzar</h4>
+            <p>Vamos a probar un retraso de inicio.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-delay">Delay</div></div>
+          </article>
+          <article class="jueves-panel">
+            <h4>Direction: alternar el sentido</h4>
+            <p>Vamos a cambiar la dirección del movimiento.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-direction">Alternate</div></div>
+          </article>
+          <article class="jueves-panel">
+            <h4>Fill-mode: conservar el final</h4>
+            <p>Vamos a ver qué pasa cuando la animación termina.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-fill">Forwards</div></div>
+          </article>
+          <article class="jueves-panel">
+            <h4>Play-state: pausar con hover</h4>
+            <p>Vamos a detener la animación al pasar el mouse.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-pausa">Pausar</div></div>
+          </article>
+        </div>
+
+        <!-- 2. TRES TIPOS DE GRADIENTES -->
+        <h3 class="jueves-subtitulo">2. Fondos con gradientes</h3>
+        <div class="jueves-grid jueves-grid-tres">
+          <article class="jueves-panel">
+            <h4>Linear-gradient</h4>
+            <div class="jueves-gradiente jueves-linear" aria-label="Ejemplo de degradado lineal"></div>
+            <p>El color cambia a lo largo de una línea.</p>
+          </article>
+          <article class="jueves-panel">
+            <h4>Radial-gradient</h4>
+            <div class="jueves-gradiente jueves-radial" aria-label="Ejemplo de degradado radial"></div>
+            <p>El color se expande desde el centro.</p>
+          </article>
+          <article class="jueves-panel">
+            <h4>Conic-gradient</h4>
+            <div class="jueves-gradiente jueves-conic" aria-label="Ejemplo de degradado cónico"></div>
+            <p>El color gira alrededor de un punto.</p>
+          </article>
+        </div>
+
+        <!-- 3. FONDO DEGRADADO ANIMADO -->
+        <h3 class="jueves-subtitulo">3. Gradiente animado</h3>
+        <div class="jueves-banner-gradiente">
+          <h4>ENERGÍA EN MOVIMIENTO</h4>
+          <p>Vamos a generar movimiento con background-position.</p>
+        </div>
+
+        <!-- 4. RENDIMIENTO: OPACITY + TRANSFORM -->
+        <h3 class="jueves-subtitulo">4. Animar con criterio</h3>
+        <div class="jueves-grid">
+          <article class="jueves-panel">
+            <h4>Transform: mover</h4>
+            <p>Para desplazar una caja conviene animar transform en lugar de left.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-rendimiento">Mover</div></div>
+          </article>
+          <article class="jueves-panel">
+            <h4>Opacity: aparecer</h4>
+            <p>Opacity cambia la transparencia sin cambiar el espacio ocupado.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-aparecer">Aparecer</div></div>
+          </article>
+        </div>
+
+        <!-- 5. LIBRERÍAS: ANIMATE.CSS Y AOS -->
+        <h3 class="jueves-subtitulo">5. Librerías de animación</h3>
+        <div class="jueves-grid">
+          <article class="jueves-panel">
+            <h4>Animate.css</h4>
+            <p>Vamos a aplicar clases de Animate.css a esta caja.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque jueves-libreria">Animate.css</div></div>
+          </article>
+          <article class="jueves-panel jueves-aos">
+            <h4>AOS: Animate On Scroll</h4>
+            <p>Vamos a activar un efecto al hacer scroll.</p>
+            <div class="jueves-escenario"><div class="jueves-bloque">AOS</div></div>
+          </article>
+        </div>
+        <p class="jueves-nota">Accesibilidad: también vamos a respetar la preferencia de reducir movimiento.</p>
+      </div>
+    </section>
+
     <section class="seccion">
       <div class="contenedor">
         <p class="eyebrow">ENTRENÁ A TU MANERA</p>
@@ -330,6 +432,15 @@
   </footer>
   <!-- Bundle JS de Bootstrap: menú hamburguesa y carrusel -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS necesita su script y una inicialización para detectar el scroll. -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Si no se cargó la librería (por ejemplo, sin conexión),
+    // el sitio continúa funcionando normalmente.
+    if (typeof AOS !== "undefined") {
+      AOS.init({ once: false, duration: 900 });
+    }
+  </script>
 </body>
 
 </html>
