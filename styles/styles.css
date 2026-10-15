@@ -1048,19 +1048,70 @@ transition:transform 0.1s ease-in-out;
 }
 
 /* 2. PROPIEDADES DE ANIMATION */
+
+@keyframes jueves-entrada {
+  from {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(80px);
+    opacity:1;
+  }
+}
+
 .jueves-delay {
+
+  /* usar los fotogramas definidos arriba */
+  animation-name: jueves-entrada;
+  /* duracion  */
+  animation-duration: 2s;
+  /* cuanto espera para arrancar */
+  animation-delay:4s;
+  /* repite el recorrido */
+  animation-iteration-count: infinite;
+  /* va y viene sin saltar al inicio */
+  animation-direction: alternate;
+  /* suavizar las aceleraciones */
+  animation-timing-function: ease-in-out;
+
 }
 
 .jueves-direction {
+  animation-name:jueves-entrada;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  /* normal: reperoduce principio al final */
+  /* reverse: al reves */
+  /* alternate: hace una pasa adelante y la siente atras */
+  animation-direction: alternate-reverse;
 }
 
 .jueves-fill {
+  animation-name: jueves-entrada;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  /* Conserva el ultimo fotograma */
+  animation-fill-mode:forwards;
+  /* backwards: aplica al inicio */
+  /* both: ambos comportamientos */
 }
 
 .jueves-pausa {
+  /* animation-name: jueves-entrada;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; */
+  /*nombre - duracion - ritmo - repeticiones - direccion
+  animation: jueves-entrada 2s ease-in-out infinite alternate; /*Forma abreviada*/
+  /* se repoduce normal */
+  animation-play-state: running;
 }
 
 .jueves-pausa:hover {
+  /* congelo el movimiento */
+  animation-play-state: paused;
 }
 
 /* 3. GRADIENTES */
@@ -1071,21 +1122,42 @@ transition:transform 0.1s ease-in-out;
 }
 
 .jueves-linear {
+  /* 90 deg: transicion de izq a derecha */
+  background: linear-gradient(90deg, #C7ff3d, #238a8a);
 }
 
 .jueves-radial {
+  /* CIRCLE: LOS COLORES SE EXPANDEN DESDE EL CENTRO EN FORMA CIRCULAR */
+  background: radial-gradient(circle, #C7FF3D, #184E3B, #0B0B0B);
 }
 
 .jueves-conic {
+  /* conico: reparte los colores alrededor de un punto central */
+  background: conic-gradient(#c7ff3d, #238a8a, #c7ff3d);
 }
 
 /* 4. GRADIENTE ANIMADO */
+
+@keyframes jueves-fondo {
+  0%{
+    background-position: 0% 50%; /*extremo inicial*/
+  }
+  50% {
+    background-position: 100% 50%; /*extremo opuesto*/
+  }
+  100% {
+    background-position: 0% 50%; /*volvemos al inicio*/
+  }
+}
 .jueves-banner-gradiente {
   padding: 44px 24px;
   border-radius: 12px;
   color: #0B0B0B;
   text-align: center;
-  background-color: var(--color-acento);
+  /* background-color: var(--color-acento); */
+  background: linear-gradient(90deg, #C7FF3D, #FFFFFF, #55bd84, #C7FF3D);
+  background-size: 300% 300%;
+  animation: jueves-fondo 5s ease-in-out infinite; /*movimiento continuop de 5 seg*/
 }
 
 .jueves-banner-gradiente h4,
@@ -1094,10 +1166,35 @@ transition:transform 0.1s ease-in-out;
 }
 
 /* 5. RENDIMIENTO: TRANSFORM Y OPACITY */
+
+@keyframes jueves-trasladar {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(65px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes jueves-opacidad {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
 .jueves-rendimiento {
+  animation: jueves-trasladar 3s ease-in-out infinite; 
 }
 
 .jueves-aparecer {
+  animation: jueves-opacidad 3s ease-in-out infinite;
+  /* si quiero sacar la animation: none */
 }
 
 /* 6. ACCESIBILIDAD */
