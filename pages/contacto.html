@@ -6,13 +6,14 @@
     <title>Contactate con Punto Café</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="shortcut icon" href="../assets/logo.webp" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../assets/hero-logo.png" alt="Logo Punto Café" class="logo">
+                    <img src="../assets/logo.webp" alt="Logo Punto Café" class="logo">
                 </a>
                 <div class="titles">
                     <h1>Punto Café</h1>
@@ -43,16 +44,27 @@
     </header>
 
     <main class="main-contacto">
-        <form action="">
-            <label for="name">Nombre: </label>
-            <input type="text" placeholder="John Doe">
-            <label for="age">Edad: </label>
-            <input type="number" placeholder="25">
-            <label for="email">eMail: </label>
-            <input type="email" placeholder="JohnDoe@gmail.com">
-            <label for="">Espacio Vació</label>
-            <input type="text" placeholder="nuevo" class="input">
-        </form>
+        <h2>Queremos conocer tu opinión</h2>
+        <p>¿Cuál fue tu café favorito? ¿Hay algo que te gustaría encontrar en nuestro menú?<br>Dejanos tu mensaje, contanos qué te gustó y compartí tus ideas con nosotros.</p>
+        <section class="contacto">
+            <iframe data-testid="embed-iframe" style="border-radius: 12px" src="https://open.spotify.com/embed/album/1dQDdZKvdJ5gNhUF56S8Qu?utm_source=generator&si=61a49307f5c740fd" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="spoty"></iframe>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2012.4051132461627!2d-64.55823980713866!3d-31.97585547324513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2b0447c2bd5ff%3A0x3245f2bd7c030f4c!2sPlaza%20Jose%20Hernandez!5e0!3m2!1ses!2sar!4v1784734245130!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" class="maps"></iframe>
+
+            <form action="" class="form">
+                <label for="name">Nombre: </label>
+                <input type="text" placeholder="John Doe">
+                <label for="age">Edad: </label>
+                <input type="number" placeholder="25">
+                <label for="email">eMail: </label>
+                <input type="email" placeholder="JohnDoe@gmail.com">
+                <label for="">Celular: </label>
+                <input type="tel" placeholder="11 12345678">
+                <label for="comments">Comentarios:</label>
+                <textarea name="comments" id="comments" placeholder="Dejanos tus comentarios y sugerencias"></textarea>
+                <input type="submit" value="Enviar" class="send">
+            </form>
+        </section>
     </main>
 
     <footer>

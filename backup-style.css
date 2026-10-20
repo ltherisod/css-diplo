@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+:root{
+    --font-ppal: "Bricolage Grotesque", sans-serif;
+    --font-sec: "Cormorant Garamond", serif;
+    --bg-ppal: #F8F3EC;
+    --bg-sec: #FFFDF8;
+    --surface: #EFE3D3;
+    --headings: #8B5E3C;
+    --text: #6D4C35;
+    --accent: #C98A4A;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--bg-ppal);
+    font-family: var(--font-ppal);
+    padding: 10px 50px 0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-sec);
+    font-weight: bolder;
+    color: var(--headings);
+}
+p{
+    font-size: 1.5rem;
+    color: var(--text);
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--accent) !important;
+}
+.active{
+    font-weight: bolder;
+}
+/* HEADER */
+.logo{
+    height: 8vh;
+    width: auto;
+}
+.titles{
+    text-align: center;
+}
+ul{
+    display: flex;
+    gap: 40px;
+}
+.nav-change{
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 1s;
+}
+.nav-change:hover{
+    background-color: var(--headings);
+    color: var(--surface);
+}
+.nav-change:active{
+    background-color: crimson;
+    color: white;
+}
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logos{
+    height: 5vh;
+    width: auto;
+}
+.whatsapp{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+/* MAIN HOME */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+}
+.hero{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-logo{
+    width: 20vw;
+    height: auto;
+}
+.speciality{
+    text-align: center;
+    width: 20vw;
+    border-bottom: var(--text) 2px solid;
+}
+.hero p{
+    text-align: center;
+}
+.hero-list{
+    text-align: center;
+}
+.hero-img{
+    height: 40vh;
+    width: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.home-img{
+    height: 40vh;
+    width: auto;
+    border-radius: 15px;
+    transition: scale 1s ease;
+}
+/* ease | ease-in | ease-out | ease-in-out */
+.home-img:hover{
+    scale: 1.5;
+}
+/* MAIN TIPOS */
+.main-types{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.main-types p{
+    width: 50vw;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.coffee-card{
+    padding: 10px;
+    border: var(--accent) 2px solid;
+    border-radius: 25px;
+    width: 30vw;
+}
+.img-type{
+    width: 20vw;
+    height: auto;
+    border-radius: 25px;
+}
+.coffee-card p{
+    margin: 0 50px;
+    width: auto;
+}
+/* GALERÍA */
+.caption{
+    color: var(--surface);
+}
+/* HISTORIA */
+.main-history{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.team{
+    max-width: 45vw;
+    float: left;
+    margin-right: 50px;
+    border-radius: 50px;
+}
+.fuente-personal{
+    color: var(--accent);
+}
+/* CONTACTO */
+.main-contacto{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.spoty{
+    width: 30vw;
+    height: 50vh;
+    order: 1;
+}
+.maps{
+    width: 30vw;
+    height: 50vh;
+    order: 3;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 30vw;
+    height: 50vh;
+    order: 2;
+}
+.form input, textarea{
+    width: 20vw;
+    text-align: center;
+}
+.send{
+    padding: 5px;
+    background-color: transparent;
+    font-weight: bolder;
+    color: var(--accent);
+    border: 2px solid var(--text);
+    border-radius: 10px;
+}
+@media (max-width: 567px) {
+    footer{
+        flex-direction: column;
+    }
+}

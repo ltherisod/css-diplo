@@ -1,0 +1,16 @@
+// sass --watch sass/main.scss style/style.css
+
+@use "./utilities/reset";
+
+// *-------------*
+
+@use "./components/header";
+@use "./components/footer";
+
+// *-------------*
+
+@use "./layout/home";
+@use "./layout/tipos";
+@use "./layout/galeria";
+@use "./layout/historia";
+@use "./layout/contacto";

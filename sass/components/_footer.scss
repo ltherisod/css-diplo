@@ -1,0 +1,20 @@
+@use "../utilities/variables" as v;
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul{
+        display: flex;
+        gap: 40px;
+        .logos{
+            height: 5vh;
+            width: auto;
+        }
+        .whatsapp{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+    }
+}

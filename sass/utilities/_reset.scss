@@ -1,0 +1,27 @@
+@use "variables" as v;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: v.$bg-ppal;
+    font-family: v.$font-ppal;
+    padding: 10px 50px 0;
+    h1, h2, h3, h4, h5, h6{
+        font-family: v.$font-sec;
+        font-weight: bolder;
+        color: v.$headings;
+    }
+    p{
+        font-size: 1.5rem;
+        color: v.$text;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: v.$accent !important;
+    }
+}
