@@ -1,0 +1,95 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+@use "../utilities/extend";
+
+.home{
+    @extend %flex-center;
+    gap: 75px;
+    .hero{
+        width: 30%;
+        @include m.flex-red(start, center);
+        flex-direction: column;
+        .hero-logo{
+            width: 20vw;
+            height: auto;
+        }
+        .speciality{
+            text-align: center;
+            width: 20vw;
+            border-bottom: v.$text 2px solid;
+        }
+        p{
+            text-align: center;
+        }
+        .hero-list{
+            text-align: center;
+            display: flex;
+            gap: 40px;
+            padding-left: 0;
+        }
+        @include m.mobile{
+            width: 100%;
+            .hero-logo{
+                width: 40vw;
+            }
+            .speciality{
+                width: 100%;
+            }
+            .hero-list{
+                gap: 10px;
+            }
+        }
+    }
+    .hero-img{ //Contenedor
+        height: auto;
+        width: 40vw;
+        overflow: hidden;
+        border-radius: 15px;
+        .home-img{ //Imagen
+            height: auto;
+            width: 40vw;
+            border-radius: 15px;
+            transition: scale 1s ease;
+            &:hover{
+            scale: 1.5;
+            }
+        }
+        @include m.mobile{
+            width: 80vw;
+            .home-img{
+                width: 100%;
+                &:hover{
+                    scale: 1;
+                }
+            }
+        }
+    }
+    @include m.tablet{
+        flex-direction: column;
+        gap: 50px;
+        .hero{
+            width: 100%;
+            .hero-logo{
+                width: 30vw;
+            }
+            .speciality{
+                width: 60%;
+            }
+        }
+        .hero-img{
+            width: 80vw;
+            display: flex;
+            justify-content: center;
+            .home-img{
+                width: 60vw;
+                &:hover{
+                    scale: 1;
+                }
+            }
+        }
+    }
+    @include m.mobile{
+        flex-direction: column;
+        gap: 25px;
+    }
+}

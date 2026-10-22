@@ -1,0 +1,61 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+.main-types{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    p{
+        width: 50vw;
+    }
+    .cards{
+        @include m.flex(row, wrap, space-between, center, 20px);
+        .coffee-card{
+            padding: 10px;
+            border: v.$accent 2px solid;
+            border-radius: 25px; 
+            width: 30vw;
+            .img-type{
+                width: 20vw;
+                height: auto;
+                border-radius: 25px;
+            }
+            p{
+                margin: 0 50px;
+                width: auto;
+            }
+        }
+    }
+    @include m.tablet{
+        p{
+            width: 75vw;
+        }
+        .cards{
+            .coffee-card{
+                width: 45vw;
+                .img-type{
+                    width: 40vw;
+                }
+            }
+        }
+    }
+    @include m.mobile{
+        flex-direction: column;
+        p{
+            width: 90vw;
+        }
+        .cards{
+            justify-content: center;
+            .coffee-card{
+                width: 90vw;
+                .img-type{
+                    width: 80vw;
+                }
+                p{
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+}

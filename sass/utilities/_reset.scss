@@ -1,4 +1,5 @@
-@use "variables" as v;
+@use "./variables" as v;
+@use "./mixin" as m;
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,16 @@
 body{
     background-color: v.$bg-ppal;
     font-family: v.$font-ppal;
-    padding: 10px 50px 0;
+    padding: 0 50px;
+    @include m.tablet{
+        padding: 0 25px;
+    }
+    @include m.mobile{
+        padding: 0 10px;
+    }
+    main{
+        padding: 30px 0;
+    }
     h1, h2, h3, h4, h5, h6{
         font-family: v.$font-sec;
         font-weight: bolder;
@@ -19,9 +29,14 @@ body{
     }
     ul{
         list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
     }
     a{
         text-decoration: none;
         color: v.$accent !important;
+    }
+    .caption{
+        color: v.$surface;
     }
 }

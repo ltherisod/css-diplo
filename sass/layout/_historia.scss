@@ -1,0 +1,35 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+.main-history{
+    text-align: center;
+    @include m.flex(column, nowrap, center, center, 32px);
+    .about{
+        .team{
+            max-width: 45vw;
+            float: left;
+            margin-right: 50px;
+            border-radius: 50px;
+        }
+    }
+    @include m.tablet{
+        .about{
+            .team{
+                max-width: 60vw;
+            }
+        }
+    }
+    @include m.mobile{
+        .about{
+            figure{
+                display: flex;
+                justify-content: center;
+            }
+            .team{
+                max-width: 80vw;
+                float: none;
+                margin-right: 0;
+            }
+        }
+    }
+}

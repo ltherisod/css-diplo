@@ -1,12 +1,19 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
 
 header{
+    height: 10vh;
     .logo{
         height: 8vh;
         width: auto;
     }
     .titles{
         text-align: center;
+        width: 25vw;
+        border-bottom: v.$text 2px solid;
+        @include m.mobile{
+            display: none;
+        }
     }
     ul{
         display: flex;
@@ -14,5 +21,11 @@ header{
         .active{
             font-weight: bolder;
         }
+    }
+    @include m.tablet{
+        height: auto;
+    }
+    @include m.mobile{
+        height: auto;
     }
 }

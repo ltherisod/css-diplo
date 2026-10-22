@@ -1,0 +1,89 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+
+.main-contacto{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .contacto{
+        @include m.flex-red(center, center);
+        gap: 50px;
+        margin-bottom: 50px;
+        .spoty{
+            width: 30vw;
+            height: 50vh;
+            order: 1;
+        }
+        .maps{
+            width: 30vw;
+            height: 50vh;
+            order: 3;
+        }
+        .form{
+            @include m.flex(column, nowrap, center, center, 10px);
+            width: 30vw;
+            height: 50vh;
+            order: 2;
+            input, textarea{
+                width: 20vw;
+                text-align: center;
+            }
+            .send{
+                padding: 5px;
+                background-color: transparent;
+                font-weight: bolder;
+                color: v.$accent;
+                border: 2px solid v.$text;
+                border-radius: 10px;
+            }
+        }
+    }
+    @include m.tablet{
+        .contacto{
+            flex-wrap: wrap;
+            .spoty{
+                width: 40vw;
+                order: 2;
+            }
+            .maps{
+                width: 40vw;
+                order: 3;
+            }
+            .form{
+                width: 80vw;
+                order: 1;
+                height: auto;
+                input, textarea{
+                    width: 75vw;
+                }
+                textarea{
+                    height: 10vh;
+                }
+            }
+        }
+    }
+    @include m.mobile{
+        .contacto{
+            flex-direction: column;
+            .spoty, .maps, .form{
+                width: 80vw;
+            }
+            .spoty{
+                order: 2;
+            }
+            .maps{
+                order: 3;
+            }
+            .form{
+                order: 1;
+                height: auto;
+                input, textarea{
+                    width: 80vw;
+                }
+                textarea{
+                    height: 15vh;
+                }
+            }
+        }
+    }
+}

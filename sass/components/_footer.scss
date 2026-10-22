@@ -1,11 +1,13 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
+@use "../utilities/animation";
 
 footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 10vh;
+    @include m.flex-red(space-between, center);
     ul{
         display: flex;
+        align-items: center;
         gap: 40px;
         .logos{
             height: 5vh;
@@ -15,6 +17,16 @@ footer{
             position: fixed;
             bottom: 50px;
             right: 50px;
+            animation: vibrate infinite 1s ease;
         }
+    }
+    @include m.tablet{
+        flex-direction: column;
+        height: auto;
+    }
+    @include m.mobile{
+        flex-direction: column;
+        height: auto;
+        text-align: center;
     }
 }
