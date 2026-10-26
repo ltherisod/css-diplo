@@ -1,10 +1,8 @@
-
+@charset "UTF-8";
 /* ==========================================
    POWER GYM - ESTILOS GENERALES
 ========================================== */
-
-/* 1. VARIABLES Y CONFIGURACIÓN GENERAL */
-
+/* Paleta original del gimnasio, expuesta como custom properties */
 :root {
   --color-principal: #0B0B0B;
   --color-secundario: #171717;
@@ -21,12 +19,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Tipografía y elementos globales: ver _tipografia.scss */
+/* ==========================================
+   2. CONTENEDOR GENERAL
+========================================== */
+.contenedor {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  color: var(--color-blanco);
-  background-color: var(--color-principal);
+  color: #FFFFFF;
+  background-color: #0B0B0B;
 }
 
 a {
@@ -46,37 +55,22 @@ p {
 }
 
 /* ==========================================
-   2. CONTENEDOR GENERAL
-========================================== */
-
-.contenedor {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-/* ==========================================
    3. HEADER Y NAVEGACIÓN
 ========================================== */
-
 .header {
-  background-color: var(--color-secundario);
+  background-color: #171717;
   border-bottom: 1px solid #333333;
 }
 
 /* Barra de navegación */
-
 .navbar-power {
-  background-color: var(--color-secundario);
-
+  background-color: #171717;
   --bs-navbar-color: #FFFFFF;
   --bs-navbar-hover-color: #C7FF3D;
   --bs-navbar-active-color: #C7FF3D;
 }
 
 /* Logo */
-
 .navbar-power .navbar-brand {
   display: flex;
   align-items: center;
@@ -94,33 +88,32 @@ p {
 }
 
 /* Enlaces de navegación */
-
 .navbar-power .nav-link {
-  color: var(--color-blanco);
+  color: #FFFFFF;
   font-weight: 600;
 }
 
-.navbar-power .nav-link:hover,
-.navbar-power .nav-link:focus,
-.navbar-power .nav-link.active,
-.navbar-power .nav-link.activo {
-  color: var(--color-acento);
+.navbar-power .nav-link:hover, .navbar-power .nav-link:focus, .navbar-power .nav-link.active, .navbar-power .nav-link.activo {
+  color: #C7FF3D;
 }
 
 /* Menú hamburguesa */
-
 .navbar-power .navbar-toggler {
-  border: 1px solid var(--color-acento);
+  border: 1px solid #C7FF3D;
 }
 
 .navbar-power .navbar-toggler:focus {
   box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.3);
 }
 
+@media (max-width: 767px) {
+  .navbar-power .logo-img {
+    width: 140px;
+  }
+}
 /* ==========================================
    4. HERO PRINCIPAL
 ========================================== */
-
 .hero {
   min-height: 620px;
 }
@@ -135,7 +128,7 @@ p {
 
 .eyebrow {
   margin-bottom: 16px;
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -148,7 +141,7 @@ p {
 }
 
 .hero h1 span {
-  color: var(--color-acento);
+  color: #C7FF3D;
 }
 
 .hero-texto {
@@ -161,12 +154,11 @@ p {
 /* ==========================================
    5. HERO DE PÁGINAS INTERNAS
 ========================================== */
-
 .page-hero {
   padding-top: 86px;
   padding-bottom: 86px;
-  background-color: var(--color-secundario);
-  border-bottom: 4px solid var(--color-acento);
+  background-color: #171717;
+  border-bottom: 4px solid #C7FF3D;
 }
 
 .page-hero h1 {
@@ -178,49 +170,25 @@ p {
   color: #D0D0D0;
 }
 
-/* ==========================================
-   6. BOTONES
-========================================== */
-
-.boton {
-  display: inline-block;
-  padding: 14px 22px;
-
-  background-color: var(--color-acento);
-  color: var(--color-principal);
-
-  border: none;
-  border-radius: 6px;
-
-  font: inherit;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
+@media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+  }
+  .hero-contenido {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
 }
-
-/* Estados interactivos */
-
-.boton:hover {
-  background-color: #B5EB2F;
-  color: var(--color-principal);
-}
-
-.boton:focus-visible {
-  outline: 3px solid var(--color-blanco);
-  outline-offset: 3px;
-}
-
 /* ==========================================
    7. SECCIONES GENERALES
 ========================================== */
-
 .seccion {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
 .seccion-oscura {
-  background-color: var(--color-secundario);
+  background-color: #171717;
 }
 
 .seccion h2 {
@@ -230,13 +198,44 @@ p {
 
 .intro {
   margin-bottom: 36px;
-  color: var(--color-gris);
+  color: #C8C8C8;
+}
+
+@media (max-width: 767px) {
+  .seccion {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+/* ==========================================
+   6. BOTONES
+========================================== */
+.boton {
+  display: inline-block;
+  padding: 14px 22px;
+  background-color: #C7FF3D;
+  color: #0B0B0B;
+  border: none;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Estados interactivos */
+.boton:hover {
+  background-color: #B5EB2F;
+  color: #0B0B0B;
+}
+.boton:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 3px;
 }
 
 /* ==========================================
    8. TARJETAS - CSS GRID
 ========================================== */
-
 /*
    MOBILE FIRST
 
@@ -244,7 +243,6 @@ p {
    Tablet:  2 columnas
    Desktop: 3 columnas
 */
-
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -252,19 +250,15 @@ p {
 }
 
 /* Tarjetas individuales */
-
 .cards-grid .card {
-  background-color: var(--color-secundario);
-  color: var(--color-blanco);
-
+  background-color: #171717;
+  color: #FFFFFF;
   border: 1px solid #2C2C2C;
   border-radius: 10px;
-
   overflow: hidden;
 }
 
 /* Imágenes */
-
 .cards-grid .card img {
   width: 100%;
   height: 260px;
@@ -272,7 +266,6 @@ p {
 }
 
 /* Contenido */
-
 .card-contenido {
   padding: 22px;
 }
@@ -280,40 +273,49 @@ p {
 .cards-grid .card h2,
 .cards-grid .card h3 {
   margin-bottom: 10px;
-  color: var(--color-blanco);
+  color: #FFFFFF;
 }
 
 .cards-grid .card p {
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 /* Precios */
-
 .cards-grid .card .precio {
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-size: 34px;
   font-weight: 700;
 }
 
 /* Etiquetas */
-
 .cards-grid .card .plan-etiqueta {
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
 
 /* Tarjeta destacada */
-
 .cards-grid .card-destacada {
-  border-color: var(--color-acento);
+  border-color: #C7FF3D;
 }
 
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards-grid .card-destacada {
+    grid-column: span 3;
+  }
+}
 /* ==========================================
    9. SECCIÓN CON GRID TEMPLATE AREAS
 ========================================== */
-
 /*
    MOBILE:
    +------------------+
@@ -327,30 +329,23 @@ p {
    |  TEXTO  | IMAGEN |
    +---------+--------+
 */
-
 .layout-areas {
   display: grid;
   grid-template-columns: 1fr;
-
-  grid-template-areas:
-    "texto"
-    "imagen";
-
+  grid-template-areas: "texto" "imagen";
   gap: 24px;
 }
 
 /* Área de texto */
-
 .area-texto {
   grid-area: texto;
 }
 
 .area-texto p {
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 /* Área de imagen */
-
 .area-imagen {
   grid-area: imagen;
 }
@@ -363,52 +358,57 @@ p {
 }
 
 /* Nota destacada */
-
 .nota-clase {
   margin-top: 24px;
   padding-left: 16px;
-  border-left: 4px solid var(--color-acento);
+  border-left: 4px solid #C7FF3D;
 }
 
+@media (max-width: 767px) {
+  .area-imagen img {
+    height: 280px;
+  }
+}
+@media (min-width: 1024px) {
+  .layout-areas {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "texto imagen";
+    align-items: center;
+  }
+}
 /* ==========================================
    10. GALERÍA DE IMÁGENES
 ========================================== */
-
 .galeria-gym {
   padding: 70px 0;
-  background-color: var(--color-secundario);
+  background-color: #171717;
 }
 
 /* Encabezado */
-
 .galeria-gym .etiqueta {
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
 .galeria-gym h2 {
-  color: var(--color-blanco);
+  color: #FFFFFF;
 }
 
 .galeria-gym .texto {
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 /* Carrusel */
-
 .carousel-power {
   max-width: 1000px;
   margin: 0 auto;
-
-  border: 2px solid var(--color-acento);
+  border: 2px solid #C7FF3D;
   border-radius: 16px;
-
   overflow: hidden;
 }
 
 /* Imágenes del carrusel */
-
 .imagen-carousel {
   width: 100%;
   height: 430px;
@@ -416,7 +416,6 @@ p {
 }
 
 /* Texto del carrusel */
-
 .carousel-power .carousel-caption {
   padding: 12px;
   background-color: rgba(11, 11, 11, 0.78);
@@ -424,27 +423,32 @@ p {
 }
 
 .carousel-power .carousel-caption h3 {
-  color: var(--color-acento);
+  color: #C7FF3D;
 }
 
 /* Indicadores */
-
 .carousel-power .carousel-indicators [data-bs-target] {
-  background-color: var(--color-acento);
+  background-color: #C7FF3D;
 }
 
 /* ==========================================
    11. FORMULARIO DE CONTACTO
 ========================================== */
-
+@media (max-width: 767px) {
+  .galeria-gym {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .imagen-carousel {
+    height: 250px;
+  }
+}
 /* Contenedor del formulario */
-
 .contacto {
   max-width: 720px;
 }
 
 /* Formulario original con Flexbox */
-
 .formulario {
   display: flex;
   flex-direction: column;
@@ -459,283 +463,167 @@ p {
 .formulario textarea {
   width: 100%;
   padding: 14px;
-
-  background-color: var(--color-secundario);
-  color: var(--color-blanco);
-
+  background-color: #171717;
+  color: #FFFFFF;
   border: 1px solid #3A3A3A;
   border-radius: 6px;
-
   font-family: inherit;
   font-size: 16px;
 }
 
 .formulario input:focus,
 .formulario textarea:focus {
-  border-color: var(--color-acento);
-  outline: 2px solid var(--color-acento);
+  border-color: #C7FF3D;
+  outline: 2px solid #C7FF3D;
   outline-offset: 2px;
 }
 
 /* ==========================================
    12. FORMULARIO POWER GYM
 ========================================== */
-
 /* Contenedor */
-
 .formulario-power {
   padding: 30px;
-  background-color: var(--color-secundario);
+  background-color: #171717;
   border: 1px solid #333333;
   border-radius: 10px;
 }
 
 /* Etiquetas */
-
 .formulario-power .form-label {
-  color: var(--color-blanco);
+  color: #FFFFFF;
   font-weight: 600;
 }
 
 /* Inputs, textarea y select */
-
 .formulario-power .form-control,
 .formulario-power .form-select {
   padding: 12px;
-
-  background-color: var(--color-principal);
-  color: var(--color-blanco);
-
+  background-color: #0B0B0B;
+  color: #FFFFFF;
   border: 1px solid #444444;
   border-radius: 6px;
 }
 
 /* Placeholders */
-
 .formulario-power .form-control::placeholder {
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 /* Estados de foco */
-
 .formulario-power .form-control:focus,
 .formulario-power .form-select:focus {
-  background-color: var(--color-principal);
-  color: var(--color-blanco);
-
-  border-color: var(--color-acento);
+  background-color: #0B0B0B;
+  color: #FFFFFF;
+  border-color: #C7FF3D;
   box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.2);
 }
 
 /* Opciones del select */
-
 .formulario-power .form-select option {
-  background-color: var(--color-principal);
-  color: var(--color-blanco);
+  background-color: #0B0B0B;
+  color: #FFFFFF;
 }
 
 /* Botón de envío */
-
 .boton-power {
   padding: 12px 24px;
-
-  background-color: var(--color-acento);
-  color: var(--color-principal);
-
+  background-color: #C7FF3D;
+  color: #0B0B0B;
   border: none;
   border-radius: 6px;
-
   font-weight: 700;
   cursor: pointer;
 }
 
 .boton-power:hover {
   background-color: #B5EB2F;
-  color: var(--color-principal);
+  color: #0B0B0B;
 }
 
 .boton-power:focus-visible {
-  outline: 3px solid var(--color-blanco);
+  outline: 3px solid #FFFFFF;
   outline-offset: 3px;
 }
 
 /* Información de contacto */
-
 .datos-contacto {
   margin-top: 30px;
 }
 
 .datos-contacto p {
   margin-bottom: 22px;
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 .datos-contacto strong {
-  color: var(--color-acento);
+  color: #C7FF3D;
 }
 
+@media (max-width: 767px) {
+  .formulario-power {
+    padding: 20px;
+  }
+}
 /* ==========================================
    13. FOOTER - FLEXBOX
 ========================================== */
-
 .footer {
   background-color: #070707;
-  border-top: 3px solid var(--color-acento);
+  border-top: 3px solid #C7FF3D;
 }
 
 /* Contenedor */
-
 .footer-contenido {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-
   padding-top: 34px;
   padding-bottom: 34px;
 }
 
 /* Textos */
-
 .footer p {
   margin-bottom: 0;
   color: #BDBDBD;
 }
 
 .footer-logo {
-  color: var(--color-blanco);
+  color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 /* Enlace */
-
 .footer-link {
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-weight: 700;
 }
 
 .footer-link:hover {
-  color: var(--color-blanco);
+  color: #FFFFFF;
 }
-
-/* ==========================================
-   14. MEDIA QUERIES - RESPONSIVE
-========================================== */
-
-/* ------------------------------------------
-   MOBILE - HASTA 767px
------------------------------------------- */
-
-@media (max-width: 767px) {
-
-  /* Logo */
-
-  .navbar-power .logo-img {
-    width: 140px;
-  }
-
-  /* Hero */
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-contenido {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-
-  /* Secciones */
-
-  .seccion {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  /* Galería */
-
-  .galeria-gym {
-    padding-top: 45px;
-    padding-bottom: 45px;
-  }
-
-  .imagen-carousel {
-    height: 250px;
-  }
-
-  /* Grid Areas */
-
-  .area-imagen img {
-    height: 280px;
-  }
-
-  /* Formulario */
-
-  .formulario-power {
-    padding: 20px;
-  }
-
-}
-
-/* ------------------------------------------
-   TABLET - DESDE 768px
------------------------------------------- */
 
 @media (min-width: 768px) {
-
-  /* Grid de tarjetas: 2 columnas */
-
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Footer en una fila */
-
   .footer-contenido {
     flex-direction: row;
     align-items: center;
   }
-
 }
-
-/* ------------------------------------------
-   DESKTOP - DESDE 1024px
------------------------------------------- */
-
-@media (min-width: 1024px) {
-
-  /* Grid de tarjetas: 3 columnas */
-
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Tarjeta destacada */
-
-  .cards-grid .card-destacada {
-    grid-column: span 3;
-  }
-
-  /* Grid Areas: texto e imagen */
-
-  .layout-areas {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "texto imagen";
-    align-items: center;
-  }
-
+.demo-escenario, .demo-caja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* ==========================================
    MÓDULO 5 - TRANSFORMACIONES Y ANIMACIONES
 ========================================== */
-
 /* Sección y distribución de ejemplos */
 .laboratorio-movimiento {
-  background-color: var(--color-principal);
+  background-color: #0B0B0B;
 }
 
 .demo-grid {
@@ -750,25 +638,22 @@ p {
 
 .demo-panel {
   padding: 20px;
-  background-color: var(--color-secundario);
+  background-color: #171717;
   border: 1px solid #3A3A3A;
   border-radius: 10px;
 }
 
 .demo-panel h3 {
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-size: 20px;
 }
 
 .demo-panel p {
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 /* Zona visible de cada demostración */
 .demo-escenario {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 170px;
   padding: 28px;
   border: 1px dashed #666666;
@@ -777,13 +662,10 @@ p {
 
 /* Apariencia original de las cajas */
 .demo-caja {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100px;
   height: 75px;
-  background-color: var(--color-acento);
-  color: var(--color-principal);
+  background-color: #C7FF3D;
+  color: #0B0B0B;
   border-radius: 8px;
   font-weight: 700;
   text-align: center;
@@ -792,20 +674,15 @@ p {
 /* 2D: translate - desplazamiento horizontal y vertical */
 .caja-translate {
   /* margin-left:200px; */
-
   /* transform: translate(50px, 40px) */
   /* mover hacia la derecha  */
-    /* transform: translateX(50px); */
-    /* mover hacia la izq  */
-    /* transform: translateX(-50px); */
-    /* mover verticalmente para abajo */
-    /* transform: translateY(50px); */
-    /* mover verticalmente para arriba */
-    transform: translateY(-50px);
-
-
-
-
+  /* transform: translateX(50px); */
+  /* mover hacia la izq  */
+  /* transform: translateX(-50px); */
+  /* mover verticalmente para abajo */
+  /* transform: translateY(50px); */
+  /* mover verticalmente para arriba */
+  transform: translateY(-50px);
 }
 
 /* 2D: rotate - giro en grados */
@@ -815,9 +692,9 @@ p {
   /* GIRO 90 GRADOS */
   /* transform: rotate(90deg); */
   /* GIRO ANTIHORARIO (CONTRARIO) */
-    /* transform: rotate(-20deg); */
-      /* GIRO media vuelta */
-    transform: rotate(180deg);
+  /* transform: rotate(-20deg); */
+  /* GIRO media vuelta */
+  transform: rotate(180deg);
 }
 
 /* 2D: scale - cambio de tamaño visual */
@@ -832,21 +709,18 @@ p {
   /* transform: scaleX(1.4); */
   /* AGRANDAR EL EJE Vertical */
   transform: scaleY(1.4);
-
-
 }
 
 /* 2D: skew - inclinación */
 .caja-skew {
   /* transform: skew(30deg); */
   /* inclinar sentido contrario */
-    /* transform: skew(-30deg); */
-    /* inclinar sobre un eje (x/y) */
-      /* transform: skewX(20deg); */
-      /* transform: skewY(30deg); */
-      /* ambos ejes */
-      transform: skew(15deg,10deg);
-
+  /* transform: skew(-30deg); */
+  /* inclinar sobre un eje (x/y) */
+  /* transform: skewX(20deg); */
+  /* transform: skewY(30deg); */
+  /* ambos ejes */
+  transform: skew(15deg, 10deg);
 }
 
 /* Combinación de funciones transform */
@@ -868,7 +742,6 @@ p {
   /* transform-origin: center; */
   /* esquina inf derecha */
   transform-origin: bottom right;
-
   transform: rotate(40deg);
 }
 
@@ -881,28 +754,28 @@ p {
 /* 3D: rotación alrededor del eje Y */
 .caja-3d {
   /* transform: rotateY(45deg); */
-    transform: rotateX(45deg);
+  transform: rotateX(45deg);
 }
 
 /* Separadores de ejemplos */
 .demo-subtitulo {
   margin-top: 38px;
   margin-bottom: 16px;
-  color: var(--color-acento);
+  color: #C7FF3D;
 }
 
 /* Tarjeta que responde a hover */
 .demo-tarjeta {
   max-width: 440px;
   padding: 30px;
-  background-color: var(--color-secundario);
-  border: 1px solid var(--color-acento);
+  background-color: #171717;
+  border: 1px solid #C7FF3D;
   border-radius: 12px;
 }
 
 .demo-tarjeta p {
   margin-bottom: 0;
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 /* Estado normal de la tarjeta: transición */
@@ -912,21 +785,19 @@ p {
   /* 04s: dura 0.4segundos */
   /* ease: aceleracion y desaceleracion suave */
   /* cambio lento uso 1 segundo completo */
-/* transition:transform 1s ease; */
-/* rapido uso decima de segundo */
-/* transition:transform 0.1s ease; */
-
-/* LINEAR: VELOCIDAD CONSTANTE */
-/* transition:transform 0.1s linear; */
-/* EASE: ACELERACION Y DESACELERACION SUAVE */
-/* transition:transform 0.1s ease; */
-/* EASE-IN : EMPEZAR LENTAMENTE Y ACELERAR */
-/* transition:transform 0.1s ease-in; */
-/* EASE-OUT : EMPIEZA RAPIDO Y DESACELERA */
-/* transition:transform 0.1s ease-out; */
-/* EASE-IN-OUT: EMPEZA Y TEREMINA LENTAMENTE */
-transition:transform 0.1s ease-in-out;
-
+  /* transition:transform 1s ease; */
+  /* rapido uso decima de segundo */
+  /* transition:transform 0.1s ease; */
+  /* LINEAR: VELOCIDAD CONSTANTE */
+  /* transition:transform 0.1s linear; */
+  /* EASE: ACELERACION Y DESACELERACION SUAVE */
+  /* transition:transform 0.1s ease; */
+  /* EASE-IN : EMPEZAR LENTAMENTE Y ACELERAR */
+  /* transition:transform 0.1s ease-in; */
+  /* EASE-OUT : EMPIEZA RAPIDO Y DESACELERA */
+  /* transition:transform 0.1s ease-out; */
+  /* EASE-IN-OUT: EMPEZA Y TEREMINA LENTAMENTE */
+  transition: transform 0.1s ease-in-out;
 }
 
 /* Estado hover: transformación */
@@ -948,17 +819,16 @@ transition:transform 0.1s ease-in-out;
 
 /* Definición de los fotogramas clave */
 @keyframes mover-caja {
-  0%{
+  0% {
     transform: translateX(0);
   }
-  50%{
+  50% {
     transform: translateX(200px);
   }
-  100%{
+  100% {
     transform: translateX(0);
   }
 }
-
 /* Aplicación de la animación a la caja */
 .caja-animada {
   /* NOMBRE DE LA ANIMACION */
@@ -971,7 +841,6 @@ transition:transform 0.1s ease-in-out;
   animation-timing-function: ease-in-out;
   /* quiero que se repita infinitamente */
   animation-iteration-count: infinite;
-
 }
 
 /* Adaptación de la grilla de demostraciones */
@@ -980,14 +849,10 @@ transition:transform 0.1s ease-in-out;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-
-
 /* ============================================================
    MÓDULO 5 - CLASE DEL JUEVES
    Animaciones, gradientes, rendimiento y accesibilidad.
 ============================================================ */
-
 /* 1. ESTILOS BASE DE LAS DEMOSTRACIONES DEL JUEVES */
 .laboratorio-jueves {
   background-color: #111111;
@@ -995,7 +860,7 @@ transition:transform 0.1s ease-in-out;
 
 .jueves-subtitulo {
   margin: 42px 0 18px;
-  color: var(--color-acento);
+  color: #C7FF3D;
   font-size: 23px;
 }
 
@@ -1008,18 +873,18 @@ transition:transform 0.1s ease-in-out;
 .jueves-panel {
   min-width: 0;
   padding: 20px;
-  background-color: var(--color-secundario);
+  background-color: #171717;
   border: 1px solid #444444;
   border-radius: 10px;
 }
 
 .jueves-panel h4 {
-  color: var(--color-blanco);
+  color: #FFFFFF;
   font-size: 19px;
 }
 
 .jueves-panel p {
-  color: var(--color-gris);
+  color: #C8C8C8;
 }
 
 .jueves-escenario {
@@ -1039,7 +904,7 @@ transition:transform 0.1s ease-in-out;
   width: 104px;
   height: 64px;
   flex-shrink: 0;
-  background-color: var(--color-acento);
+  background-color: #C7FF3D;
   color: #0B0B0B;
   border-radius: 7px;
   font-size: 13px;
@@ -1048,7 +913,6 @@ transition:transform 0.1s ease-in-out;
 }
 
 /* 2. PROPIEDADES DE ANIMATION */
-
 @keyframes jueves-entrada {
   from {
     transform: translateX(0);
@@ -1056,29 +920,26 @@ transition:transform 0.1s ease-in-out;
   }
   to {
     transform: translateX(80px);
-    opacity:1;
+    opacity: 1;
   }
 }
-
 .jueves-delay {
-
   /* usar los fotogramas definidos arriba */
   animation-name: jueves-entrada;
   /* duracion  */
   animation-duration: 2s;
   /* cuanto espera para arrancar */
-  animation-delay:4s;
+  animation-delay: 4s;
   /* repite el recorrido */
   animation-iteration-count: infinite;
   /* va y viene sin saltar al inicio */
   animation-direction: alternate;
   /* suavizar las aceleraciones */
   animation-timing-function: ease-in-out;
-
 }
 
 .jueves-direction {
-  animation-name:jueves-entrada;
+  animation-name: jueves-entrada;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -1093,7 +954,7 @@ transition:transform 0.1s ease-in-out;
   animation-duration: 2s;
   animation-iteration-count: 1;
   /* Conserva el ultimo fotograma */
-  animation-fill-mode:forwards;
+  animation-fill-mode: forwards;
   /* backwards: aplica al inicio */
   /* both: ambos comportamientos */
 }
@@ -1137,9 +998,8 @@ transition:transform 0.1s ease-in-out;
 }
 
 /* 4. GRADIENTE ANIMADO */
-
 @keyframes jueves-fondo {
-  0%{
+  0% {
     background-position: 0% 50%; /*extremo inicial*/
   }
   50% {
@@ -1154,7 +1014,7 @@ transition:transform 0.1s ease-in-out;
   border-radius: 12px;
   color: #0B0B0B;
   text-align: center;
-  /* background-color: var(--color-acento); */
+  /* background-color: $color-acento; */
   background: linear-gradient(90deg, #C7FF3D, #FFFFFF, #55bd84, #C7FF3D);
   background-size: 300% 300%;
   animation: jueves-fondo 5s ease-in-out infinite; /*movimiento continuop de 5 seg*/
@@ -1166,7 +1026,6 @@ transition:transform 0.1s ease-in-out;
 }
 
 /* 5. RENDIMIENTO: TRANSFORM Y OPACITY */
-
 @keyframes jueves-trasladar {
   0% {
     transform: translateX(0);
@@ -1178,8 +1037,6 @@ transition:transform 0.1s ease-in-out;
     transform: translateX(0);
   }
 }
-
-
 @keyframes jueves-opacidad {
   0%, 100% {
     opacity: 1;
@@ -1189,7 +1046,7 @@ transition:transform 0.1s ease-in-out;
   }
 }
 .jueves-rendimiento {
-  animation: jueves-trasladar 3s ease-in-out infinite; 
+  animation: jueves-trasladar 3s ease-in-out infinite;
 }
 
 .jueves-aparecer {
@@ -1198,21 +1055,24 @@ transition:transform 0.1s ease-in-out;
 }
 
 /* 6. ACCESIBILIDAD */
-
 /* 7. RESPONSIVE
    Una columna en celulares, dos en pantallas medianas,
    y tres para los ejemplos de gradientes en escritorio.
 */
 @media (min-width: 768px) {
-  .jueves-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .jueves-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
-
 @media (min-width: 1024px) {
-  .jueves-grid-tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .jueves-grid-tres {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
-
 .jueves-nota {
   margin-top: 20px;
-  color: var(--color-gris);
+  color: #C8C8C8;
   font-size: 14px;
 }
+
+/*# sourceMappingURL=styles.css.map */

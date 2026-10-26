@@ -1,0 +1,36 @@
+@use "../utilities/variables" as *;
+
+/* ==========================================
+   POWER GYM - ESTILOS GENERALES
+========================================== */
+
+/* Paleta original del gimnasio, expuesta como custom properties */
+
+:root {
+  --color-principal: #0B0B0B;
+  --color-secundario: #171717;
+  --color-acento: #C7FF3D;
+  --color-blanco: #FFFFFF;
+  --color-gris: #C8C8C8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tipografía y elementos globales: ver _tipografia.scss */
+
+/* ==========================================
+   2. CONTENEDOR GENERAL
+========================================== */
+
+.contenedor {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}

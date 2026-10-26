@@ -1,0 +1,35 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   6. BOTONES
+========================================== */
+
+.boton {
+  display: inline-block;
+  padding: $espacio-14 22px;
+
+  background-color: $color-acento;
+  color: $color-principal;
+
+  border: none;
+  border-radius: $radio-sm;
+
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Estados interactivos */
+
+.boton {
+  &:hover {
+    background-color: $color-acento-hover;
+    color: $color-principal;
+  }
+
+  &:focus-visible {
+    @include m.focus-visible;
+  }
+}

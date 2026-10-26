@@ -1,0 +1,95 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+/* ==========================================
+   8. TARJETAS - CSS GRID
+========================================== */
+
+/*
+   MOBILE FIRST
+
+   Mobile:  1 columna
+   Tablet:  2 columnas
+   Desktop: 3 columnas
+*/
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $espacio-24;
+}
+
+/* Tarjetas individuales */
+
+.cards-grid .card {
+  background-color: $color-secundario;
+  color: $color-blanco;
+
+  border: 1px solid #2C2C2C;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+/* Imágenes */
+
+.cards-grid .card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Contenido */
+
+.card-contenido {
+  padding: 22px;
+}
+
+.cards-grid .card h2,
+.cards-grid .card h3 {
+  margin-bottom: 10px;
+  color: $color-blanco;
+}
+
+.cards-grid .card p {
+  color: $color-gris;
+}
+
+/* Precios */
+
+.cards-grid .card .precio {
+  color: $color-acento;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+/* Etiquetas */
+
+.cards-grid .card .plan-etiqueta {
+  color: $color-acento;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Tarjeta destacada */
+
+.cards-grid .card-destacada {
+  border-color: $color-acento;
+}
+
+@include tablet {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include desktop {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-grid .card-destacada {
+    grid-column: span 3;
+  }
+}

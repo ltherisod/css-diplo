@@ -1,0 +1,21 @@
+// POWER GYM - Único punto de entrada de Sass.
+// Compilar: npx sass --watch scss/main.scss:styles/styles.css
+// No editar styles/styles.css: se genera automáticamente.
+
+@use "base/base";
+@use "base/tipografia";
+
+@use "layout/header";
+@use "layout/nav";
+@use "layout/hero";
+@use "layout/sections";
+
+@use "components/buttons";
+@use "components/cards";
+@use "layout/areas";
+@use "components/carousel";
+@use "components/forms";
+@use "layout/footer";
+
+// Animaciones y demostraciones prácticas del módulo 5.
+@use "components/animations";

@@ -1,0 +1,13 @@
+{
+  "name": "power-gym-scss",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Power Gym - Modulo 6 Sass",
+  "scripts": {
+    "sass": "sass scss/main.scss styles/styles.css --no-source-map",
+    "sass:watch": "sass --watch scss/main.scss:styles/styles.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.93.0"
+  }
+}

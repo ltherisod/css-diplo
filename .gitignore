@@ -1,0 +1,15 @@
+# Dependencias instaladas localmente
+node_modules/
+package-lock.json
+
+# Variables de entorno
+.env
+.env.*
+
+# Logs y archivos del sistema
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Mapas de código fuente de Sass
+*.css.map

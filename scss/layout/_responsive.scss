@@ -1,0 +1,110 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   14. MEDIA QUERIES - RESPONSIVE
+========================================== */
+
+/* ------------------------------------------
+   MOBILE - HASTA 767px
+------------------------------------------ */
+
+@include m.hasta-mobile {
+
+  /* Logo */
+
+  .navbar-power .logo-img {
+    width: 140px;
+  }
+
+  /* Hero */
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-contenido {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  /* Secciones */
+
+  .seccion {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* Galería */
+
+  .galeria-gym {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .imagen-carousel {
+    height: 250px;
+  }
+
+  /* Grid Areas */
+
+  .area-imagen img {
+    height: 280px;
+  }
+
+  /* Formulario */
+
+  .formulario-power {
+    padding: 20px;
+  }
+
+}
+
+/* ------------------------------------------
+   TABLET - DESDE 768px
+------------------------------------------ */
+
+@include m.desde-tablet {
+
+  /* Grid de tarjetas: 2 columnas */
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer en una fila */
+
+  .footer-contenido {
+    flex-direction: row;
+    align-items: center;
+  }
+
+}
+
+/* ------------------------------------------
+   DESKTOP - DESDE 1024px
+------------------------------------------ */
+
+@include m.desde-desktop {
+
+  /* Grid de tarjetas: 3 columnas */
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Tarjeta destacada */
+
+  .cards-grid .card-destacada {
+    grid-column: span 3;
+  }
+
+  /* Grid Areas: texto e imagen */
+
+  .layout-areas {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "texto imagen";
+    align-items: center;
+  }
+
+}

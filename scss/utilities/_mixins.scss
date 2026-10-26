@@ -1,0 +1,60 @@
+@use "variables" as v;
+
+// Reutilización de Flexbox y Grid (con valores por defecto).
+@mixin flex($direccion: row, $justificar: flex-start, $alinear: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $justificar;
+  align-items: $alinear;
+  gap: $gap;
+}
+
+@mixin grid($columnas: 1fr, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columnas;
+  gap: $gap;
+}
+
+@mixin focus-visible {
+  outline: 3px solid v.$color-blanco;
+  outline-offset: 3px;
+}
+
+
+// Se conservan los breakpoints originales  para no cambiar el diseño.
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Alias para los mixins que ya se utilizaban en la clase anterior.
+@mixin hasta-mobile {
+  @include mobile {
+    @content;
+  }
+}
+
+@mixin desde-tablet {
+  @include tablet {
+    @content;
+  }
+}
+
+@mixin desde-desktop {
+  @include desktop {
+    @content;
+  }
+}

@@ -1,135 +1,41 @@
-# POWER GYM — CSS Grid y Media Queries
+# POWER GYM — Módulo 6: migración a SCSS
 
-La web está completa en contenido y estilos visuales.
+El sitio conserva las **cinco páginas**, la paleta negra y verde lima, Bootstrap, las animaciones y el responsive del proyecto anterior. No se cambiaron los HTML.
 
-Durante las clases se trabaja sobre este mismo proyecto para practicar **CSS Grid**, **Grid Areas**, **Flexbox** y **Media Queries**.
+## Ver la página en tu computadora
 
-## Estructura
+Abrí `index.html` en el navegador (o con Live Server). El archivo `styles/styles.css` original está incluido para poder ver la página incluso antes de instalar Sass.
 
-```text
-/
-├── index.html
-├── pages/
-│   ├── actividades.html
-│   ├── planes.html
-│   ├── nosotros.html
-│   └── contacto.html
-└── styles/
-    └── styles.css
-```
+## Instalar y compilar Sass localmente
 
-## En clase
+1. Abrí la carpeta del proyecto con VS Code.
+2. En la terminal ejecutá `npm install` (Node y npm ya deben estar instalados).
+3. Ejecutá `npm run sass` para compilar una vez.
+4. Para trabajar en vivo usá `npm run sass:watch` y dejá la terminal abierta.
+5. Modificá **solamente los archivos `.scss`**, no el CSS compilado.
 
-- Navbar: usa Flexbox.
-- Footer: usa Flexbox.
-- `.cards-grid`: usa CSS Grid.
-- `.card-destacada`: modifica el espacio que ocupa una tarjeta dentro de la grilla.
-- `.layout-areas`: usa Grid y `grid-template-areas`.
-- `.area-texto` y `.area-imagen`: identifican las áreas dentro del layout.
-- `.hero h1`: se adapta usando `clamp()`.
+El CSS compilado queda en `styles/styles.css`, que es el archivo enlazado en los 5 HTML. Sass también se puede ejecutar con `npx sass --watch scss/main.scss:styles/styles.css`.
 
-## Responsive y Media Queries
+## Arquitectura
 
-El proyecto trabaja con una estrategia **Mobile First**.
+- `scss/main.scss`: único punto de entrada; agrupa todo mediante `@use`.
+- `scss/utilities/_variables.scss`: paleta original, medidas y tokens.
+- `scss/utilities/_mixins.scss`: Flexbox, Grid, foco y media queries `mobile`, `tablet`, `desktop` con `@content`.
+- `scss/utilities/_extends.scss`: placeholder `%flex-centrado` usado mediante `@extend`.
+- `scss/base/`: reglas generales y tipografía.
+- `scss/layout/`: header, navegación, hero, secciones, áreas y footer.
+- `scss/components/`: botones, cards, carousel, formularios y demostraciones de animaciones.
 
-Esto significa que primero se escriben los estilos para pantallas pequeñas y luego se agregan cambios cuando aumenta el ancho disponible.
+**Responsive:** siguiendo el enfoque del profesor, los `@include m.mobile`, `@include m.tablet` y `@include m.desktop` están dentro del parcial correspondiente al elemento (no en un único `_responsive.scss`). Conservamos los cortes originales: 767, 768 y 1024 px. El diseño sigue siendo mobile-first.
 
-### Mobile
+## Respaldo del estilo anterior
 
-Los estilos base funcionan sin Media Query.
+`backup-style.css` es una copia íntegra del CSS anterior a la migración; **no se debe editar**. El archivo `styles/styles.css` es el CSS utilizado por las páginas y se reemplaza al compilar Sass. El respaldo sirve para comparar y recuperar los estilos si hiciera falta.
 
-Ejemplo:
+## Git y dependencias
 
-```css
-.cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-```
+`.gitignore` excluye `node_modules/` y los mapas `.css.map`. Se incluyen `package.json` (y `package-lock.json` cuando se genere con `npm install`), `scss/`, `styles/styles.css`, HTML e imágenes.
 
-Las tarjetas se muestran en una sola columna.
+## Nota de verificación
 
-### Tablet
-
-Desde `768px` se puede modificar la distribución:
-
-```css
-@media (min-width: 768px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-```
-
-### Desktop
-
-Desde `1024px` se realizan cambios más importantes en el layout:
-
-```css
-@media (min-width: 1024px) {
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-```
-
-También se adapta la sección de Grid Areas.
-
-En mobile:
-
-```css
-grid-template-areas:
-  "texto"
-  "imagen";
-```
-
-En desktop:
-
-```css
-grid-template-areas:
-  "texto imagen";
-```
-
-De esta manera, el contenido puede pasar de estar apilado a mostrarse en dos columnas sin modificar el HTML.
-
-El navbar también puede cambiar su distribución utilizando Flexbox:
-
-```css
-flex-direction: column;
-```
-
-en mobile y:
-
-```css
-flex-direction: row;
-```
-
-en desktop.
-
-## Paleta
-
-- Negro: `#0B0B0B`
-- Negro secundario: `#171717`
-- Verde lima: `#C7FF3D`
-- Blanco: `#FFFFFF`
-- Gris: `#C8C8C8`
-
-## Buenas prácticas aplicadas
-
-- HTML semántico: `header`, `nav`, `main`, `section`, `article`, `footer`.
-- Un único archivo CSS compartido por las 5 páginas.
-- Clases descriptivas y reutilizables.
-- Imágenes con atributo `alt`.
-- `meta viewport` en todas las páginas.
-- Contenedor con `max-width` para evitar textos demasiado anchos.
-- `object-fit` para mantener proporción de imágenes.
-- Uso de `fr` para crear columnas flexibles.
-- Uso de `gap` para separar elementos de Grid y Flexbox.
-- Mobile First como estrategia responsive.
-- Media Queries con `min-width`.
-- Breakpoints de referencia en `768px` y `1024px`.
-- Separación clara del CSS por secciones y comentarios.
-- El HTML se mantiene y CSS se encarga de reorganizar el contenido según el tamaño de pantalla.
-
-> Las imágenes se cargan desde Unsplash y necesitan conexión a Internet.
+El CSS que acompaña al ZIP reproduce exactamente el CSS original. Al instalar Sass ejecutá `npm run sass` para compilar el código SCSS refactorizado. Los HTML no necesitan vincular ningún archivo `.scss`.

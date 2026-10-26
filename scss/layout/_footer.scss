@@ -1,0 +1,52 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   13. FOOTER - FLEXBOX
+========================================== */
+
+.footer {
+  background-color: #070707;
+  border-top: 3px solid $color-acento;
+}
+
+/* Contenedor */
+
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+/* Textos */
+
+.footer p {
+  margin-bottom: 0;
+  color: #BDBDBD;
+}
+
+.footer-logo {
+  color: $color-blanco;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Enlace */
+
+.footer-link {
+  color: $color-acento;
+  font-weight: 700;
+}
+
+.footer-link:hover {
+  color: $color-blanco;
+}
+
+@include m.tablet {
+  .footer-contenido { flex-direction: row; align-items: center; }
+}

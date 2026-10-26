@@ -1,0 +1,143 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* Contenedor del formulario */
+
+.contacto {
+  max-width: 720px;
+}
+
+/* Formulario original con Flexbox */
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario label {
+  font-weight: 700;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: $espacio-14;
+
+  background-color: $color-secundario;
+  color: $color-blanco;
+
+  border: 1px solid #3A3A3A;
+  border-radius: $radio-sm;
+
+  font-family: inherit;
+  font-size: $espacio-16;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: $color-acento;
+  outline: 2px solid $color-acento;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   12. FORMULARIO POWER GYM
+========================================== */
+
+/* Contenedor */
+
+.formulario-power {
+  padding: 30px;
+  background-color: $color-secundario;
+  border: 1px solid $color-borde;
+  border-radius: 10px;
+}
+
+/* Etiquetas */
+
+.formulario-power .form-label {
+  color: $color-blanco;
+  font-weight: 600;
+}
+
+/* Inputs, textarea y select */
+
+.formulario-power .form-control,
+.formulario-power .form-select {
+  padding: 12px;
+
+  background-color: $color-principal;
+  color: $color-blanco;
+
+  border: 1px solid #444444;
+  border-radius: $radio-sm;
+}
+
+/* Placeholders */
+
+.formulario-power .form-control::placeholder {
+  color: $color-gris;
+}
+
+/* Estados de foco */
+
+.formulario-power .form-control:focus,
+.formulario-power .form-select:focus {
+  background-color: $color-principal;
+  color: $color-blanco;
+
+  border-color: $color-acento;
+  box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.2);
+}
+
+/* Opciones del select */
+
+.formulario-power .form-select option {
+  background-color: $color-principal;
+  color: $color-blanco;
+}
+
+/* Botón de envío */
+
+.boton-power {
+  padding: 12px $espacio-24;
+
+  background-color: $color-acento;
+  color: $color-principal;
+
+  border: none;
+  border-radius: $radio-sm;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boton-power:hover {
+  background-color: $color-acento-hover;
+  color: $color-principal;
+}
+
+.boton-power:focus-visible {
+  outline: 3px solid $color-blanco;
+  outline-offset: 3px;
+}
+
+/* Información de contacto */
+
+.datos-contacto {
+  margin-top: 30px;
+}
+
+.datos-contacto p {
+  margin-bottom: 22px;
+  color: $color-gris;
+}
+
+.datos-contacto strong {
+  color: $color-acento;
+}
+
+@include m.mobile {
+  .formulario-power { padding: 20px; }
+}

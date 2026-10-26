@@ -1,0 +1,68 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   4. HERO PRINCIPAL
+========================================== */
+
+.hero {
+  min-height: 620px;
+}
+
+.hero-contenido {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 150px;
+  padding-bottom: 120px;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  color: $color-acento;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1;
+}
+
+.hero h1 span {
+  color: $color-acento;
+}
+
+.hero-texto {
+  max-width: 600px;
+  margin-bottom: 32px;
+  color: $color-texto-suave;
+  font-size: 19px;
+}
+
+/* ==========================================
+   5. HERO DE PÁGINAS INTERNAS
+========================================== */
+
+.page-hero {
+  padding-top: 86px;
+  padding-bottom: 86px;
+  background-color: $color-secundario;
+  border-bottom: 4px solid $color-acento;
+}
+
+.page-hero h1 {
+  margin-bottom: 14px;
+  font-size: clamp(32px, 5vw, 52px);
+}
+
+.page-hero p {
+  color: $color-texto-intermedio;
+}
+
+@include m.mobile {
+  .hero { min-height: auto; }
+  .hero-contenido { padding-top: 90px; padding-bottom: 90px; }
+}

@@ -1,0 +1,29 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   7. SECCIONES GENERALES
+========================================== */
+
+.seccion {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.seccion-oscura {
+  background-color: $color-secundario;
+}
+
+.seccion h2 {
+  margin-bottom: 14px;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.intro {
+  margin-bottom: 36px;
+  color: $color-gris;
+}
+
+@include m.mobile {
+  .seccion { padding-top: 50px; padding-bottom: 50px; }
+}

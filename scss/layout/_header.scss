@@ -1,0 +1,10 @@
+@use "../utilities/variables" as *;
+
+/* ==========================================
+   3. HEADER Y NAVEGACIÓN
+========================================== */
+
+.header {
+  background-color: $color-secundario;
+  border-bottom: 1px solid $color-borde;
+}

@@ -1,0 +1,73 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   9. SECCIÓN CON GRID TEMPLATE AREAS
+========================================== */
+
+/*
+   MOBILE:
+   +------------------+
+   |      TEXTO       |
+   +------------------+
+   |      IMAGEN      |
+   +------------------+
+
+   DESKTOP:
+   +---------+--------+
+   |  TEXTO  | IMAGEN |
+   +---------+--------+
+*/
+
+.layout-areas {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  grid-template-areas:
+    "texto"
+    "imagen";
+
+  gap: 24px;
+}
+
+/* Área de texto */
+
+.area-texto {
+  grid-area: texto;
+}
+
+.area-texto p {
+  color: $color-gris;
+}
+
+/* Área de imagen */
+
+.area-imagen {
+  grid-area: imagen;
+}
+
+.area-imagen img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Nota destacada */
+
+.nota-clase {
+  margin-top: 24px;
+  padding-left: 16px;
+  border-left: 4px solid $color-acento;
+}
+
+@include m.mobile {
+  .area-imagen img { height: 280px; }
+}
+@include m.desktop {
+  .layout-areas {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "texto imagen";
+    align-items: center;
+  }
+}

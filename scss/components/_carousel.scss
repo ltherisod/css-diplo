@@ -1,0 +1,74 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* ==========================================
+   10. GALERÍA DE IMÁGENES
+========================================== */
+
+.galeria-gym {
+  padding: 70px 0;
+  background-color: $color-secundario;
+}
+
+/* Encabezado */
+
+.galeria-gym .etiqueta {
+  color: $color-acento;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.galeria-gym h2 {
+  color: $color-blanco;
+}
+
+.galeria-gym .texto {
+  color: $color-gris;
+}
+
+/* Carrusel */
+
+.carousel-power {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  border: 2px solid $color-acento;
+  border-radius: $espacio-16;
+
+  overflow: hidden;
+}
+
+/* Imágenes del carrusel */
+
+.imagen-carousel {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+/* Texto del carrusel */
+
+.carousel-power .carousel-caption {
+  padding: 12px;
+  background-color: rgba(11, 11, 11, 0.78);
+  border-radius: 8px;
+}
+
+.carousel-power .carousel-caption h3 {
+  color: $color-acento;
+}
+
+/* Indicadores */
+
+.carousel-power .carousel-indicators [data-bs-target] {
+  background-color: $color-acento;
+}
+
+/* ==========================================
+   11. FORMULARIO DE CONTACTO
+========================================== */
+
+@include m.mobile {
+  .galeria-gym { padding-top: 45px; padding-bottom: 45px; }
+  .imagen-carousel { height: 250px; }
+}

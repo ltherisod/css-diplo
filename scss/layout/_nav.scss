@@ -1,0 +1,61 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as m;
+
+/* Barra de navegación */
+
+.navbar-power {
+  background-color: $color-secundario;
+
+  --bs-navbar-color: #FFFFFF;
+  --bs-navbar-hover-color: #C7FF3D;
+  --bs-navbar-active-color: #C7FF3D;
+}
+
+/* Logo */
+
+.navbar-power .navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0;
+  margin-right: 24px;
+}
+
+.navbar-power .logo-img {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Enlaces de navegación */
+
+.navbar-power .nav-link {
+  color: $color-blanco;
+  font-weight: 600;
+}
+
+.navbar-power .nav-link {
+  &:hover,
+  &:focus,
+  &.active,
+  &.activo {
+    color: $color-acento;
+  }
+}
+
+/* Menú hamburguesa */
+
+.navbar-power .navbar-toggler {
+  border: 1px solid $color-acento;
+}
+
+.navbar-power .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.3);
+}
+
+// Adaptación mobile de la marca (sin alterar el breakpoint original).
+@include m.mobile {
+  .navbar-power .logo-img { width: 140px; }
+}
