@@ -1075,4 +1075,130 @@ p {
   font-size: 14px;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/* ==========================================
+   ESTILOS GENERALES
+
+   HTML: index.html
+   Sección: Laboratorio CSS moderno
+
+   Definimos los colores, fondos y espacios
+   generales del laboratorio.
+========================================== */
+.modulo7 {
+  padding: 3rem 0;
+  background-color: #0B0B0B;
+}
+.modulo7 .m7-panel {
+  padding: 1.5rem;
+  margin-block: 1rem;
+  background-color: #171717;
+  color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 0.75rem;
+}
+
+/* ==========================================
+   EJEMPLO DE ANIDAMIENTO
+
+   HTML: .m7-boton
+
+   Agrupamos los estilos de un elemento
+   y sus cambios al pasar el mouse.
+========================================== */
+.m7-boton {
+  background-color: #C7FF3D;
+  color: #0B0B0B;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.m7-boton:hover {
+  transform: translateY(-4px);
+}
+
+/* ==========================================
+   EJEMPLO DE SELECTORES
+
+   HTML: .m7-panel y .m7-mini-card
+
+   Agrupamos selectores con :is() y :where().
+   Con :has() diferenciamos las tarjetas
+   que contienen imágenes de las que no.
+========================================== */
+.m7-panel :is(h3, h4) {
+  color: #C7FF3D;
+  letter-spacing: 0.02em;
+}
+
+.modulo-7 :where(.m7-mini-card h4) {
+  color: #FFFFFF;
+}
+
+.m7-mini-card:has(img) {
+  border: 2px solid #C7FF3D;
+  background-color: #171717;
+}
+
+.m7-mini-card:not(:has(img)) {
+  padding: 1.25rem;
+  border-style: dashed;
+}
+
+/* ==========================================
+   EJEMPLO DE CAPAS
+
+   HTML: .m7-ejemplo-capas y .m7-chip
+
+   Usamos @layer para comparar prioridades
+   entre diferentes grupos de estilos.
+========================================== */
+@layer m7-base {
+  .modulo7 .m7-ejemplo-capas .m7-chip {
+    color: #FFFFFF;
+    background-color: #0B0B0B;
+  }
+}
+@layer m7-destacado {
+  .modulo-7 .m7-ejemplo-capas .m7-chip {
+    color: #0B0B0B;
+    background-color: #C7FF3D;
+  }
+}
+.m7-chip {
+  display: inline-block;
+  padding: 0.5rem 1 rem;
+}
+
+/* ==========================================
+   EJEMPLO DE COMPATIBILIDAD
+
+   HTML: .m7-soporte
+
+   Definimos una apariencia básica y después
+   comprobamos si el navegador permite
+   aplicar una mejora con @supports.
+========================================== */
+.m7-soporte {
+  background-color: #171717;
+  color: #FFFFFF;
+  padding: 1rem;
+}
+/* ==========================================
+   EJEMPLO DE CONTENEDORES
+
+   HTML: .m7-contenedor y .m7-card-adaptable
+
+   Preparamos dos contenedores de distinto
+   tamaño para trabajar con @container.
+========================================== */
+/* ==========================================
+   EJEMPLO DE TAMAÑOS
+
+   HTML: .m7-medidas
+
+   Trabajamos proporciones de imágenes
+   y medidas adaptables con aspect-ratio,
+   min(), max() y clamp().
+========================================== */

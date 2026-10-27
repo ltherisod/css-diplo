@@ -1,98 +1,93 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="Power Gym: entrenamiento de fuerza, funcional y planes para distintos objetivos." name="description" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Power Gym: entrenamiento de fuerza, funcional y planes para distintos objetivos.">
   <title>Power Gym | Inicio</title>
-  <!-- Bootstrap CSS primero; nuestros estilos después -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="styles/styles.css" rel="stylesheet" />
-  <!-- Animate.css: efectos ya preparados, cargados mediante CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- AOS: estilos de animación al hacer scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos compilados desde SCSS -->
+  <link href="styles/styles.css" rel="stylesheet">
+
+  <!-- Librerías de animación -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 <body>
 
-  <!-- ==========================================
-     HEADER - NAVEGACIÓN
-========================================== -->
-
+  <!-- HEADER Y NAVEGACIÓN -->
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-power">
       <div class="container">
 
-        <!-- Logo -->
         <a class="navbar-brand" href="./index.html">
-          <img src="https://i.postimg.cc/XJjzVPvX/Logotipo-POWER-GYM-Neon.png" alt="Logo de Power Gym"
-            class="logo-img" />
+          <img
+            src="https://i.postimg.cc/XJjzVPvX/Logotipo-POWER-GYM-Neon.png"
+            alt="Logo de Power Gym"
+            class="logo-img"
+          >
         </a>
 
-        <!-- Botón hamburguesa -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
-          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Enlaces -->
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-
             <li class="nav-item">
-              <a class="nav-link activo" href="./index.html" aria-current="page">
-                Inicio
-              </a>
+              <a class="nav-link activo" href="./index.html" aria-current="page">Inicio</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link" href="./pages/nosotros.html">
-                Sobre nosotros
-              </a>
+              <a class="nav-link" href="./pages/nosotros.html">Sobre nosotros</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link" href="./pages/actividades.html">
-                Actividades
-              </a>
+              <a class="nav-link" href="./pages/actividades.html">Actividades</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link" href="./pages/planes.html">
-                Planes
-              </a>
+              <a class="nav-link" href="./pages/planes.html">Planes</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link" href="./pages/contacto.html">
-                Contacto
-              </a>
+              <a class="nav-link" href="./pages/contacto.html">Contacto</a>
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   </header>
 
   <main>
+
+    <!-- PORTADA PRINCIPAL -->
     <section class="hero">
       <div class="hero-contenido contenedor">
         <p class="eyebrow">FUERZA · ENERGÍA · CONSTANCIA</p>
-        <h1>Entrená fuerte.<br /><span>Sentite mejor.</span></h1>
+        <h1>Entrená fuerte.<br><span>Sentite mejor.</span></h1>
+
         <p class="hero-texto">
           Un gimnasio pensado para acompañarte desde tu primer entrenamiento
           hasta tus próximos objetivos.
         </p>
+
         <a class="boton" href="pages/planes.html">Conocé nuestros planes</a>
       </div>
     </section>
 
-    <!-- ==========================================
-         MÓDULO 5 - TRANSFORMACIONES Y ANIMACIONES
-    ========================================== -->
+    <!-- MÓDULO 5: TRANSFORMACIONES -->
     <section class="seccion laboratorio-movimiento" aria-labelledby="titulo-movimiento">
       <div class="contenedor">
         <p class="eyebrow">MÓDULO 5 · CSS</p>
@@ -103,6 +98,7 @@
 
         <!-- Transformaciones 2D -->
         <div class="demo-grid">
+
           <article class="demo-panel">
             <h3>Translate</h3>
             <p>Desplazamiento en los ejes X e Y.</p>
@@ -134,10 +130,12 @@
               <div class="demo-caja caja-skew">Inclinar</div>
             </div>
           </article>
+
         </div>
 
-        <!-- Combinación de transformaciones y origen -->
+        <!-- Transformaciones combinadas -->
         <div class="demo-grid demo-grid-secundaria">
+
           <article class="demo-panel">
             <h3>Varias transformaciones</h3>
             <p>El orden cambia el resultado.</p>
@@ -153,6 +151,7 @@
               <div class="demo-caja caja-origen">Origen</div>
             </div>
           </article>
+
         </div>
 
         <!-- Transformaciones 3D -->
@@ -161,120 +160,161 @@
           <div class="demo-caja caja-3d">Giro 3D</div>
         </div>
 
-        <!-- Transición asociada al estado hover -->
+        <!-- Transiciones -->
         <h3 class="demo-subtitulo">Transición con hover</h3>
         <p class="intro">Acercá el mouse a la tarjeta para observar el cambio.</p>
+
         <div class="demo-tarjeta tarjeta-hover">
           <h3>Entrená a tu ritmo</h3>
           <p>Una tarjeta para probar transform y transition.</p>
         </div>
 
-        <!-- Animación con keyframes -->
+        <!-- Keyframes -->
         <h3 class="demo-subtitulo">Primera animación con keyframes</h3>
         <div class="demo-pista">
           <div class="demo-caja caja-animada">Animar</div>
         </div>
+
       </div>
     </section>
 
-
-    <!-- ========================================================
-         MÓDULO 5 - CLASE DEL JUEVES
-         Los ejemplos del martes permanecen en la sección anterior.
-         Cada demostración tiene clases independientes para poder
-         modificarla sin alterar el resto de Power Gym.
-    ========================================================= -->
+    <!-- MÓDULO 5: ANIMACIONES Y GRADIENTES -->
     <section class="seccion laboratorio-jueves" id="clase-jueves">
       <div class="contenedor">
         <p class="eyebrow">MÓDULO 5 · SEGUNDA CLASE</p>
         <h2>Animaciones, gradientes y buenas prácticas</h2>
-        <p class="intro">Seguimos trabajando con CSS: controlamos el movimiento, creamos fondos degradados y probamos librerías.</p>
+        <p class="intro">
+          Seguimos trabajando con CSS: controlamos el movimiento,
+          creamos fondos degradados y probamos librerías.
+        </p>
 
-        <!-- 1. CONTROL DE ANIMATION -->
+        <!-- Propiedades de animation -->
         <h3 class="jueves-subtitulo">1. Propiedades de animation</h3>
+
         <div class="jueves-grid">
+
           <article class="jueves-panel">
             <h4>Delay: esperar para comenzar</h4>
             <p>Vamos a probar un retraso de inicio.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-delay">Delay</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-delay">Delay</div>
+            </div>
           </article>
+
           <article class="jueves-panel">
             <h4>Direction: alternar el sentido</h4>
             <p>Vamos a cambiar la dirección del movimiento.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-direction">Alternate</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-direction">Alternate</div>
+            </div>
           </article>
+
           <article class="jueves-panel">
             <h4>Fill-mode: conservar el final</h4>
             <p>Vamos a ver qué pasa cuando la animación termina.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-fill">Forwards</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-fill">Forwards</div>
+            </div>
           </article>
+
           <article class="jueves-panel">
             <h4>Play-state: pausar con hover</h4>
             <p>Vamos a detener la animación al pasar el mouse.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-pausa">Pausar</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-pausa">Pausar</div>
+            </div>
           </article>
+
         </div>
 
-        <!-- 2. TRES TIPOS DE GRADIENTES -->
+        <!-- Gradientes -->
         <h3 class="jueves-subtitulo">2. Fondos con gradientes</h3>
+
         <div class="jueves-grid jueves-grid-tres">
+
           <article class="jueves-panel">
             <h4>Linear-gradient</h4>
             <div class="jueves-gradiente jueves-linear" aria-label="Ejemplo de degradado lineal"></div>
             <p>El color cambia a lo largo de una línea.</p>
           </article>
+
           <article class="jueves-panel">
             <h4>Radial-gradient</h4>
             <div class="jueves-gradiente jueves-radial" aria-label="Ejemplo de degradado radial"></div>
             <p>El color se expande desde el centro.</p>
           </article>
+
           <article class="jueves-panel">
             <h4>Conic-gradient</h4>
             <div class="jueves-gradiente jueves-conic" aria-label="Ejemplo de degradado cónico"></div>
             <p>El color gira alrededor de un punto.</p>
           </article>
+
         </div>
 
-        <!-- 3. FONDO DEGRADADO ANIMADO -->
+        <!-- Gradiente animado -->
         <h3 class="jueves-subtitulo">3. Gradiente animado</h3>
+
         <div class="jueves-banner-gradiente">
           <h4>ENERGÍA EN MOVIMIENTO</h4>
           <p>Vamos a generar movimiento con background-position.</p>
         </div>
 
-        <!-- 4. RENDIMIENTO: OPACITY + TRANSFORM -->
+        <!-- Rendimiento -->
         <h3 class="jueves-subtitulo">4. Animar con criterio</h3>
+
         <div class="jueves-grid">
+
           <article class="jueves-panel">
             <h4>Transform: mover</h4>
             <p>Para desplazar una caja conviene animar transform en lugar de left.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-rendimiento">Mover</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-rendimiento">Mover</div>
+            </div>
           </article>
+
           <article class="jueves-panel">
             <h4>Opacity: aparecer</h4>
             <p>Opacity cambia la transparencia sin cambiar el espacio ocupado.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-aparecer">Aparecer</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-aparecer">Aparecer</div>
+            </div>
           </article>
+
         </div>
 
-        <!-- 5. LIBRERÍAS: ANIMATE.CSS Y AOS -->
+        <!-- Librerías externas -->
         <h3 class="jueves-subtitulo">5. Librerías de animación</h3>
+
         <div class="jueves-grid">
+
           <article class="jueves-panel">
             <h4>Animate.css</h4>
             <p>Vamos a aplicar clases de Animate.css a esta caja.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque jueves-libreria animate__animated animate__pulse animate__infinite animate__slow">Animate.css</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque jueves-libreria animate__animated animate__pulse animate__infinite animate__slow">
+                Animate.css
+              </div>
+            </div>
           </article>
+
           <article class="jueves-panel jueves-aos" data-aos="fade-up" data-aos-duration="900">
             <h4>AOS: Animate On Scroll</h4>
             <p>Vamos a activar un efecto al hacer scroll.</p>
-            <div class="jueves-escenario"><div class="jueves-bloque">AOS</div></div>
+            <div class="jueves-escenario">
+              <div class="jueves-bloque">AOS</div>
+            </div>
           </article>
+
         </div>
-        <p class="jueves-nota">Accesibilidad: también vamos a respetar la preferencia de reducir movimiento.</p>
+
+        <p class="jueves-nota">
+          Accesibilidad: también vamos a respetar la preferencia de reducir movimiento.
+        </p>
       </div>
     </section>
 
+    <!-- ACTIVIDADES DESTACADAS: GRID -->
     <section class="seccion">
       <div class="contenedor">
         <p class="eyebrow">ENTRENÁ A TU MANERA</p>
@@ -282,145 +322,288 @@
         <p class="intro">
           Estas tarjetas van a ser nuestro ejemplo principal para aprender CSS Grid.
         </p>
+
         <div class="cards-grid">
+
           <article class="card">
-            <img alt="Persona entrenando musculación con pesas"
-              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <img
+              alt="Persona entrenando musculación con pesas"
+              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            >
             <div class="card-contenido">
               <h3>Musculación</h3>
               <p>Entrenamiento de fuerza con máquinas, barras y mancuernas.</p>
             </div>
           </article>
+
           <article class="card">
-            <img alt="Persona realizando entrenamiento funcional"
-              src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <img
+              alt="Persona realizando entrenamiento funcional"
+              src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            >
             <div class="card-contenido">
               <h3>Funcional</h3>
               <p>Clases dinámicas para trabajar fuerza, coordinación y resistencia.</p>
             </div>
           </article>
+
           <article class="card card-destacada">
-            <img alt="Entrenamiento personalizado en gimnasio"
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <img
+              alt="Entrenamiento personalizado en gimnasio"
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            >
             <div class="card-contenido">
               <h3>Personalizado</h3>
               <p>Rutinas adaptadas a tus objetivos con acompañamiento profesional.</p>
             </div>
           </article>
+
           <article class="card">
-            <img alt="Persona levantando pesas"
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <img
+              alt="Persona levantando pesas"
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            >
             <div class="card-contenido">
               <h3>Fuerza</h3>
               <p>Trabajo progresivo para mejorar técnica y rendimiento.</p>
             </div>
           </article>
+
           <article class="card">
-            <img alt="Clase grupal dentro de un gimnasio"
-              src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <img
+              alt="Clase grupal dentro de un gimnasio"
+              src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            >
             <div class="card-contenido">
               <h3>Clases grupales</h3>
               <p>Entrená acompañado y mantené la motivación semana a semana.</p>
             </div>
           </article>
+
           <article class="card">
-            <img alt="Zona de entrenamiento de gimnasio"
-              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+            <img
+              alt="Zona de entrenamiento de gimnasio"
+              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            >
             <div class="card-contenido">
               <h3>Open Gym</h3>
               <p>Usá el espacio y el equipamiento para realizar tu propia rutina.</p>
             </div>
           </article>
+
         </div>
       </div>
     </section>
+
+    <!-- GRID AREAS Y MEDIA QUERIES -->
     <section class="seccion seccion-oscura">
       <div class="contenedor layout-areas">
+
         <div class="area-texto">
           <p class="eyebrow">MÁS QUE UN GIMNASIO</p>
           <h2>Un espacio preparado para vos</h2>
+
           <p>
             Entrená con equipamiento completo, profesionales que te acompañan
             y un ambiente que te impulsa a seguir.
           </p>
+
           <p class="nota-clase">
             Esta sección la vamos a usar para practicar
             <strong>Grid Areas</strong> junto con <strong>Media Queries</strong>.
           </p>
         </div>
+
         <div class="area-imagen">
-          <img alt="Equipamiento de Power Gym"
-            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+          <img
+            alt="Equipamiento de Power Gym"
+            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          >
         </div>
+
       </div>
     </section>
-    <!-- Componente Bootstrap: carrusel (se conserva CSS Grid arriba) -->
+
+    <!-- CARRUSEL DE BOOTSTRAP -->
     <section class="galeria-gym">
       <div class="container">
         <div class="encabezado-seccion">
           <p class="etiqueta">GALERÍA</p>
           <h2 class="titulo-seccion">Conocé nuestro espacio</h2>
           <p class="texto">
-            Recorré algunas de las áreas y actividades que vas a encontrar en
-            Power Gym.
+            Recorré algunas de las áreas y actividades que vas a encontrar en Power Gym.
           </p>
         </div>
+
         <div class="carousel slide carousel-power" data-bs-ride="carousel" id="carouselPowerGym">
-          <!-- Indicadores -->
+
           <div class="carousel-indicators">
-            <button aria-current="true" aria-label="Imagen 1" class="active" data-bs-slide-to="0"
-              data-bs-target="#carouselPowerGym" type="button"></button>
-            <button aria-label="Imagen 2" data-bs-slide-to="1" data-bs-target="#carouselPowerGym"
-              type="button"></button>
-            <button aria-label="Imagen 3" data-bs-slide-to="2" data-bs-target="#carouselPowerGym"
-              type="button"></button>
+            <button type="button" data-bs-target="#carouselPowerGym" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+            <button type="button" data-bs-target="#carouselPowerGym" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+            <button type="button" data-bs-target="#carouselPowerGym" data-bs-slide-to="2" aria-label="Imagen 3"></button>
           </div>
-          <!-- Slides -->
+
           <div class="carousel-inner">
+
             <div class="carousel-item active">
-              <img alt="Sala de musculación" class="d-block w-100 imagen-carousel"
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <img
+                class="d-block w-100 imagen-carousel"
+                alt="Sala de musculación"
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+              >
               <div class="carousel-caption d-none d-md-block">
                 <h3>Sala de musculación</h3>
                 <p>Equipamiento para trabajar fuerza y resistencia.</p>
               </div>
-              </img>
             </div>
+
             <div class="carousel-item">
-              <img alt="Entrenamiento con pesas" class="d-block w-100 imagen-carousel"
-                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <img
+                class="d-block w-100 imagen-carousel"
+                alt="Entrenamiento con pesas"
+                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+              >
               <div class="carousel-caption d-none d-md-block">
                 <h3>Entrenamiento con pesas</h3>
                 <p>Sectores preparados para diferentes objetivos.</p>
               </div>
-              </img>
             </div>
+
             <div class="carousel-item">
-              <img alt="Entrenamiento funcional" class="d-block w-100 imagen-carousel"
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80">
+              <img
+                class="d-block w-100 imagen-carousel"
+                alt="Entrenamiento funcional"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+              >
               <div class="carousel-caption d-none d-md-block">
                 <h3>Clases y actividades</h3>
-                <p>
-                  Entrenamientos individuales y grupales para todos los
-                  niveles.
-                </p>
+                <p>Entrenamientos individuales y grupales para todos los niveles.</p>
               </div>
-              </img>
             </div>
+
           </div>
-          <!-- Controles -->
-          <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselPowerGym" type="button">
-            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden"> Anterior </span>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselPowerGym" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
           </button>
-          <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselPowerGym" type="button">
-            <span aria-hidden="true" class="carousel-control-next-icon"></span>
-            <span class="visually-hidden"> Siguiente </span>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselPowerGym" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
           </button>
+
         </div>
       </div>
     </section>
+
+    <!-- MÓDULO 7: CSS MODERNO -->
+    <section class="seccion modulo7" id="laboratorio-css-moderno" aria-labelledby="m7-titulo">
+      <div class="contenedor">
+
+        <p class="eyebrow">MÓDULO 7 · CSS MODERNO</p>
+        <h2 id="m7-titulo">Laboratorio CSS moderno</h2>
+        <p class="intro">Ejemplos prácticos en Power Gym.</p>
+
+        <!-- EJEMPLO DE ANIDAMIENTO:
+             Agrupar los estilos de un elemento y sus estados. -->
+        <div class="m7-panel">
+          <h3>Anidamiento</h3>
+          <a class="m7-boton" href="#m7-selectores">Explorar ejercicios</a>
+        </div>
+
+        <!-- EJEMPLO DE SELECTORES:
+             Comparar tarjetas con y sin imagen y agrupar elementos. -->
+        <div class="m7-panel" id="m7-selectores">
+          <h3>Selectores</h3>
+
+          <div class="m7-demo-grid">
+            <article class="m7-mini-card">
+              <img
+                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+                alt="Atleta entrenando con pesas"
+              >
+              <h4>Musculación</h4>
+              <p>Entrenamiento de fuerza.</p>
+            </article>
+
+            <article class="m7-mini-card">
+              <h4>Seguimiento</h4>
+              <p>Asesoramiento personalizado.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- EJEMPLO DE CAPAS:
+             Comparar la prioridad de diferentes reglas CSS. -->
+        <div class="m7-panel">
+          <h3>Capas</h3>
+
+          <div class="m7-ejemplo-capas">
+            <span class="m7-chip">PLAN POWER</span>
+          </div>
+        </div>
+
+        <!-- EJEMPLO DE COMPATIBILIDAD:
+             Crear una apariencia básica y una mejora opcional. -->
+        <div class="m7-panel">
+          <h3>Compatibilidad</h3>
+          <div class="m7-soporte">Entrená a tu ritmo</div>
+        </div>
+
+        <!-- EJEMPLO DE CONTENEDORES:
+             Comparar la misma tarjeta en espacios de distinto ancho. -->
+        <div class="m7-panel">
+          <h3>Contenedores</h3>
+
+          <div class="m7-contenedores">
+
+            <div class="m7-contenedor m7-contenedor-estrecho">
+              <article class="m7-card-adaptable">
+                <span class="m7-icono" aria-hidden="true">🏋️</span>
+                <div>
+                  <h4>Plan inicial</h4>
+                  <p>Entrenamiento inicial.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="m7-contenedor m7-contenedor-ancho">
+              <article class="m7-card-adaptable">
+                <span class="m7-icono" aria-hidden="true">🏋️</span>
+                <div>
+                  <h4>Plan inicial</h4>
+                  <p>Entrenamiento inicial.</p>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EJEMPLO DE TAMAÑOS:
+             Trabajar proporciones y medidas adaptables. -->
+        <div class="m7-panel">
+          <h3>Medidas</h3>
+
+          <div class="m7-medidas">
+            <img
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+              alt="Entrenamiento de fuerza"
+            >
+            <div>
+              <h4>Fuerza para todos</h4>
+              <p>Entrená a tu manera.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-contenido contenedor">
       <div>
@@ -430,17 +613,14 @@
       <a class="footer-link" href="pages/contacto.html">Consultanos</a>
     </div>
   </footer>
-  <!-- Bundle JS de Bootstrap: menú hamburguesa y carrusel -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS necesita su script y una inicialización para detectar el scroll. -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Si no se cargó la librería (por ejemplo, sin conexión),
-    // el sitio continúa funcionando normalmente.
     if (typeof AOS !== "undefined") {
       AOS.init({ once: false, duration: 900 });
     }
   </script>
-</body>
 
+</body>
 </html>

@@ -39,3 +39,8 @@ El CSS compilado queda en `styles/styles.css`, que es el archivo enlazado en los
 ## Nota de verificación
 
 El CSS que acompaña al ZIP reproduce exactamente el CSS original. Al instalar Sass ejecutá `npm run sass` para compilar el código SCSS refactorizado. Los HTML no necesitan vincular ningún archivo `.scss`.
+
+
+## Módulo 7 - clase del martes
+
+Laboratorio añadido al final de `index.html` con ancla `#laboratorio-css-moderno`. Los ejemplos se trabajan en `scss/components/_modulo7.scss`, marcados por número de PPT. Se conservó el resto del proyecto. Ejecutar `npm install` y `npm run sass:watch` para regenerar `styles/styles.css`. El CSS incluido en el ZIP es el previo a la práctica hasta que se compile.

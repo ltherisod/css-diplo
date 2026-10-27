@@ -1,0 +1,202 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+
+/* ==========================================
+   ESTILOS GENERALES
+
+   HTML: index.html
+   Sección: Laboratorio CSS moderno
+
+   Definimos los colores, fondos y espacios
+   generales del laboratorio.
+========================================== */
+
+.modulo7 {
+   padding:3rem 0; //separo laboratorio del resto
+   background-color: v.$color-principal; //uso la variable prinicipal de mi paleta
+  .m7-panel {
+   padding: 1.5rem;
+   margin-block: 1rem;
+   background-color: v.$color-secundario; //otro color de mi paleta sass
+   color: v.$color-blanco;
+   border: 1px solid v.$color-borde;
+   border-radius: 0.75rem;
+  }
+
+}
+
+
+/* ==========================================
+   EJEMPLO DE ANIDAMIENTO
+
+   HTML: .m7-boton
+
+   Agrupamos los estilos de un elemento
+   y sus cambios al pasar el mouse.
+========================================== */
+
+.m7-boton {
+   background-color:v.$color-acento;
+   color: v.$color-principal;
+   padding: 0.75rem 1rem;
+   border-radius: 0.5rem;
+   text-decoration:none;
+   display: inline-block;
+   transition: transform 0.3s ease;
+  &:hover {
+   transform: translateY(-4px);
+  }
+
+}
+
+
+/* ==========================================
+   EJEMPLO DE SELECTORES
+
+   HTML: .m7-panel y .m7-mini-card
+
+   Agrupamos selectores con :is() y :where().
+   Con :has() diferenciamos las tarjetas
+   que contienen imágenes de las que no.
+========================================== */
+//agrupa alternativas
+.m7-panel :is(h3, h4) {//mayor prioridad
+   color: v.$color-acento;
+   letter-spacing: 0.02em;
+
+}
+.modulo-7 :where(.m7-mini-card h4){ //aplica una basae baja de especificidad -menor prioridad
+   color: v.$color-blanco;
+
+}
+
+.m7-demo-grid {
+
+}
+
+.m7-mini-card:has(img){ //MIRA EL CONTEWNIDO DE LA TARJETA si tiene img
+   border:2px solid v.$color-acento;
+   background-color: v.$color-secundario;
+
+}
+.m7-mini-card:not(:has(img)){ //MIRA EL CONTEWNIDO DE LA TARJETA niego no tiene img
+ padding: 1.25rem;
+ border-style:dashed;
+
+}
+
+
+/* ==========================================
+   EJEMPLO DE CAPAS
+
+   HTML: .m7-ejemplo-capas y .m7-chip
+
+   Usamos @layer para comparar prioridades
+   entre diferentes grupos de estilos.
+========================================== */
+@layer m7-base { //abre una capa de estilos basicos
+   .modulo7 .m7-ejemplo-capas .m7-chip{ //selecciono lo que quiero modificar
+      color: v.$color-blanco; //capa base color tecto 
+      background-color: v.$color-principal; //capa base color fonfo
+   }
+}
+
+
+@layer m7-destacado {
+   .modulo-7 .m7-ejemplo-capas .m7-chip{
+      color: v.$color-principal;
+      background-color: v.$color-acento;
+   }
+}
+.m7-ejemplo-capas {
+
+}
+
+.m7-chip {
+   display:inline-block;
+   padding:0.5rem 1 rem;
+
+}
+
+
+/* ==========================================
+   EJEMPLO DE COMPATIBILIDAD
+
+   HTML: .m7-soporte
+
+   Definimos una apariencia básica y después
+   comprobamos si el navegador permite
+   aplicar una mejora con @supports.
+========================================== */
+
+.m7-soporte {
+   background-color: v.$color-secundario;
+   color:v.$color-blanco;
+   padding:1rem;
+   @supports (background: linear-gradient(90deg, #000, #fff)){
+      
+   } //pregundo si el navegador conoce esto
+
+}
+
+
+/* ==========================================
+   EJEMPLO DE CONTENEDORES
+
+   HTML: .m7-contenedor y .m7-card-adaptable
+
+   Preparamos dos contenedores de distinto
+   tamaño para trabajar con @container.
+========================================== */
+
+.m7-contenedores {
+
+}
+
+.m7-contenedor {
+
+}
+
+.m7-contenedor-estrecho {
+
+}
+
+.m7-contenedor-ancho {
+
+}
+
+.m7-card-adaptable { //m7-card-adaptable__titulo
+   // &__titulo {
+   //    font-weight: 800;
+   // }
+
+}
+
+.m7-icono {
+
+}
+
+
+/* ==========================================
+   EJEMPLO DE TAMAÑOS
+
+   HTML: .m7-medidas
+
+   Trabajamos proporciones de imágenes
+   y medidas adaptables con aspect-ratio,
+   min(), max() y clamp().
+========================================== */
+
+.m7-medidas {
+
+}
+
+.m7-medidas img {
+
+}
+
+.m7-medidas h4 {
+
+}
