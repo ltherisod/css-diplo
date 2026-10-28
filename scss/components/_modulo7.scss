@@ -1,202 +1,264 @@
 
 @use "../utilities/variables" as v;
-@use "../utilities/mixins" as m;
-
 
 /* ==========================================
-   ESTILOS GENERALES
+   MÓDULO 7 - CSS MODERNO
+   POWER GYM
+========================================== */
+
+/* ==========================================
+   1. ESTILOS GENERALES
 
    HTML: index.html
    Sección: Laboratorio CSS moderno
-
-   Definimos los colores, fondos y espacios
-   generales del laboratorio.
 ========================================== */
 
 .modulo7 {
-   padding:3rem 0; //separo laboratorio del resto
-   background-color: v.$color-principal; //uso la variable prinicipal de mi paleta
-  .m7-panel {
-   padding: 1.5rem;
-   margin-block: 1rem;
-   background-color: v.$color-secundario; //otro color de mi paleta sass
-   color: v.$color-blanco;
-   border: 1px solid v.$color-borde;
-   border-radius: 0.75rem;
-  }
+  padding: 3rem 0;
+  background-color: v.$color-principal;
 
+  .m7-panel {
+    padding: 1.5rem;
+    margin-block: 1rem;
+    background-color: v.$color-secundario;
+    color: v.$color-blanco;
+    border: 1px solid v.$color-borde;
+    border-radius: 0.75rem;
+  }
 }
 
-
 /* ==========================================
-   EJEMPLO DE ANIDAMIENTO
-
-   HTML: .m7-boton
+   2. ANIDAMIENTO
 
    Agrupamos los estilos de un elemento
    y sus cambios al pasar el mouse.
 ========================================== */
 
 .m7-boton {
-   background-color:v.$color-acento;
-   color: v.$color-principal;
-   padding: 0.75rem 1rem;
-   border-radius: 0.5rem;
-   text-decoration:none;
-   display: inline-block;
-   transition: transform 0.3s ease;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: v.$color-acento;
+  color: v.$color-principal;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+
   &:hover {
-   transform: translateY(-4px);
+    transform: translateY(-4px);
   }
-
 }
-
 
 /* ==========================================
-   EJEMPLO DE SELECTORES
+   3. SELECTORES MODERNOS
 
-   HTML: .m7-panel y .m7-mini-card
-
-   Agrupamos selectores con :is() y :where().
-   Con :has() diferenciamos las tarjetas
-   que contienen imágenes de las que no.
+   :is() - :where() - :has()
 ========================================== */
-//agrupa alternativas
-.m7-panel :is(h3, h4) {//mayor prioridad
-   color: v.$color-acento;
-   letter-spacing: 0.02em;
 
-}
-.modulo-7 :where(.m7-mini-card h4){ //aplica una basae baja de especificidad -menor prioridad
-   color: v.$color-blanco;
+/* :is() agrupa diferentes selectores */
 
+.m7-panel :is(h3, h4) {
+  color: v.$color-acento;
+  letter-spacing: 0.02em;
 }
+
+/* :where() tiene especificidad cero */
+
+.modulo7 :where(.m7-mini-card h4) {
+  color: v.$color-blanco;
+}
+
+/* Distribución de las tarjetas */
 
 .m7-demo-grid {
-
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 250px), 1fr)
+  );
+  gap: 1rem;
 }
 
-.m7-mini-card:has(img){ //MIRA EL CONTEWNIDO DE LA TARJETA si tiene img
-   border:2px solid v.$color-acento;
-   background-color: v.$color-secundario;
+/* Estilos generales de las tarjetas */
 
-}
-.m7-mini-card:not(:has(img)){ //MIRA EL CONTEWNIDO DE LA TARJETA niego no tiene img
- padding: 1.25rem;
- border-style:dashed;
-
+.m7-mini-card {
+  padding: 1.25rem;
+  background-color: v.$color-principal;
+  border: 2px solid v.$color-borde;
+  border-radius: 0.75rem;
 }
 
+.m7-mini-card img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* :has() comprueba si contiene una imagen */
+
+.m7-mini-card:has(img) {
+  border-color: v.$color-acento;
+  background-color: v.$color-secundario;
+}
+
+/* :not() niega la condición */
+
+.m7-mini-card:not(:has(img)) {
+  border-style: dashed;
+}
 
 /* ==========================================
-   EJEMPLO DE CAPAS
+   4. CAPAS - @layer
 
-   HTML: .m7-ejemplo-capas y .m7-chip
-
-   Usamos @layer para comparar prioridades
-   entre diferentes grupos de estilos.
+   Permite organizar la prioridad
+   de diferentes grupos de estilos.
 ========================================== */
-@layer m7-base { //abre una capa de estilos basicos
-   .modulo7 .m7-ejemplo-capas .m7-chip{ //selecciono lo que quiero modificar
-      color: v.$color-blanco; //capa base color tecto 
-      background-color: v.$color-principal; //capa base color fonfo
-   }
+
+/* Declaramos el orden de las capas */
+
+@layer m7-base, m7-destacado;
+
+/* Primera capa */
+
+@layer m7-base {
+  .modulo7 .m7-ejemplo-capas .m7-chip {
+    color: v.$color-blanco;
+    background-color: v.$color-principal;
+  }
 }
 
+/* Segunda capa: mayor prioridad */
 
 @layer m7-destacado {
-   .modulo-7 .m7-ejemplo-capas .m7-chip{
-      color: v.$color-principal;
-      background-color: v.$color-acento;
-   }
+  .modulo7 .m7-ejemplo-capas .m7-chip {
+    color: v.$color-principal;
+    background-color: v.$color-acento;
+  }
 }
-.m7-ejemplo-capas {
 
+/* Estilos generales del ejemplo */
+
+.m7-ejemplo-capas {
+  padding: 1rem;
 }
 
 .m7-chip {
-   display:inline-block;
-   padding:0.5rem 1 rem;
-
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
 }
 
-
 /* ==========================================
-   EJEMPLO DE COMPATIBILIDAD
+   5. COMPATIBILIDAD - @supports
 
-   HTML: .m7-soporte
-
-   Definimos una apariencia básica y después
-   comprobamos si el navegador permite
-   aplicar una mejora con @supports.
+   Aplicamos un estilo básico y después
+   comprobamos si el navegador admite
+   una propiedad CSS.
 ========================================== */
+
+/* Estilo base */
 
 .m7-soporte {
-   background-color: v.$color-secundario;
-   color:v.$color-blanco;
-   padding:1rem;
-   @supports (background: linear-gradient(90deg, #000, #fff)){
-      
-   } //pregundo si el navegador conoce esto
-
+  padding: 1rem;
+  background-color: v.$color-secundario;
+  color: v.$color-blanco;
+  border: 1px solid v.$color-borde;
+  border-radius: 0.5rem;
 }
+
+/* Si el navegador admite linear-gradient */
+
+@supports (background: linear-gradient(90deg, #000, #fff)) {
+  .m7-soporte {
+    background: linear-gradient(
+      90deg,
+      v.$color-principal,
+      v.$color-acento
+    );
+    color: v.$color-blanco;
+  }
+}
+
+/* ==========================================
+   HASTA ACÁ LLEGAMOS EN LA CLASE ANTERIOR
+========================================== */
 
 
 /* ==========================================
-   EJEMPLO DE CONTENEDORES
+   6. CONTENEDORES
+   PENDIENTE PARA LA PRÓXIMA CLASE
 
-   HTML: .m7-contenedor y .m7-card-adaptable
-
-   Preparamos dos contenedores de distinto
-   tamaño para trabajar con @container.
+   Vamos a trabajar con @container.
 ========================================== */
 
-.m7-contenedores {
+/* Estructura visual básica */
 
+.m7-contenedores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .m7-contenedor {
-
+  padding: 1rem;
+  border: 1px solid v.$color-borde;
+  border-radius: 0.5rem;
 }
 
 .m7-contenedor-estrecho {
-
+  width: 100%;
+  max-width: 250px;
 }
 
 .m7-contenedor-ancho {
-
+  width: 100%;
+  max-width: 550px;
 }
 
-.m7-card-adaptable { //m7-card-adaptable__titulo
-   // &__titulo {
-   //    font-weight: 800;
-   // }
-
+.m7-card-adaptable {
+  padding: 1rem;
+  background-color: v.$color-principal;
+  border-radius: 0.5rem;
 }
 
 .m7-icono {
-
+  font-size: 2rem;
 }
+
+/* Acá vamos a trabajar @container */
 
 
 /* ==========================================
-   EJEMPLO DE TAMAÑOS
+   7. MEDIDAS MODERNAS
+   PENDIENTE PARA LA PRÓXIMA CLASE
 
-   HTML: .m7-medidas
-
-   Trabajamos proporciones de imágenes
-   y medidas adaptables con aspect-ratio,
-   min(), max() y clamp().
+   aspect-ratio
+   min()
+   max()
+   clamp()
 ========================================== */
 
-.m7-medidas {
+/* Estructura visual básica */
 
+.m7-medidas {
+  padding: 1rem;
+  background-color: v.$color-principal;
+  border-radius: 0.5rem;
 }
 
 .m7-medidas img {
-
+  display: block;
+  width: 100%;
+  max-width: 400px;
 }
 
 .m7-medidas h4 {
-
+  color: v.$color-acento;
+  margin-top: 1rem;
 }
+
+/* Acá vamos a trabajar las medidas modernas */
+
