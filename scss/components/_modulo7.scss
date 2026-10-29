@@ -202,10 +202,16 @@
   gap: 1rem;
 }
 
+//padre de las cards
+
 .m7-contenedor {
   padding: 1rem;
   border: 1px solid v.$color-borde;
   border-radius: 0.5rem;
+//   habilitar consultas de ancho con inline-size
+   container-type: inline-size;
+   // le doy un nombre al contenedor para identificarlo
+   container-name: tarjeta-gym;
 }
 
 .m7-contenedor-estrecho {
@@ -219,9 +225,13 @@
 }
 
 .m7-card-adaptable {
-  padding: 1rem;
-  background-color: v.$color-principal;
-  border-radius: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap:1rem;
+   padding: 1rem;
+   background-color: v.$color-principal;
+   border-radius: 0.5rem;
 }
 
 .m7-icono {
@@ -229,6 +239,21 @@
 }
 
 /* Acá vamos a trabajar @container */
+// si el contenedor tarjeta-gym tiene por lo menos 400px de ancho, quiero modificar la tarjeta
+
+@container tarjeta-gym (min-width: 400px) {
+   .m7-card-adaptable{
+      flex-direction: row;
+      align-items: center;
+      gap:1.5rem;
+   }
+
+   .m7-icono{
+      font-size: 3rem;
+   }
+}
+
+// CQI: representa el 1% del ancho del contenedor de la consulta 
 
 
 /* ==========================================
@@ -253,12 +278,111 @@
   display: block;
   width: 100%;
   max-width: 400px;
+  aspect-ratio:16/9; //conservar una proporcion de 16:9
+  object-fit: cover; 
+  border-radius: 0.5rem;
+
 }
 
-.m7-medidas h4 {
-  color: v.$color-acento;
-  margin-top: 1rem;
-}
+
 
 /* Acá vamos a trabajar las medidas modernas */
 
+// MIN() VALOR MAS PEQUENO
+// EN PANTALLAS CHICAS SE ADAPTA Y EN PANTALLAS GRANDES NO PASA DE 500PX
+
+
+.m7-medidas {
+   width: min(100%,500px);
+}
+
+// max()
+// ELEGI EL VALOR MAS GRANDE 
+// el padding ytiene como minimo 1rem y su 3vw supera ese valor, crece 
+// 3vw = 3% del ancho de la venta del navegador
+.m7-medidas {
+  padding: max(1rem, 3vw);
+}
+
+//CLAMP() EL TEXTO PUEDE CRECER CON LA PANTALLA PERO 
+// el texto nunca va a ser menor de 1.25rem ni mayor de 2 rem
+
+.m7-medidas h4 {
+  color: v.$color-acento;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-top: 1rem;
+}
+
+//PROPIEDADES LOGICAS
+// TRABAJAN CON LA DIRECCION DEL CONTENIDO SIN DEPENDER DE IZQ/DER
+.m7-medidas {
+   //centrar horizontal
+   margin-inline: auto;
+   //espacio arriba y abajo
+   margin-block: 1rem;
+}
+
+.m7-card-adaptable{
+   //espaciado al inicio y al final del eje horizontal
+   padding-inline: 1rem;
+}
+
+
+//SUB GRID: hijos usan columnas de su padre
+//PADRE
+.m7-subgrid-demo {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   gap: 1rem
+}
+
+//HIJOS
+.m7-subgrid-card {
+   display: grid;
+   grid-row: span 3;
+   grid-template-rows: subgrid;
+}
+
+
+//COLORES MODERNOS OKLCH() Y COLOR-MIX()
+ .m7-color-demo {
+   --m7-acento-moderno: oklch(85% 0.22 125)
+   //color alternativo
+   --m7-acento-oscuro: color-mix(in oklch, var(--m7-acento-moderno) 75%, black)
+   //color suave von blanco
+   --m7-acento-clar:: color-mix(in oklch, var(--m7-acento-moderno) 30%, white)
+ }
+
+
+
+ //TEXT WRAP
+ .m7-titulo-moderno {
+   max-width: 340px; //limita el ancho
+   text-wrap: balance; //titulos (busca lineas equilibradas)
+ }
+
+ .m7-texto-moderno{
+   max-width: 45ch; //medida aproximada basada en el ancho del caracter de la tipo
+   //para parrafos, mejorar el corte final del parrago
+   text-wrap:pretty;
+ }
+
+
+ //accento-color permite utilizar nuestro color en controles nativos del navegador
+
+ .m7-form-moderno {
+   padding: 1rem;
+   margin-block: 1rem;
+   background-color: v.$color-principal;
+   border-radius: 0.5rem;
+
+   //aplicar el color de marca de los controles
+   accent-color: v.$color-acento;
+ }
+
+ m7.m7-form-moderno label {
+   display: flex;
+   align-items: center;
+   gap:0.75rem;
+   margin-block: 0.75rem;
+ }

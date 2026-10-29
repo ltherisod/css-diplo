@@ -1076,13 +1076,14 @@ p {
 }
 
 /* ==========================================
-   ESTILOS GENERALES
+   MÓDULO 7 - CSS MODERNO
+   POWER GYM
+========================================== */
+/* ==========================================
+   1. ESTILOS GENERALES
 
    HTML: index.html
    Sección: Laboratorio CSS moderno
-
-   Definimos los colores, fondos y espacios
-   generales del laboratorio.
 ========================================== */
 .modulo7 {
   padding: 3rem 0;
@@ -1098,20 +1099,18 @@ p {
 }
 
 /* ==========================================
-   EJEMPLO DE ANIDAMIENTO
-
-   HTML: .m7-boton
+   2. ANIDAMIENTO
 
    Agrupamos los estilos de un elemento
    y sus cambios al pasar el mouse.
 ========================================== */
 .m7-boton {
+  display: inline-block;
+  padding: 0.75rem 1rem;
   background-color: #C7FF3D;
   color: #0B0B0B;
-  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
-  display: inline-block;
   transition: transform 0.3s ease;
 }
 .m7-boton:hover {
@@ -1119,86 +1118,262 @@ p {
 }
 
 /* ==========================================
-   EJEMPLO DE SELECTORES
+   3. SELECTORES MODERNOS
 
-   HTML: .m7-panel y .m7-mini-card
-
-   Agrupamos selectores con :is() y :where().
-   Con :has() diferenciamos las tarjetas
-   que contienen imágenes de las que no.
+   :is() - :where() - :has()
 ========================================== */
+/* :is() agrupa diferentes selectores */
 .m7-panel :is(h3, h4) {
   color: #C7FF3D;
   letter-spacing: 0.02em;
 }
 
-.modulo-7 :where(.m7-mini-card h4) {
+/* :where() tiene especificidad cero */
+.modulo7 :where(.m7-mini-card h4) {
   color: #FFFFFF;
 }
 
+/* Distribución de las tarjetas */
+.m7-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1rem;
+}
+
+/* Estilos generales de las tarjetas */
+.m7-mini-card {
+  padding: 1.25rem;
+  background-color: #0B0B0B;
+  border: 2px solid #333333;
+  border-radius: 0.75rem;
+}
+
+.m7-mini-card img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* :has() comprueba si contiene una imagen */
 .m7-mini-card:has(img) {
-  border: 2px solid #C7FF3D;
+  border-color: #C7FF3D;
   background-color: #171717;
 }
 
+/* :not() niega la condición */
 .m7-mini-card:not(:has(img)) {
-  padding: 1.25rem;
   border-style: dashed;
 }
 
 /* ==========================================
-   EJEMPLO DE CAPAS
+   4. CAPAS - @layer
 
-   HTML: .m7-ejemplo-capas y .m7-chip
-
-   Usamos @layer para comparar prioridades
-   entre diferentes grupos de estilos.
+   Permite organizar la prioridad
+   de diferentes grupos de estilos.
 ========================================== */
+/* Declaramos el orden de las capas */
+@layer m7-base, m7-destacado;
+/* Primera capa */
 @layer m7-base {
   .modulo7 .m7-ejemplo-capas .m7-chip {
     color: #FFFFFF;
     background-color: #0B0B0B;
   }
 }
+/* Segunda capa: mayor prioridad */
 @layer m7-destacado {
-  .modulo-7 .m7-ejemplo-capas .m7-chip {
+  .modulo7 .m7-ejemplo-capas .m7-chip {
     color: #0B0B0B;
     background-color: #C7FF3D;
   }
 }
-.m7-chip {
-  display: inline-block;
-  padding: 0.5rem 1 rem;
-}
-
-/* ==========================================
-   EJEMPLO DE COMPATIBILIDAD
-
-   HTML: .m7-soporte
-
-   Definimos una apariencia básica y después
-   comprobamos si el navegador permite
-   aplicar una mejora con @supports.
-========================================== */
-.m7-soporte {
-  background-color: #171717;
-  color: #FFFFFF;
+/* Estilos generales del ejemplo */
+.m7-ejemplo-capas {
   padding: 1rem;
 }
+
+.m7-chip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
 /* ==========================================
-   EJEMPLO DE CONTENEDORES
+   5. COMPATIBILIDAD - @supports
 
-   HTML: .m7-contenedor y .m7-card-adaptable
+   Aplicamos un estilo básico y después
+   comprobamos si el navegador admite
+   una propiedad CSS.
+========================================== */
+/* Estilo base */
+.m7-soporte {
+  padding: 1rem;
+  background-color: #171717;
+  color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+}
 
-   Preparamos dos contenedores de distinto
-   tamaño para trabajar con @container.
+/* Si el navegador admite linear-gradient */
+@supports (background: linear-gradient(90deg, #000, #fff)) {
+  .m7-soporte {
+    background: linear-gradient(90deg, #0B0B0B, #C7FF3D);
+    color: #FFFFFF;
+  }
+}
+/* ==========================================
+   HASTA ACÁ LLEGAMOS EN LA CLASE ANTERIOR
 ========================================== */
 /* ==========================================
-   EJEMPLO DE TAMAÑOS
+   6. CONTENEDORES
+   PENDIENTE PARA LA PRÓXIMA CLASE
 
-   HTML: .m7-medidas
-
-   Trabajamos proporciones de imágenes
-   y medidas adaptables con aspect-ratio,
-   min(), max() y clamp().
+   Vamos a trabajar con @container.
 ========================================== */
+/* Estructura visual básica */
+.m7-contenedores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.m7-contenedor {
+  padding: 1rem;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+  container-type: inline-size;
+  container-name: tarjeta-gym;
+}
+
+.m7-contenedor-estrecho {
+  width: 100%;
+  max-width: 250px;
+}
+
+.m7-contenedor-ancho {
+  width: 100%;
+  max-width: 550px;
+}
+
+.m7-card-adaptable {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #0B0B0B;
+  border-radius: 0.5rem;
+}
+
+.m7-icono {
+  font-size: 2rem;
+}
+
+/* Acá vamos a trabajar @container */
+@container tarjeta-gym (min-width: 400px) {
+  .m7-card-adaptable {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .m7-icono {
+    font-size: 3rem;
+  }
+}
+/* ==========================================
+   7. MEDIDAS MODERNAS
+   PENDIENTE PARA LA PRÓXIMA CLASE
+
+   aspect-ratio
+   min()
+   max()
+   clamp()
+========================================== */
+/* Estructura visual básica */
+.m7-medidas {
+  padding: 1rem;
+  background-color: #0B0B0B;
+  border-radius: 0.5rem;
+}
+
+.m7-medidas img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Acá vamos a trabajar las medidas modernas */
+.m7-medidas {
+  width: min(100%, 500px);
+}
+
+.m7-medidas {
+  padding: max(1rem, 3vw);
+}
+
+.m7-medidas h4 {
+  color: #C7FF3D;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-top: 1rem;
+}
+
+.m7-medidas {
+  margin-inline: auto;
+  margin-block: 1rem;
+}
+
+.m7-card-adaptable {
+  padding-inline: 1rem;
+}
+
+.m7-subgrid-demo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.m7-subgrid-card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+}
+
+.m7-color-demo {
+  --m7-acento-moderno: oklch(85% 0.22 125)
+  //color alternativo
+  --m7-acento-oscuro: color-mix(in oklch, var(--m7-acento-moderno) 75%, black)
+  //color suave von blanco
+  --m7-acento-clar:: color-mix(in oklch, var(--m7-acento-moderno) 30%, white) ;
+}
+
+.m7-titulo-moderno {
+  max-width: 340px;
+  text-wrap: balance;
+}
+
+.m7-texto-moderno {
+  max-width: 45ch;
+  text-wrap: pretty;
+}
+
+.m7-form-moderno {
+  padding: 1rem;
+  margin-block: 1rem;
+  background-color: #0B0B0B;
+  border-radius: 0.5rem;
+  accent-color: #C7FF3D;
+}
+
+m7.m7-form-moderno label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block: 0.75rem;
+}
